@@ -3,40 +3,28 @@ import { Icon } from 'astro-icon';
 
 const items = [
 	{
-		title: 'Headers',
+		title: '进阶研究分级课程体系',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-		icon: 'flat-color-icons:home',
+			'B0科研探索、B1科研体验、B2科研挑战、B3长期研究项目。阶梯式设计既尊重学生的个体差异，也为他们提供了清晰的成长路径。',
+		icon: 'flat-color-icons:graduated',
 	},
 	{
-		title: 'Footers',
+		title: '多维人才评价模型',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-		icon: 'flat-color-icons:faq',
+			'打破单一标准的束缚，关注学生在探究过程中展现的好奇心、坚韧性、创造力、协作能力、反思能力等多个维度。',
+		icon: 'flat-color-icons:multiple-inputs',
 	},
 	{
-		title: 'Features',
+		title: '创新师资培训体系',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-		icon: 'flat-color-icons:video-projector',
+			'通过参与式行动研究(PAR)培训教师，让他们从"答案贩卖机"转变为"想象力守护者"，从知识权威转变为学生的"共同研究者"。',
+		icon: 'flat-color-icons:conference-call',
 	},
 	{
-		title: 'Call-to-Action',
+		title: '数字与物理空间融合',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-		icon: 'flat-color-icons:video-projector',
-	},
-	{
-		title: 'Pricing',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-		icon: 'flat-color-icons:calculator',
-	},
-	{
-		title: 'Testimonial',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-		icon: 'flat-color-icons:voice-presentation',
+			'物理空间采用"去中心化"设计，配合在线协作平台、知识库、项目管理工具，创造出一种既有温度又有效率的创新场域。',
+		icon: 'flat-color-icons:business-contact',
 	},
 ];
 ---
@@ -46,15 +34,15 @@ const items = [
 	<div class="relative max-w-6xl mx-auto px-4 sm:px-6">
 		<div class="py-4 pt-8 sm:py-6 lg:py-8 lg:pt-12">
 			<div class="mb-8 text-center">
-				<p class="text-base text-primary-600 dark:text-primary-200 font-semibold tracking-wide uppercase">Components</p>
-				<h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
-					Most used widgets
+				<p class="text-base text-primary-600 dark:text-primary-200 font-semibold tracking-wide uppercase">培养体系</p>
+				<h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading" id="education">
+					四大支柱体系
 				</h2>
 				<p class="max-w-3xl mx-auto text-center text-xl text-gray-600 dark:text-slate-400">
-					Provides frequently used components for building websites using Tailwind CSS
+					经过多年实践，形成了一套系统性的创新人才培养体系，四大支柱相互支撑、协同发力
 				</p>
 			</div>
-			<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start my-12 dark:text-white">
+			<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-2 items-start my-12 dark:text-white">
 				{
 					items.map(({ title, description, icon }) => (
 						<div class="relative flex flex-col p-6 bg-white dark:bg-slate-900 rounded shadow-xl hover:shadow-lg transition dark:border dark:border-slate-800">

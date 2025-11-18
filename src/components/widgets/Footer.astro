@@ -4,57 +4,44 @@ import { getHomePermalink, getRelativeLink } from '~/utils/permalinks';
 
 const links = [
 	{
-		title: 'Product',
+		title: '关于',
 		items: [
-			{ title: 'Features', href: '#' },
-			{ title: 'Security', href: '#' },
-			{ title: 'Team', href: '#' },
-			{ title: 'Enterprise', href: '#' },
-			{ title: 'Customer stories', href: '#' },
-			{ title: 'Pricing', href: '#' },
-			{ title: 'Resources', href: '#' },
+			{ title: '发展历程', href: '#about' },
+			{ title: '核心理念', href: '#values' },
+			{ title: '培养体系', href: '#education' },
 		],
 	},
 	{
-		title: 'Platform',
+		title: '空间',
 		items: [
-			{ title: 'Developer API', href: '#' },
-			{ title: 'Partners', href: '#' },
-			{ title: 'Atom', href: '#' },
-			{ title: 'Electron', href: '#' },
-			{ title: 'AstroWind Desktop', href: '#' },
+			{ title: '深圳坪山基地', href: '#' },
+			{ title: '清华李兆基空间', href: '#' },
+			{ title: '深圳南山总部', href: '#' },
 		],
 	},
 	{
-		title: 'Support',
+		title: '资源',
 		items: [
-			{ title: 'Docs', href: '#' },
-			{ title: 'Community Forum', href: '#' },
-			{ title: 'Professional Services', href: '#' },
-			{ title: 'Skills', href: '#' },
-			{ title: 'Status', href: '#' },
+			{ title: '最新动态', href: '/blog' },
+			{ title: '项目展示', href: '#' },
+			{ title: '研究成果', href: '#' },
 		],
 	},
 	{
-		title: 'Company',
+		title: '联系',
 		items: [
-			{ title: 'About', href: '#' },
-			{ title: 'Blog', href: '#' },
-			{ title: 'Careers', href: '#' },
-			{ title: 'Press', href: '#' },
-			{ title: 'Inclusion', href: '#' },
-			{ title: 'Social Impact', href: '#' },
-			{ title: 'Shop', href: '#' },
+			{ title: '联系我们', href: '#contact' },
+			{ title: '加入我们', href: '#' },
+			{ title: '合作伙伴', href: '#' },
 		],
 	},
 ];
 
 const social = [
-	{ label: 'Twitter', icon: 'tabler:brand-twitter', href: '#' },
-	{ label: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-	{ label: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
+	{ label: 'WeChat', icon: 'tabler:brand-wechat', href: '#' },
+	{ label: 'Bilibili', icon: 'tabler:brand-bilibili', href: '#' },
+	{ label: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/openwisdomlab' },
 	{ label: 'RSS', icon: 'tabler:rss', href: getRelativeLink('/rss.xml') },
-	{ label: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
 ];
 ---
 
@@ -63,17 +50,13 @@ const social = [
 		<div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
 			<div class="col-span-12 lg:col-span-4">
 				<div class="mb-2">
-					<a class="inline-block font-bold text-xl" href={getHomePermalink()}>AstroWind</a>
+					<a class="inline-block font-bold text-xl" href={getHomePermalink()}>🦉 猫头鹰实验室</a>
 				</div>
-				<div class="text-sm text-gray-600">
-					<a
-						class="text-gray-600 hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out"
-						href="#">Terms</a
-					> ·
-					<a
-						class="text-gray-600 hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out"
-						href="#">Privacy Policy</a
-					>
+				<div class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+					Open Wisdom Lab
+				</div>
+				<div class="text-sm text-gray-600 dark:text-gray-400">
+					让有好奇心的人、天马行空的想法和有趣的问题在此汇聚和激发
 				</div>
 			</div>
 			{
@@ -116,12 +99,7 @@ const social = [
 			</ul>
 
 			<div class="text-sm text-gray-700 mr-4 dark:text-slate-400">
-				<span
-					class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 float-left rounded-sm bg-[url(https://onwidget.com/favicon/favicon-32x32.png)]"
-				>
-				</span>
-				Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://onwidget.com/"> onWidget</a> ·
-				All rights reserved.
+				© {new Date().getFullYear()} 猫头鹰实验室 · Open Wisdom Lab · All rights reserved.
 			</div>
 		</div>
 	</div>

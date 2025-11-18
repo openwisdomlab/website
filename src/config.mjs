@@ -1,15 +1,15 @@
 export const SITE = {
-	name: 'AstroWind',
+	name: '猫头鹰实验室 | Open Wisdom Lab',
 
-	origin: 'https://astrowind.vercel.app',
+	origin: 'https://openwisdomlab.org',
 	basePathname: '/',
 	trailingSlash: false,
 
-	title: 'AstroWind — Your website with Astro + Tailwind CSS',
-	description: '🚀 AstroWind is a free and ready to start template to make your website using Astro and Tailwind CSS.',
+	title: '猫头鹰实验室 | Open Wisdom Lab - 开放、交叉、创新的学习空间',
+	description: '猫头鹰实验室（OWL）是一个开放、包容、创新的实验室，致力于培养具有创新精神和跨学科思维的人才。我们强调开放性、交叉性、连接性、可持续性和前沿技术。',
 
 	googleAnalyticsId: false, // or "G-XXXXXXXXXX",
-	googleSiteVerificationId: 'orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M',
+	googleSiteVerificationId: '',
 };
 
 export const BLOG = {
