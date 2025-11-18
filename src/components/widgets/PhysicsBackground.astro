@@ -1,0 +1,246 @@
+---
+// Physics Background Component using Matter.js
+---
+
+<div id="physics-canvas-container" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0 opacity-30">
+	<canvas id="physics-canvas"></canvas>
+</div>
+
+<script>
+	import Matter from 'matter-js';
+
+	// Wait for DOM to be ready
+	if (typeof window !== 'undefined') {
+		const initPhysics = () => {
+			const canvas = document.getElementById('physics-canvas');
+			const container = document.getElementById('physics-canvas-container');
+
+			if (!canvas || !container) return;
+
+			// Module aliases
+			const Engine = Matter.Engine,
+				Render = Matter.Render,
+				Runner = Matter.Runner,
+				Bodies = Matter.Bodies,
+				Composite = Matter.Composite,
+				Mouse = Matter.Mouse,
+				MouseConstraint = Matter.MouseConstraint,
+				Events = Matter.Events;
+
+			// Create engine
+			const engine = Engine.create({
+				gravity: { x: 0, y: 0.05 }
+			});
+
+			// Create renderer
+			const render = Render.create({
+				canvas: canvas,
+				engine: engine,
+				options: {
+					width: window.innerWidth,
+					height: window.innerHeight,
+					wireframes: false,
+					background: 'transparent'
+				}
+			});
+
+			// Create geometric shapes with futuristic colors
+			const colors = [
+				'#6366f1', // indigo
+				'#8b5cf6', // violet
+				'#06b6d4', // cyan
+				'#10b981', // emerald
+				'#f59e0b', // amber
+			];
+
+			const shapes: Matter.Body[] = [];
+
+			// Create circles
+			for (let i = 0; i < 8; i++) {
+				const size = Math.random() * 30 + 20;
+				shapes.push(
+					Bodies.circle(
+						Math.random() * window.innerWidth,
+						Math.random() * window.innerHeight,
+						size,
+						{
+							render: {
+								fillStyle: colors[Math.floor(Math.random() * colors.length)],
+								strokeStyle: colors[Math.floor(Math.random() * colors.length)],
+								lineWidth: 2
+							},
+							restitution: 0.8,
+							friction: 0.001,
+							density: 0.001
+						}
+					)
+				);
+			}
+
+			// Create rectangles
+			for (let i = 0; i < 6; i++) {
+				const width = Math.random() * 40 + 30;
+				const height = Math.random() * 40 + 30;
+				shapes.push(
+					Bodies.rectangle(
+						Math.random() * window.innerWidth,
+						Math.random() * window.innerHeight,
+						width,
+						height,
+						{
+							render: {
+								fillStyle: colors[Math.floor(Math.random() * colors.length)],
+								strokeStyle: colors[Math.floor(Math.random() * colors.length)],
+								lineWidth: 2
+							},
+							restitution: 0.7,
+							friction: 0.001,
+							density: 0.001
+						}
+					)
+				);
+			}
+
+			// Create polygons (triangles, pentagons, hexagons)
+			for (let i = 0; i < 6; i++) {
+				const sides = Math.floor(Math.random() * 4) + 3; // 3-6 sides
+				const radius = Math.random() * 25 + 20;
+				shapes.push(
+					Bodies.polygon(
+						Math.random() * window.innerWidth,
+						Math.random() * window.innerHeight,
+						sides,
+						radius,
+						{
+							render: {
+								fillStyle: colors[Math.floor(Math.random() * colors.length)],
+								strokeStyle: colors[Math.floor(Math.random() * colors.length)],
+								lineWidth: 2
+							},
+							restitution: 0.8,
+							friction: 0.001,
+							density: 0.001
+						}
+					)
+				);
+			}
+
+			// Create boundaries (invisible walls)
+			const wallThickness = 50;
+			const walls = [
+				// top
+				Bodies.rectangle(window.innerWidth / 2, -wallThickness / 2, window.innerWidth, wallThickness, {
+					isStatic: true,
+					render: { visible: false }
+				}),
+				// bottom
+				Bodies.rectangle(window.innerWidth / 2, window.innerHeight + wallThickness / 2, window.innerWidth, wallThickness, {
+					isStatic: true,
+					render: { visible: false }
+				}),
+				// left
+				Bodies.rectangle(-wallThickness / 2, window.innerHeight / 2, wallThickness, window.innerHeight, {
+					isStatic: true,
+					render: { visible: false }
+				}),
+				// right
+				Bodies.rectangle(window.innerWidth + wallThickness / 2, window.innerHeight / 2, wallThickness, window.innerHeight, {
+					isStatic: true,
+					render: { visible: false }
+				})
+			];
+
+			// Add all bodies to the world
+			Composite.add(engine.world, [...shapes, ...walls]);
+
+			// Add mouse control with repulsion effect
+			const mouse = Mouse.create(render.canvas);
+			const mouseConstraint = MouseConstraint.create(engine, {
+				mouse: mouse,
+				constraint: {
+					stiffness: 0.2,
+					render: { visible: false }
+				}
+			});
+
+			Composite.add(engine.world, mouseConstraint);
+
+			// Keep the mouse in sync with rendering
+			render.mouse = mouse;
+
+			// Add gentle random forces to keep shapes moving
+			Events.on(engine, 'beforeUpdate', () => {
+				shapes.forEach((shape) => {
+					// Apply random gentle forces
+					if (Math.random() < 0.02) {
+						const forceMagnitude = 0.0001;
+						Matter.Body.applyForce(shape, shape.position, {
+							x: (Math.random() - 0.5) * forceMagnitude,
+							y: (Math.random() - 0.5) * forceMagnitude
+						});
+					}
+
+					// Add rotation for visual interest
+					Matter.Body.setAngularVelocity(shape, shape.angularVelocity * 0.99);
+				});
+			});
+
+			// Run the renderer
+			Render.run(render);
+
+			// Create runner
+			const runner = Runner.create();
+			Runner.run(runner, engine);
+
+			// Handle window resize
+			const handleResize = () => {
+				render.canvas.width = window.innerWidth;
+				render.canvas.height = window.innerHeight;
+				render.options.width = window.innerWidth;
+				render.options.height = window.innerHeight;
+
+				// Update wall positions
+				Matter.Body.setPosition(walls[0], { x: window.innerWidth / 2, y: -wallThickness / 2 });
+				Matter.Body.setPosition(walls[1], { x: window.innerWidth / 2, y: window.innerHeight + wallThickness / 2 });
+				Matter.Body.setPosition(walls[2], { x: -wallThickness / 2, y: window.innerHeight / 2 });
+				Matter.Body.setPosition(walls[3], { x: window.innerWidth + wallThickness / 2, y: window.innerHeight / 2 });
+
+				// Update wall dimensions
+				Matter.Body.set(walls[0], { vertices: Matter.Vertices.fromPath(`0 0 ${window.innerWidth} 0 ${window.innerWidth} ${wallThickness} 0 ${wallThickness}`) });
+				Matter.Body.set(walls[1], { vertices: Matter.Vertices.fromPath(`0 0 ${window.innerWidth} 0 ${window.innerWidth} ${wallThickness} 0 ${wallThickness}`) });
+			};
+
+			window.addEventListener('resize', handleResize);
+
+			// Cleanup on page navigation
+			document.addEventListener('astro:before-preparation', () => {
+				window.removeEventListener('resize', handleResize);
+				Render.stop(render);
+				Runner.stop(runner);
+				Engine.clear(engine);
+			});
+		};
+
+		// Initialize on page load
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', initPhysics);
+		} else {
+			initPhysics();
+		}
+
+		// Re-initialize on page navigation
+		document.addEventListener('astro:page-load', initPhysics);
+	}
+</script>
+
+<style>
+	#physics-canvas-container {
+		mix-blend-mode: screen;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		#physics-canvas-container {
+			display: none;
+		}
+	}
+</style>
