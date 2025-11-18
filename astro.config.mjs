@@ -5,7 +5,6 @@ import { defineConfig } from 'astro/config';
 
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
-import image from '@astrojs/image';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 
@@ -26,14 +25,9 @@ export default defineConfig({
 
 	integrations: [
 		tailwind({
-			config: {
-				applyBaseStyles: false,
-			},
+			applyBaseStyles: false,
 		}),
 		sitemap(),
-		image({
-			serviceEntryPoint: '@astrojs/image/sharp',
-		}),
 		mdx(),
 
 		...whenExternalScripts(() =>
@@ -45,7 +39,6 @@ export default defineConfig({
 
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
-		extendDefaultPlugins: true,
 	},
 
 	vite: {
@@ -54,5 +47,10 @@ export default defineConfig({
 				'~': path.resolve(__dirname, './src'),
 			},
 		},
+	},
+
+	image: {
+		domains: [],
+		remotePatterns: [],
 	},
 });
