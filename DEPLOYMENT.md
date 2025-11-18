@@ -178,6 +178,17 @@ git push origin feature/your-feature
 ### Q: 我忘记了使用哪个账号部署的？
 **A**: 使用有 `openwisdomlab` GitHub 组织访问权限的账号登录 Vercel，在 Dashboard 中可以看到所有项目。
 
+### Q: Production 环境显示旧版本怎么办？
+**A**: 如果 Production 环境没有自动更新到最新代码：
+1. **检查 Production 分支设置**
+   - 进入 Vercel 项目设置 → Git
+   - 确认 "Production Branch" 设置为 `main`
+2. **手动触发部署**
+   - 进入 "Deployments" 标签
+   - 点击 "Redeploy" 或直接部署 `main` 分支
+   - 选择 "Rebuild" 完全重新构建
+3. **详细步骤**: 查看 [PRODUCTION_DEPLOYMENT.md](./PRODUCTION_DEPLOYMENT.md)
+
 ### Q: 如何回滚到之前的版本？
 **A**:
 1. 在 Vercel Dashboard 的 "Deployments" 中找到之前的部署
