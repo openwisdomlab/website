@@ -6,10 +6,10 @@ import { Picture } from 'astro:assets';
 <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl">
 	<div class="grid gap-6 row-gap-10 md:grid-cols-2">
 		<div class="md:pb-6 md:pr-16">
-			<h2 class="mb-8 text-3xl lg:text-4xl font-bold font-heading" id="about">
+			<h2 class="mb-8 text-3xl lg:text-4xl font-bold font-heading" id="about" data-aos="fade-right">
 				发展历程：从清华到深圳
 			</h2>
-			<div class="flex">
+			<div class="flex" data-aos="fade-up" data-aos-delay="100">
 				<div class="flex flex-col items-center mr-4">
 					<div>
 						<div class="flex items-center justify-center w-10 h-10 rounded-full border-primary-600 border-2">
@@ -25,7 +25,7 @@ import { Picture } from 'astro:assets';
 					</p>
 				</div>
 			</div>
-			<div class="flex">
+			<div class="flex" data-aos="fade-up" data-aos-delay="200">
 				<div class="flex flex-col items-center mr-4">
 					<div>
 						<div class="flex items-center justify-center w-10 h-10 rounded-full border-primary-600 border-2">
@@ -41,7 +41,7 @@ import { Picture } from 'astro:assets';
 					</p>
 				</div>
 			</div>
-			<div class="flex">
+			<div class="flex" data-aos="fade-up" data-aos-delay="300">
 				<div class="flex flex-col items-center mr-4">
 					<div>
 						<div class="flex items-center justify-center w-10 h-10 rounded-full border-primary-600 border-2">
@@ -57,7 +57,7 @@ import { Picture } from 'astro:assets';
 					</p>
 				</div>
 			</div>
-			<div class="flex">
+			<div class="flex" data-aos="fade-up" data-aos-delay="400">
 				<div class="flex flex-col items-center mr-4">
 					<div>
 						<div class="flex items-center justify-center w-10 h-10 rounded-full border-primary-600 border-2 bg-primary-600">
@@ -71,7 +71,7 @@ import { Picture } from 'astro:assets';
 				</div>
 			</div>
 		</div>
-		<div class="relative">
+		<div class="relative" data-aos="fade-left" data-aos-duration="1000">
 			<Picture
 				class="inset-0 object-cover object-top w-full rounded-md shadow-lg md:absolute md:h-full bg-gray-400 dark:bg-slate-700"
 				src={import('~/assets/images/astronaut.jpg')}
