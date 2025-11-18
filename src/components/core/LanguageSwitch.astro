@@ -1,0 +1,137 @@
+---
+import { Icon } from 'astro-icon/components';
+import { getLangFromUrl } from '~/i18n/languages';
+
+const currentLang = getLangFromUrl(Astro.url);
+---
+
+<div class="language-switch relative">
+  <button
+    id="language-toggle"
+    type="button"
+    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+    aria-label="Switch language"
+    aria-expanded="false"
+  >
+    <Icon name="tabler:language" class="w-5 h-5" />
+    <span class="ml-1 text-sm font-medium">{currentLang.toUpperCase()}</span>
+  </button>
+
+  <div
+    id="language-menu"
+    class="hidden absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 z-50"
+  >
+    <div class="py-1" role="menu" aria-orientation="vertical">
+      <button
+        class="language-option block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+        data-lang="zh"
+        role="menuitem"
+      >
+        <span class="font-medium">中文</span>
+      </button>
+      <button
+        class="language-option block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+        data-lang="en"
+        role="menuitem"
+      >
+        <span class="font-medium">English</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function setupLanguageSwitch() {
+    const toggle = document.getElementById('language-toggle');
+    const menu = document.getElementById('language-menu');
+    const options = document.querySelectorAll('.language-option');
+
+    if (!toggle || !menu) return;
+
+    // Toggle menu
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menu.classList.toggle('hidden');
+      toggle.setAttribute('aria-expanded', menu.classList.contains('hidden') ? 'false' : 'true');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+
+    // Handle language selection
+    options.forEach(option => {
+      option.addEventListener('click', (e) => {
+        const lang = (e.currentTarget as HTMLElement).dataset.lang;
+        if (lang) {
+          localStorage.setItem('preferred-language', lang);
+          // Store current scroll position
+          const scrollY = window.scrollY;
+          localStorage.setItem('scroll-position', scrollY.toString());
+
+          // Update page content without reload for better UX
+          updatePageLanguage(lang);
+          menu.classList.add('hidden');
+        }
+      });
+    });
+  }
+
+  function updatePageLanguage(lang: string) {
+    // Update all translatable elements
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (key) {
+        // This will be populated dynamically
+        // For now, we'll reload the page with the new language
+        window.location.reload();
+      }
+    });
+
+    // Update language toggle display
+    const toggleSpan = document.querySelector('#language-toggle span');
+    if (toggleSpan) {
+      toggleSpan.textContent = lang.toUpperCase();
+    }
+  }
+
+  // Initialize on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupLanguageSwitch);
+  } else {
+    setupLanguageSwitch();
+  }
+
+  // Re-initialize on page navigation (for Astro view transitions)
+  document.addEventListener('astro:page-load', setupLanguageSwitch);
+
+  // Apply saved language on load
+  const savedLang = localStorage.getItem('preferred-language');
+  if (savedLang) {
+    const currentLang = document.documentElement.lang;
+    if (savedLang !== currentLang && window.location.pathname === '/') {
+      // Only auto-switch on homepage to avoid confusion
+      // updatePageLanguage(savedLang);
+    }
+  }
+
+  // Restore scroll position after language change
+  const savedScroll = localStorage.getItem('scroll-position');
+  if (savedScroll) {
+    window.scrollTo(0, parseInt(savedScroll));
+    localStorage.removeItem('scroll-position');
+  }
+</script>
+
+<style>
+  .language-switch {
+    display: inline-block;
+  }
+
+  #language-menu {
+    min-width: 8rem;
+  }
+</style>

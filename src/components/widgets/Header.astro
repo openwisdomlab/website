@@ -3,6 +3,7 @@ import { Icon } from 'astro-icon/components';
 import Logo from '~/components/atoms/Logo.astro';
 import ToggleTheme from '~/components/core/ToggleTheme.astro';
 import ToggleMenu from '~/components/core/ToggleMenu.astro';
+import LanguageSwitch from '~/components/core/LanguageSwitch.astro';
 
 import { getHomePermalink, getBlogPermalink, getPermalink, getRelativeLink } from '~/utils/permalinks';
 ---
@@ -30,27 +31,34 @@ import { getHomePermalink, getBlogPermalink, getPermalink, getRelativeLink } fro
 					<a
 						class="font-medium hover:text-gray-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
 						href="#about"
-						>关于我们
+						>关于我们 <span class="text-xs ml-1 opacity-60">About</span>
 					</a>
 				</li>
 				<li>
 					<a
 						class="font-medium hover:text-gray-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
 						href="#values"
-						>核心理念
+						>核心理念 <span class="text-xs ml-1 opacity-60">Values</span>
 					</a>
 				</li>
 				<li>
 					<a
 						class="font-medium hover:text-gray-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
-						href="#education"
-						>培养体系
+						href="#curriculum"
+						>课程体系 <span class="text-xs ml-1 opacity-60">Curriculum</span>
 					</a>
 				</li>
 				<li>
 					<a
 						class="font-medium hover:text-gray-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
-						href={getBlogPermalink()}>动态</a
+						href="#challenges"
+						>科学挑战 <span class="text-xs ml-1 opacity-60">Challenges</span>
+					</a>
+				</li>
+				<li>
+					<a
+						class="font-medium hover:text-gray-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
+						href={getBlogPermalink()}>动态 <span class="text-xs ml-1 opacity-60">Blog</span></a
 					>
 				</li>
 				<li class="md:hidden">
@@ -62,7 +70,8 @@ import { getHomePermalink, getBlogPermalink, getPermalink, getRelativeLink } fro
 				</li>
 			</ul>
 			<div class="md:self-center flex items-center mb-4 md:mb-0 ml-2">
-				<div class="hidden items-center md:flex">
+				<div class="hidden items-center md:flex gap-1">
+					<LanguageSwitch />
 					<ToggleTheme iconClass="w-5 h-5" />
 					<a
 						class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"

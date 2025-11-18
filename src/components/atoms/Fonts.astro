@@ -2,4 +2,70 @@
 import '@fontsource-variable/inter';
 ---
 
-<!-- Or Google Fonts -->
+<!-- 引入更炫酷的字体 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&family=Exo+2:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style is:global>
+  :root {
+    /* 主标题使用 Orbitron - 未来科技感 */
+    --font-heading: 'Orbitron', 'Inter Variable', sans-serif;
+    /* 副标题使用 Space Grotesk - 现代几何感 */
+    --font-subheading: 'Space Grotesk', 'Inter Variable', sans-serif;
+    /* 正文使用 Inter Variable - 优秀的可读性 */
+    --font-body: 'Inter Variable', sans-serif;
+    /* 数字和代码使用 Rajdhani - 清晰的技术感 */
+    --font-mono: 'Rajdhani', monospace;
+    /* 特殊装饰文字使用 Exo 2 - 动感现代 */
+    --font-display: 'Exo 2', sans-serif;
+  }
+
+  /* 应用字体到对应元素 */
+  h1, h2, .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+
+  h3, h4, h5, h6 {
+    font-family: var(--font-subheading);
+    letter-spacing: -0.01em;
+  }
+
+  body {
+    font-family: var(--font-body);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  .display-text {
+    font-family: var(--font-display);
+    font-weight: 600;
+  }
+
+  /* 增强标题的视觉效果 */
+  h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+  }
+
+  /* 暗色模式下的标题渐变 */
+  .dark h1 {
+    background: linear-gradient(135deg, #a78bfa 0%, #c084fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+</style>
