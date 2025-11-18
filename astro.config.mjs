@@ -7,6 +7,7 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
+import icon from 'astro-icon';
 
 import { remarkReadingTime } from './src/utils/frontmatter.mjs';
 import { SITE } from './src/config.mjs';
@@ -29,6 +30,7 @@ export default defineConfig({
 		}),
 		sitemap(),
 		mdx(),
+		icon(),
 
 		...whenExternalScripts(() =>
 			partytown({

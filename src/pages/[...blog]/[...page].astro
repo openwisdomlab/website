@@ -1,4 +1,5 @@
 ---
+import type { Page } from 'astro';
 import { SITE, BLOG } from '~/config.mjs';
 
 import Layout from '~/layouts/BlogLayout.astro';
@@ -19,7 +20,7 @@ export async function getStaticPaths({ paginate }) {
 	});
 }
 
-const { page } = Astro.props;
+const { page } = Astro.props as { page: Page };
 const currentPage = page.currentPage ?? 1;
 
 const meta = {
