@@ -9,8 +9,8 @@ import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
 
-import { remarkReadingTime } from './src/utils/frontmatter.mjs';
-import { SITE } from './src/config.mjs';
+import { remarkReadingTime } from './src/utils/frontmatter';
+import { SITE } from './src/config';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
