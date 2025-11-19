@@ -1,0 +1,65 @@
+---
+import { SITE } from '~/config';
+import { getCanonical, getPermalink } from '~/utils/permalinks';
+import Layout from '~/layouts/PageLayout.astro';
+
+import ScientificChallenges from '~/components/widgets/ScientificChallenges.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const meta = {
+	title: '科学挑战 | ' + SITE.title,
+	description: '探索前沿科学挑战，培养创新思维和科研能力',
+	canonical: getCanonical(getPermalink('/challenges')),
+};
+---
+
+<Layout {meta}>
+	<!-- 页面标题区域 -->
+	<section class="relative bg-gradient-to-r from-tech-900 via-primary-900 to-secondary-900 py-20 overflow-hidden">
+		<!-- 动态网格背景 -->
+		<div class="absolute inset-0 opacity-20">
+			<div class="absolute inset-0" style="
+				background-image:
+					linear-gradient(rgba(0, 240, 255, 0.1) 1px, transparent 1px),
+					linear-gradient(90deg, rgba(0, 240, 255, 0.1) 1px, transparent 1px);
+				background-size: 50px 50px;
+			"></div>
+		</div>
+
+		<!-- 发光效果 -->
+		<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-neon-blue opacity-5 rounded-full filter blur-3xl"></div>
+
+		<div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+			<div class="text-center">
+				<h1
+					class="text-5xl md:text-6xl font-bold text-white mb-6 font-display animate-fade-in"
+					data-aos="fade-up"
+				>
+					<span data-i18n="page.challenges.title">科学挑战</span>
+				</h1>
+				<p
+					class="text-xl text-tech-100 max-w-3xl mx-auto"
+					data-aos="fade-up"
+					data-aos-delay="200"
+					data-i18n="page.challenges.subtitle"
+				>
+					面向前沿问题，探索未知领域，追求创新突破
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- 科学挑战总览 -->
+	<ScientificChallenges />
+
+	<!-- 挑战特色和方法 -->
+	<Features2 />
+
+	<!-- 更多特色 -->
+	<Features3 />
+
+	<!-- 行动号召 -->
+	<CallToAction />
+</Layout>

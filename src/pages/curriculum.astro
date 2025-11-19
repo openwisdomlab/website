@@ -1,0 +1,58 @@
+---
+import { SITE } from '~/config';
+import { getCanonical, getPermalink } from '~/utils/permalinks';
+import Layout from '~/layouts/PageLayout.astro';
+
+import Curriculum from '~/components/widgets/Curriculum.astro';
+import MiddleSchool from '~/components/widgets/MiddleSchool.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const meta = {
+	title: '课程体系 | ' + SITE.title,
+	description: '探索猫头鹰实验室的进阶式课程体系，从 B0 到 B3 的完整学习路径',
+	canonical: getCanonical(getPermalink('/curriculum')),
+};
+---
+
+<Layout {meta}>
+	<!-- 页面标题区域 -->
+	<section class="relative bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 py-20 overflow-hidden">
+		<!-- 装饰性背景 -->
+		<div class="absolute inset-0 opacity-10">
+			<div class="absolute top-20 left-10 w-72 h-72 bg-tech-500 rounded-full filter blur-3xl animate-float"></div>
+			<div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary-500 rounded-full filter blur-3xl animate-float" style="animation-delay: 2s;"></div>
+		</div>
+
+		<div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+			<div class="text-center">
+				<h1
+					class="text-5xl md:text-6xl font-bold text-white mb-6 font-display"
+					data-aos="fade-up"
+				>
+					<span data-i18n="page.curriculum.title">课程体系</span>
+				</h1>
+				<p
+					class="text-xl text-blue-100 max-w-3xl mx-auto"
+					data-aos="fade-up"
+					data-aos-delay="200"
+					data-i18n="page.curriculum.subtitle"
+				>
+					进阶式探索之旅，从兴趣启蒙到创新突破
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- 课程体系总览 (B0-B3) -->
+	<Curriculum />
+
+	<!-- 中学生专区 -->
+	<MiddleSchool />
+
+	<!-- 学习步骤/路径 -->
+	<Steps />
+
+	<!-- 行动号召 -->
+	<CallToAction />
+</Layout>
