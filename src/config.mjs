@@ -5,8 +5,8 @@ export const SITE = {
 	basePathname: '/',
 	trailingSlash: false,
 
-	title: '猫头鹰实验室 | Open Wisdom Lab - 科技界的迪士尼乐园',
-	description: '猫头鹰实验室（OWL）是科技界的"迪士尼乐园"，一个充满想象力、创造力和探索乐趣的创新教育空间。基于创生教育理念，我们致力于培养AI时代具有创新精神和跨学科思维的未来人才。',
+	title: '猫头鹰实验室 | Open Wisdom Lab - 科技界的奇妙乐园',
+	description: '猫头鹰实验室（OWL）是科技界的"奇妙乐园"，一个充满想象力、创造力和探索乐趣的创新教育空间。基于创生教育理念，我们致力于培养AI时代具有创新精神和跨学科思维的未来人才。',
 
 	googleAnalyticsId: false, // or "G-XXXXXXXXXX",
 	googleSiteVerificationId: '',
