@@ -23,7 +23,7 @@ const trim = (str: string, ch: string): string => {
  * Trim slashes from a string
  * 移除字符串首尾的斜杠
  */
-const trimSlash = (s: string): string => trim(trim(s, '/'));
+const trimSlash = (s: string): string => trim(trim(s, '/'), '/');
 
 /**
  * Create a path from multiple parameters

@@ -86,10 +86,10 @@ import ImageUpload from '~/components/forms/ImageUpload.astro';
 &lt;ImageUpload lang="zh" onUploadComplete="handleUploadComplete" /&gt;
 
 &lt;script&gt;
-  function handleUploadComplete(url) {
+  function handleUploadComplete(url: string) &#123;
     console.log('上传完成:', url);
     // 在这里处理上传完成后的逻辑
-  }
+  &#125;
 &lt;/script&gt;</code></pre>
 				</div>
 
@@ -123,7 +123,13 @@ import ImageUpload from '~/components/forms/ImageUpload.astro';
 
 <script>
 	// 全局回调函数示例
-	window.handleUploadComplete = function (url) {
+	declare global {
+		interface Window {
+			handleUploadComplete: (url: string) => void;
+		}
+	}
+
+	window.handleUploadComplete = function (url: string) {
 		console.log('图片上传完成:', url);
 		// 你可以在这里添加自定义逻辑
 		// 例如: 更新表单字段、显示通知等

@@ -4,7 +4,7 @@
  */
 
 type ImageModule = () => Promise<{ default: any }>;
-type ImageCollection = Record<string, ImageModule>;
+type ImageCollection = Record<string, ImageModule | (() => Promise<any>)>;
 
 /**
  * Load all local images
