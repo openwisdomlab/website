@@ -3,7 +3,7 @@ import { SITE } from '~/config';
 import { getCanonical, getPermalink } from '~/utils/permalinks';
 import Layout from '~/layouts/PageLayout.astro';
 
-import Curriculum from '~/components/widgets/Curriculum.astro';
+import CurriculumSection from '~/components/widgets/Curriculum.astro';
 import MiddleSchool from '~/components/widgets/MiddleSchool.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
@@ -45,7 +45,7 @@ const meta = {
 	</section>
 
 	<!-- 课程体系总览 (B0-B3) -->
-	<Curriculum />
+	<CurriculumSection />
 
 	<!-- 中学生专区 -->
 	<MiddleSchool />

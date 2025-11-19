@@ -12,7 +12,7 @@
 	// Wait for DOM to be ready
 	if (typeof window !== 'undefined') {
 		const initPhysics = () => {
-			const canvas = document.getElementById('physics-canvas');
+			const canvas = document.getElementById('physics-canvas') as HTMLCanvasElement | null;
 			const container = document.getElementById('physics-canvas-container');
 
 			if (!canvas || !container) return;
@@ -60,7 +60,7 @@
 			// Create more circles with varied sizes
 			for (let i = 0; i < 12; i++) {
 				const size = Math.random() * 40 + 15;
-				const colorObj = colors[Math.floor(Math.random() * colors.length)];
+				const colorObj = colors[Math.floor(Math.random() * colors.length)]!;
 				shapes.push(
 					Bodies.circle(
 						Math.random() * window.innerWidth,
@@ -71,8 +71,6 @@
 								fillStyle: colorObj.fill,
 								strokeStyle: colorObj.glow,
 								lineWidth: 3,
-								shadowBlur: 15,
-								shadowColor: colorObj.glow
 							},
 							restitution: 0.9,
 							friction: 0.001,
@@ -87,7 +85,7 @@
 			for (let i = 0; i < 8; i++) {
 				const width = Math.random() * 50 + 25;
 				const height = Math.random() * 50 + 25;
-				const colorObj = colors[Math.floor(Math.random() * colors.length)];
+				const colorObj = colors[Math.floor(Math.random() * colors.length)]!;
 				shapes.push(
 					Bodies.rectangle(
 						Math.random() * window.innerWidth,
@@ -99,8 +97,6 @@
 								fillStyle: colorObj.fill,
 								strokeStyle: colorObj.glow,
 								lineWidth: 3,
-								shadowBlur: 15,
-								shadowColor: colorObj.glow
 							},
 							restitution: 0.85,
 							friction: 0.001,
@@ -116,7 +112,7 @@
 			for (let i = 0; i < 10; i++) {
 				const sides = Math.floor(Math.random() * 6) + 3; // 3-8 sides
 				const radius = Math.random() * 30 + 15;
-				const colorObj = colors[Math.floor(Math.random() * colors.length)];
+				const colorObj = colors[Math.floor(Math.random() * colors.length)]!;
 				shapes.push(
 					Bodies.polygon(
 						Math.random() * window.innerWidth,
@@ -128,8 +124,6 @@
 								fillStyle: colorObj.fill,
 								strokeStyle: colorObj.glow,
 								lineWidth: 3,
-								shadowBlur: 15,
-								shadowColor: colorObj.glow
 							},
 							restitution: 0.9,
 							friction: 0.001,
@@ -251,14 +245,14 @@
 				render.options.height = window.innerHeight;
 
 				// Update wall positions
-				Matter.Body.setPosition(walls[0], { x: window.innerWidth / 2, y: -wallThickness / 2 });
-				Matter.Body.setPosition(walls[1], { x: window.innerWidth / 2, y: window.innerHeight + wallThickness / 2 });
-				Matter.Body.setPosition(walls[2], { x: -wallThickness / 2, y: window.innerHeight / 2 });
-				Matter.Body.setPosition(walls[3], { x: window.innerWidth + wallThickness / 2, y: window.innerHeight / 2 });
+				Matter.Body.setPosition(walls[0]!, { x: window.innerWidth / 2, y: -wallThickness / 2 });
+				Matter.Body.setPosition(walls[1]!, { x: window.innerWidth / 2, y: window.innerHeight + wallThickness / 2 });
+				Matter.Body.setPosition(walls[2]!, { x: -wallThickness / 2, y: window.innerHeight / 2 });
+				Matter.Body.setPosition(walls[3]!, { x: window.innerWidth + wallThickness / 2, y: window.innerHeight / 2 });
 
 				// Update wall dimensions
-				Matter.Body.set(walls[0], { vertices: Matter.Vertices.fromPath(`0 0 ${window.innerWidth} 0 ${window.innerWidth} ${wallThickness} 0 ${wallThickness}`) });
-				Matter.Body.set(walls[1], { vertices: Matter.Vertices.fromPath(`0 0 ${window.innerWidth} 0 ${window.innerWidth} ${wallThickness} 0 ${wallThickness}`) });
+				(Matter.Body.set as any)(walls[0]!, { vertices: (Matter.Vertices.fromPath as any)(`0 0 ${window.innerWidth} 0 ${window.innerWidth} ${wallThickness} 0 ${wallThickness}`) });
+				(Matter.Body.set as any)(walls[1]!, { vertices: (Matter.Vertices.fromPath as any)(`0 0 ${window.innerWidth} 0 ${window.innerWidth} ${wallThickness} 0 ${wallThickness}`) });
 			};
 
 			window.addEventListener('resize', handleResize);
