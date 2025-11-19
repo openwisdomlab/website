@@ -24,6 +24,7 @@
     "@iconify-json/logos": "^1.2.10",
     "aos": "^2.3.4",
     "astro": "^5.12.9",
+    "cloudinary": "^2.8.0",
     "limax": "^4.1.0",
     "lodash.merge": "^4.6.2",
     "matter-js": "^0.20.0",
