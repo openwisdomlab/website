@@ -1,0 +1,56 @@
+---
+import { SITE } from '~/config';
+import { getCanonical, getPermalink } from '~/utils/permalinks';
+import Layout from '~/layouts/PageLayout.astro';
+
+import IME from '~/components/widgets/IME.astro';
+import ProblemDrivenLearning from '~/components/widgets/ProblemDrivenLearning.astro';
+import Features from '~/components/widgets/Features.astro';
+import Policy from '~/components/widgets/Policy.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const meta = {
+	title: '教育体系 | ' + SITE.title,
+	description: '了解猫头鹰实验室的创生教育理念和问题驱动学习方法',
+	canonical: getCanonical(getPermalink('/education')),
+};
+---
+
+<Layout {meta}>
+	<!-- 页面标题区域 -->
+	<section class="bg-gradient-cyber py-20">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6">
+			<div class="text-center">
+				<h1
+					class="text-5xl md:text-6xl font-bold text-white mb-6 font-display animate-fade-in"
+					data-aos="fade-up"
+				>
+					<span data-i18n="page.education.title">教育体系</span>
+				</h1>
+				<p
+					class="text-xl text-white/90 max-w-3xl mx-auto"
+					data-aos="fade-up"
+					data-aos-delay="200"
+					data-i18n="page.education.subtitle"
+				>
+					以问题为驱动，以创新为目标的创生教育理念
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- 创生教育 (IME) -->
+	<IME />
+
+	<!-- 问题驱动学习 -->
+	<ProblemDrivenLearning />
+
+	<!-- 教育特色 -->
+	<Features />
+
+	<!-- 教育政策 -->
+	<Policy />
+
+	<!-- 行动号召 -->
+	<CallToAction />
+</Layout>

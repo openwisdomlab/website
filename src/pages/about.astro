@@ -1,0 +1,56 @@
+---
+import { SITE } from '~/config';
+import { getCanonical, getPermalink } from '~/utils/permalinks';
+import Layout from '~/layouts/PageLayout.astro';
+
+import Vision from '~/components/widgets/Vision.astro';
+import Context from '~/components/widgets/Context.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Note from '~/components/widgets/Note.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const meta = {
+	title: '关于我们 | ' + SITE.title,
+	description: '了解猫头鹰实验室的愿景、使命和发展历程',
+	canonical: getCanonical(getPermalink('/about')),
+};
+---
+
+<Layout {meta}>
+	<!-- 页面标题区域 -->
+	<section class="bg-gradient-dark py-20">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6">
+			<div class="text-center">
+				<h1
+					class="text-5xl md:text-6xl font-bold text-white mb-6 font-display"
+					data-aos="fade-up"
+				>
+					<span data-i18n="page.about.title">关于我们</span>
+				</h1>
+				<p
+					class="text-xl text-gray-300 max-w-3xl mx-auto"
+					data-aos="fade-up"
+					data-aos-delay="200"
+					data-i18n="page.about.subtitle"
+				>
+					探索未知，激发潜能，培养未来的创新人才
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- 愿景和使命 -->
+	<Vision />
+
+	<!-- 发展背景 -->
+	<Context />
+
+	<!-- 数据统计 -->
+	<Stats />
+
+	<!-- 重要说明 -->
+	<Note />
+
+	<!-- 行动号召 -->
+	<CallToAction />
+</Layout>

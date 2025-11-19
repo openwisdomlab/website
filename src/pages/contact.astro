@@ -1,0 +1,44 @@
+---
+import { SITE } from '~/config';
+import { getCanonical, getPermalink } from '~/utils/permalinks';
+import Layout from '~/layouts/PageLayout.astro';
+
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const meta = {
+	title: '联系我们 | ' + SITE.title,
+	description: '联系猫头鹰实验室，了解更多关于我们的教育项目',
+	canonical: getCanonical(getPermalink('/contact')),
+};
+---
+
+<Layout {meta}>
+	<!-- 页面标题区域 -->
+	<section class="bg-gradient-dark py-20">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6">
+			<div class="text-center">
+				<h1
+					class="text-5xl md:text-6xl font-bold text-white mb-6 font-display"
+					data-aos="fade-up"
+				>
+					<span data-i18n="page.contact.title">联系我们</span>
+				</h1>
+				<p
+					class="text-xl text-gray-300 max-w-3xl mx-auto"
+					data-aos="fade-up"
+					data-aos-delay="200"
+					data-i18n="page.contact.subtitle"
+				>
+					有任何问题或想法？我们很乐意听到您的声音
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- 常见问题 -->
+	<FAQs />
+
+	<!-- 联系方式和行动号召 -->
+	<CallToAction />
+</Layout>
