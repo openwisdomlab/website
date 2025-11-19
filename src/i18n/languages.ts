@@ -20,8 +20,13 @@ export const ui = {
     'site.title': '猫头鹰实验室 | Open Wisdom Lab - 科技界的奇妙乐园',
     'site.description': '猫头鹰实验室（OWL）是科技界的"奇妙乐园",一个充满想象力、创造力和探索乐趣的创新教育空间。基于创生教育理念,我们致力于培养AI时代具有创新精神和跨学科思维的未来人才。',
 
-    'hero.title': '科技界的奇妙乐园',
-    'hero.subtitle': '开启你的科学探索之旅',
+    'hero.title': '猫头鹰实验室',
+    'hero.subtitle': 'Open Wisdom Lab',
+    'hero.description': '一个开放、包容、创新的学习空间，让有好奇心的人、天马行空的想法和有趣的问题在此汇聚和激发。我们通过跨学科融合、实践驱动和问题导向，培养具有创新精神的未来人才。',
+    'hero.description.short': '一个开放、包容、创新的学习空间，让有好奇心的人、天马行空的想法和有趣的问题在此汇聚和激发。',
+    'hero.description.full': '我们通过跨学科融合、实践驱动和问题导向，培养具有创新精神的未来人才。',
+    'hero.button.vision': '探索愿景',
+    'hero.button.ime': '创生教育',
 
     'curriculum.title': '进阶式探索之旅',
     'curriculum.subtitle': '像主题乐园的不同区域,我们为不同阶段的学生设计了进阶式课程体系',
@@ -75,8 +80,13 @@ export const ui = {
     'site.title': 'Open Wisdom Lab - Wonderland of Technology',
     'site.description': 'Open Wisdom Lab (OWL) is the "Wonderland of Technology" - an innovative educational space filled with imagination, creativity, and the joy of exploration. Based on generative education principles, we are committed to cultivating future talents with innovative spirit and interdisciplinary thinking for the AI era.',
 
-    'hero.title': 'Wonderland of Technology',
-    'hero.subtitle': 'Begin Your Journey of Scientific Exploration',
+    'hero.title': 'Open Wisdom Lab',
+    'hero.subtitle': 'OWL',
+    'hero.description': 'An open, inclusive, and innovative learning space where curious minds, imaginative ideas, and interesting questions converge and inspire. We cultivate future talents with innovative spirit through interdisciplinary integration, practice-driven approaches, and problem-oriented learning.',
+    'hero.description.short': 'An open, inclusive, and innovative learning space where curious minds, imaginative ideas, and interesting questions converge and inspire.',
+    'hero.description.full': 'We cultivate future talents with innovative spirit through interdisciplinary integration, practice-driven approaches, and problem-oriented learning.',
+    'hero.button.vision': 'Explore Vision',
+    'hero.button.ime': 'Generative Education',
 
     'curriculum.title': 'Progressive Learning Journey',
     'curriculum.subtitle': 'Like different zones in a theme park, we design progressive curriculum systems for students at different stages',
@@ -121,7 +131,7 @@ export const ui = {
 
 export function getLangFromUrl(url: URL) {
   const [, lang] = url.pathname.split('/');
-  if (lang in languages) return lang as keyof typeof languages;
+  if (lang && lang in languages) return lang as keyof typeof languages;
   return defaultLang;
 }
 

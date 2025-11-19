@@ -41,6 +41,8 @@ const currentLang = getLangFromUrl(Astro.url);
 </div>
 
 <script>
+  import { applyTranslations } from '~/scripts/i18n-client.ts';
+
   function setupLanguageSwitch() {
     const toggle = document.getElementById('language-toggle');
     const menu = document.getElementById('language-menu');
@@ -66,36 +68,22 @@ const currentLang = getLangFromUrl(Astro.url);
       option.addEventListener('click', (e) => {
         const lang = (e.currentTarget as HTMLElement).dataset.lang;
         if (lang) {
+          // Save language preference
           localStorage.setItem('preferred-language', lang);
-          // Store current scroll position
-          const scrollY = window.scrollY;
-          localStorage.setItem('scroll-position', scrollY.toString());
 
-          // Update page content without reload for better UX
-          updatePageLanguage(lang);
+          // Update HTML lang attribute and data-lang
+          document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en-US';
+          document.documentElement.setAttribute('data-lang', lang);
+
+          // Apply translations immediately
+          applyTranslations(lang as 'zh' | 'en');
+
+          // Close menu
           menu.classList.add('hidden');
+          toggle.setAttribute('aria-expanded', 'false');
         }
       });
     });
-  }
-
-  function updatePageLanguage(lang: string) {
-    // Update all translatable elements
-    const elements = document.querySelectorAll('[data-i18n]');
-    elements.forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      if (key) {
-        // This will be populated dynamically
-        // For now, we'll reload the page with the new language
-        window.location.reload();
-      }
-    });
-
-    // Update language toggle display
-    const toggleSpan = document.querySelector('#language-toggle span');
-    if (toggleSpan) {
-      toggleSpan.textContent = lang.toUpperCase();
-    }
   }
 
   // Initialize on page load
@@ -107,23 +95,6 @@ const currentLang = getLangFromUrl(Astro.url);
 
   // Re-initialize on page navigation (for Astro view transitions)
   document.addEventListener('astro:page-load', setupLanguageSwitch);
-
-  // Apply saved language on load
-  const savedLang = localStorage.getItem('preferred-language');
-  if (savedLang) {
-    const currentLang = document.documentElement.lang;
-    if (savedLang !== currentLang && window.location.pathname === '/') {
-      // Only auto-switch on homepage to avoid confusion
-      // updatePageLanguage(savedLang);
-    }
-  }
-
-  // Restore scroll position after language change
-  const savedScroll = localStorage.getItem('scroll-position');
-  if (savedScroll) {
-    window.scrollTo(0, parseInt(savedScroll));
-    localStorage.removeItem('scroll-position');
-  }
 </script>
 
 <style>

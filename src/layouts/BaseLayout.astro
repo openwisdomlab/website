@@ -4,12 +4,13 @@ import '~/assets/styles/base.css';
 import MetaTags from '~/components/core/MetaTags.astro';
 import BasicScripts from '~/components/core/BasicScripts.astro';
 import AOSInit from '~/components/core/AOSInit.astro';
+import { defaultLang } from '~/i18n/languages';
 
 const { meta = {} } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="motion-safe:scroll-smooth 2xl:text-[20px]">
+<html lang={defaultLang} class="motion-safe:scroll-smooth 2xl:text-[20px]">
 	<head>
 		<MetaTags {...meta} />
 	</head>
@@ -18,6 +19,22 @@ const { meta = {} } = Astro.props;
 		<slot />
 		<BasicScripts />
 		<AOSInit />
+
+		<!-- Language initialization script -->
+		<script is:inline>
+			// Apply saved language preference immediately to avoid flash
+			(function() {
+				const savedLang = localStorage.getItem('preferred-language') || 'zh';
+				document.documentElement.lang = savedLang === 'zh' ? 'zh-CN' : 'en-US';
+				document.documentElement.setAttribute('data-lang', savedLang);
+			})();
+		</script>
+
+		<!-- Client-side i18n translation script -->
+		<script>
+			import '~/scripts/i18n-client.ts';
+		</script>
+
 		<style is:global>
 			img {
 				content-visibility: auto;
