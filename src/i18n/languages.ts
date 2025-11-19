@@ -17,14 +17,14 @@ export const ui = {
     'nav.challenges': '科学挑战',
     'nav.research': '研究方法',
 
-    'site.title': '猫头鹰实验室 | Open Wisdom Lab - 科技界的迪士尼乐园',
-    'site.description': '猫头鹰实验室（OWL）是科技界的"迪士尼乐园",一个充满想象力、创造力和探索乐趣的创新教育空间。基于创生教育理念,我们致力于培养AI时代具有创新精神和跨学科思维的未来人才。',
+    'site.title': '猫头鹰实验室 | Open Wisdom Lab - 科技界的奇妙乐园',
+    'site.description': '猫头鹰实验室（OWL）是科技界的"奇妙乐园",一个充满想象力、创造力和探索乐趣的创新教育空间。基于创生教育理念,我们致力于培养AI时代具有创新精神和跨学科思维的未来人才。',
 
-    'hero.title': '科技界的迪士尼乐园',
+    'hero.title': '科技界的奇妙乐园',
     'hero.subtitle': '开启你的科学探索之旅',
 
     'curriculum.title': '进阶式探索之旅',
-    'curriculum.subtitle': '像迪士尼乐园的不同区域,我们为不同阶段的学生设计了进阶式课程体系',
+    'curriculum.subtitle': '像主题乐园的不同区域,我们为不同阶段的学生设计了进阶式课程体系',
 
     'curriculum.b0.title': '科研探索 · 兴趣启蒙',
     'curriculum.b0.desc': '点燃科学好奇心的第一站,让学生感受科研的魅力',
@@ -72,14 +72,14 @@ export const ui = {
     'nav.challenges': 'Scientific Challenges',
     'nav.research': 'Research Methods',
 
-    'site.title': 'Open Wisdom Lab - Disneyland of Technology',
-    'site.description': 'Open Wisdom Lab (OWL) is the "Disneyland of Technology" - an innovative educational space filled with imagination, creativity, and the joy of exploration. Based on generative education principles, we are committed to cultivating future talents with innovative spirit and interdisciplinary thinking for the AI era.',
+    'site.title': 'Open Wisdom Lab - Wonderland of Technology',
+    'site.description': 'Open Wisdom Lab (OWL) is the "Wonderland of Technology" - an innovative educational space filled with imagination, creativity, and the joy of exploration. Based on generative education principles, we are committed to cultivating future talents with innovative spirit and interdisciplinary thinking for the AI era.',
 
-    'hero.title': 'Disneyland of Technology',
+    'hero.title': 'Wonderland of Technology',
     'hero.subtitle': 'Begin Your Journey of Scientific Exploration',
 
     'curriculum.title': 'Progressive Learning Journey',
-    'curriculum.subtitle': 'Like different zones in Disneyland, we design progressive curriculum systems for students at different stages',
+    'curriculum.subtitle': 'Like different zones in a theme park, we design progressive curriculum systems for students at different stages',
 
     'curriculum.b0.title': 'Research Exploration · Interest Enlightenment',
     'curriculum.b0.desc': 'The first station to ignite scientific curiosity and let students experience the charm of research',
