@@ -1,0 +1,89 @@
+---
+/**
+ * Card - 全息玻璃效果卡片组件
+ * 特点：极高透明度的磨砂玻璃 + 流动的彩色渐变边框 + 悬停发光效果
+ */
+interface Props {
+	variant?: 'holographic' | 'neon' | 'brutal' | 'glass';
+	glow?: 'purple' | 'cyan' | 'green' | 'none';
+	className?: string;
+	href?: string;
+}
+
+const {
+	variant = 'holographic',
+	glow = 'purple',
+	className = '',
+	href
+} = Astro.props;
+
+const Tag = href ? 'a' : 'div';
+
+// 边框渐变样式
+const borderGradients = {
+	holographic: 'bg-gradient-holographic',
+	neon: 'bg-gradient-neon',
+	brutal: 'bg-black',
+	glass: 'bg-gradient-cyber',
+};
+
+// 发光效果
+const glowClasses = {
+	purple: 'hover:shadow-neon',
+	cyan: 'hover:shadow-glow-cyan',
+	green: 'hover:shadow-glow-green',
+	none: '',
+};
+---
+
+<!-- 渐变边框容器 -->
+<Tag
+	href={href}
+	class={`
+		group relative block
+		transition-all duration-300
+		${glowClasses[glow]}
+		${className}
+	`}
+>
+	<!-- 渐变边框 (使用 padding trick) -->
+	<div class={`
+		absolute inset-0 rounded-xl
+		${borderGradients[variant]}
+		${variant === 'holographic' ? 'bg-[length:200%_200%] animate-holographic' : ''}
+		${variant === 'brutal' ? 'translate-x-2 translate-y-2 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform' : ''}
+		p-[2px]
+	`}>
+		<!-- 内部玻璃效果 -->
+		<div class="w-full h-full rounded-xl bg-black/80 dark:bg-black/90 backdrop-blur-xl"></div>
+	</div>
+
+	<!-- 内容区域 -->
+	<div class="relative rounded-xl bg-black/60 dark:bg-black/70 backdrop-blur-xl border-2 border-transparent p-6 transition-all duration-300 group-hover:bg-black/70">
+		<!-- 内部发光效果 -->
+		<div class="absolute inset-0 rounded-xl bg-gradient-to-br from-primary-500/5 via-transparent to-secondary-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+		<!-- 内容插槽 -->
+		<div class="relative z-10">
+			<slot />
+		</div>
+	</div>
+
+	<!-- Neo-Brutalism 阴影效果 -->
+	{variant === 'brutal' && (
+		<div class="absolute inset-0 -z-10 translate-x-2 translate-y-2 rounded-xl bg-primary-500 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform"></div>
+	)}
+</Tag>
+
+<style>
+	/* 确保悬停时有平滑的动画 */
+	a, div {
+		backface-visibility: hidden;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	/* 添加细微的 3D 效果 */
+	.group:hover {
+		transform: translateY(-2px);
+	}
+</style>

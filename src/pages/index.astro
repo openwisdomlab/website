@@ -3,7 +3,11 @@ import { SITE } from '~/config';
 import { getCanonical, getHomePermalink, getPermalink } from '~/utils/permalinks';
 import Layout from '~/layouts/PageLayout.astro';
 import { Icon } from 'astro-icon/components';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import CyberpunkBackground from '~/components/ui/CyberpunkBackground.astro';
+import Card from '~/components/ui/Card.astro';
+import Button from '~/components/ui/Button.astro';
+import MagneticButton from '~/components/ui/MagneticButton';
+import TerminalText from '~/components/ui/TerminalText';
 
 const meta = {
 	title: SITE.title,
@@ -13,211 +17,395 @@ const meta = {
 ---
 
 <Layout {meta}>
-	<!-- Hero - 全屏震撼着陆区 -->
-	<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-dark">
-		<!-- 动态背景粒子效果 -->
-		<div class="absolute inset-0">
-			<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500 opacity-20 rounded-full filter blur-3xl animate-float"></div>
-			<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary-500 opacity-20 rounded-full filter blur-3xl animate-float" style="animation-delay: 2s;"></div>
-			<div class="absolute top-1/2 left-1/2 w-96 h-96 bg-tech-500 opacity-15 rounded-full filter blur-3xl animate-float" style="animation-delay: 4s;"></div>
-		</div>
+	<!-- 赛博朋克背景 -->
+	<CyberpunkBackground variant="default" intensity="medium" />
 
-		<!-- 网格背景 -->
-		<div class="absolute inset-0 opacity-10" style="
-			background-image:
-				linear-gradient(rgba(24, 144, 255, 0.3) 1px, transparent 1px),
-				linear-gradient(90deg, rgba(24, 144, 255, 0.3) 1px, transparent 1px);
-			background-size: 100px 100px;
-		"></div>
+	<!-- Hero Section - 不对称布局 + 巨大标题 -->
+	<section class="relative min-h-screen flex items-center overflow-hidden">
+		<!-- 主要内容区 -->
+		<div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 z-10">
+			<div class="grid lg:grid-cols-12 gap-12 items-center">
+				<!-- 左侧：主标题和文案 -->
+				<div class="lg:col-span-7 space-y-8">
+					<!-- 系统状态标签 -->
+					<div class="flex items-center gap-4 font-mono text-xs uppercase tracking-widest">
+						<span class="px-3 py-1 bg-neon-green/20 text-neon-green border border-neon-green/50 rounded-full flex items-center gap-2">
+							<span class="w-2 h-2 bg-neon-green rounded-full animate-pulse"></span>
+							SYSTEM_READY
+						</span>
+						<span class="text-gray-500">V.2.0</span>
+					</div>
 
-		<div class="relative max-w-7xl mx-auto px-4 sm:px-6 text-center z-10 py-20">
-			<!-- Logo/品牌 -->
-			<div class="mb-8 animate-fade-in">
-				<div class="inline-block p-4 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10">
-					<Icon name="tabler:telescope" class="w-16 h-16 text-primary-400" />
+					<!-- 巨大标题 - 不对称布局 -->
+					<div class="space-y-4">
+						<h1 class="font-display font-black text-7xl md:text-9xl leading-none tracking-tighter">
+							<span class="block text-white" data-i18n="hero.title">猫头鹰</span>
+							<span class="block text-transparent bg-gradient-cyber bg-clip-text bg-[length:200%_200%] animate-holographic" data-i18n="hero.subtitle">
+								实验室
+							</span>
+						</h1>
+
+						<!-- 英文副标题 - 小字等宽字体 -->
+						<div class="font-mono text-sm md:text-base text-gray-400 uppercase tracking-[0.2em] pl-2 border-l-2 border-neon-purple">
+							Open Wisdom Lab
+						</div>
+					</div>
+
+					<!-- 描述文字 - 混合大小 -->
+					<div class="space-y-6 max-w-2xl">
+						<p class="text-xl md:text-2xl text-gray-300 leading-relaxed" data-i18n="hero.description.short">
+							一个<span class="text-neon-purple font-bold">开放、包容、创新</span>的学习空间，
+							让有好奇心的人、天马行空的想法和有趣的问题在此<span class="text-neon-blue font-bold">汇聚和激发</span>。
+						</p>
+
+						<!-- 终端风格的标语 -->
+						<div class="bg-black/60 backdrop-blur-sm border border-white/10 rounded-lg p-4">
+							<TerminalText
+								client:visible
+								text="探索未知，创造未来 // Explore the unknown, create the future"
+								speed={30}
+								className="text-sm md:text-base"
+							/>
+						</div>
+					</div>
+
+					<!-- CTA 按钮组 - 不对称布局 -->
+					<div class="flex flex-wrap gap-4 items-center">
+						<MagneticButton
+							client:visible
+							href={getPermalink('/about')}
+							variant="neon"
+							strength={0.25}
+						>
+							<Icon name="tabler:rocket" class="w-5 h-5 mr-2" />
+							<span data-i18n="home.cta.explore">探索世界</span>
+						</MagneticButton>
+
+						<Button
+							href={getPermalink('/contact')}
+							variant="outline"
+							size="lg"
+						>
+							<Icon name="tabler:mail" class="w-5 h-5 mr-2" />
+							<span data-i18n="home.cta.contact">联系我们</span>
+						</Button>
+
+						<!-- 装饰性数据标签 -->
+						<div class="hidden md:flex items-center gap-6 ml-8 font-mono text-xs text-gray-500">
+							<div class="flex flex-col">
+								<span class="text-neon-green text-2xl font-bold">1000+</span>
+								<span class="uppercase tracking-wider">Projects</span>
+							</div>
+							<div class="w-px h-12 bg-white/10"></div>
+							<div class="flex flex-col">
+								<span class="text-neon-blue text-2xl font-bold">50+</span>
+								<span class="uppercase tracking-wider">Members</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 右侧：3D 视觉元素 / 装饰 -->
+				<div class="lg:col-span-5 relative hidden lg:block">
+					<!-- 全息卡片堆叠 -->
+					<div class="relative space-y-8">
+						<!-- 浮动卡片 1 -->
+						<div class="absolute -top-20 -right-10 w-64 h-64 bg-gradient-neon opacity-20 rounded-full filter blur-3xl animate-float"></div>
+
+						<!-- 主视觉卡片 -->
+						<Card variant="holographic" glow="purple" className="transform rotate-3 hover:rotate-0 transition-transform duration-500">
+							<div class="aspect-square flex items-center justify-center">
+								<Icon name="tabler:telescope" class="w-32 h-32 text-primary-400 animate-float-slow" />
+							</div>
+						</Card>
+
+						<!-- 浮动数据卡片 -->
+						<div class="absolute bottom-0 -left-20 animate-float-fast" style="animation-delay: 1s;">
+							<Card variant="glass" className="w-48 p-4 bg-black/90">
+								<div class="font-mono text-xs space-y-2">
+									<div class="flex justify-between text-gray-400">
+										<span>STATUS:</span>
+										<span class="text-neon-green">ACTIVE</span>
+									</div>
+									<div class="flex justify-between text-gray-400">
+										<span>UPTIME:</span>
+										<span class="text-neon-blue">99.9%</span>
+									</div>
+									<div class="h-px bg-gradient-cyber"></div>
+									<div class="text-center text-neon-purple font-bold">INNOVATION LAB</div>
+								</div>
+							</Card>
+						</div>
+					</div>
 				</div>
 			</div>
+		</div>
 
-			<!-- 主标题 -->
-			<h1 class="text-6xl md:text-8xl font-bold mb-6 font-display animate-fade-in" data-aos="fade-up">
-				<span class="block text-white" data-i18n="hero.title">猫头鹰实验室</span>
-				<span class="block mt-2 bg-gradient-cyber bg-clip-text text-transparent" data-i18n="hero.subtitle">
-					Open Wisdom Lab
-				</span>
-			</h1>
-
-			<!-- 副标题 -->
-			<p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12 animate-slide-up" data-aos="fade-up" data-aos-delay="200" data-i18n="hero.description.short">
-				一个开放、包容、创新的学习空间，让有好奇心的人、天马行空的想法和有趣的问题在此汇聚和激发。
-			</p>
-
-			<!-- CTA 按钮 -->
-			<div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up" data-aos="fade-up" data-aos-delay="400">
-				<a
-					href={getPermalink('/about')}
-					class="group relative px-8 py-4 bg-gradient-cyber text-white font-semibold rounded-full overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-glow-lg"
-				>
-					<span class="relative z-10 flex items-center">
-						<Icon name="tabler:rocket" class="w-5 h-5 mr-2" />
-						<span data-i18n="home.cta.explore">探索我们的世界</span>
-					</span>
-				</a>
-				<a
-					href={getPermalink('/contact')}
-					class="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full border-2 border-white/20 hover:bg-white/20 transform transition-all duration-300 hover:scale-105"
-				>
-					<span class="flex items-center">
-						<Icon name="tabler:mail" class="w-5 h-5 mr-2" />
-						<span data-i18n="home.cta.contact">联系我们</span>
-					</span>
-				</a>
-			</div>
-
-			<!-- 向下滚动提示 -->
-			<div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-				<Icon name="tabler:chevron-down" class="w-8 h-8 text-white/50" />
-			</div>
+		<!-- 向下滚动指示器 -->
+		<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+			<span class="font-mono text-xs text-gray-500 uppercase tracking-widest">Scroll Down</span>
+			<Icon name="tabler:chevron-down" class="w-6 h-6 text-neon-purple" />
 		</div>
 	</section>
 
-	<!-- 核心价值主张 - 3个亮点 -->
-	<section class="py-20 bg-white dark:bg-slate-900">
-		<div class="max-w-6xl mx-auto px-4 sm:px-6">
-			<div class="text-center mb-16">
-				<h2 class="text-4xl md:text-5xl font-bold mb-4 font-display" data-aos="fade-up">
-					<span data-i18n="home.values.title">我们的核心价值</span>
+	<!-- 核心价值 - Neo-Brutalism 风格卡片 -->
+	<section class="relative py-32 overflow-hidden">
+		<!-- 装饰性网格 -->
+		<div class="absolute inset-0 bg-grid-small bg-grid-small opacity-10"></div>
+
+		<div class="relative max-w-7xl mx-auto px-4 sm:px-6 z-10">
+			<!-- Section Header - 不对称 -->
+			<div class="mb-20 max-w-3xl">
+				<div class="font-mono text-sm text-neon-purple uppercase tracking-widest mb-4">
+					[ CORE_VALUES ]
+				</div>
+				<h2 class="font-display font-black text-6xl md:text-7xl text-white mb-6" data-i18n="home.values.title">
+					核心价值
 				</h2>
-				<p class="text-xl text-gray-600 dark:text-slate-400" data-aos="fade-up" data-aos-delay="100">
-					<span data-i18n="home.values.subtitle">培养面向未来的创新人才</span>
+				<p class="text-xl text-gray-400" data-i18n="home.values.subtitle">
+					培养面向未来的创新人才
 				</p>
 			</div>
 
-			<div class="grid md:grid-cols-3 gap-8">
-				<!-- 价值1：问题驱动 -->
-				<div class="group relative p-8 bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-950 dark:to-primary-900 rounded-2xl shadow-tech hover:shadow-glow transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
-					<div class="absolute top-0 right-0 w-32 h-32 bg-primary-500 opacity-5 rounded-bl-full"></div>
+			<!-- 价值卡片 - 不规则网格布局 -->
+			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+				<!-- 价值 1 - Brutal 风格 -->
+				<Card variant="brutal" className="md:col-span-2 lg:col-span-1">
 					<div class="relative">
-						<div class="w-16 h-16 bg-primary-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-							<Icon name="tabler:bulb" class="w-8 h-8 text-white" />
+						<div class="flex items-center gap-4 mb-6">
+							<div class="w-14 h-14 bg-neon-purple rounded-lg flex items-center justify-center">
+								<Icon name="tabler:bulb" class="w-8 h-8 text-white" />
+							</div>
+							<div>
+								<div class="font-mono text-xs text-gray-500 uppercase">001</div>
+								<h3 class="font-display text-2xl font-bold text-white" data-i18n="home.value1.title">
+									问题驱动学习
+								</h3>
+							</div>
 						</div>
-						<h3 class="text-2xl font-bold mb-4" data-i18n="home.value1.title">问题驱动学习</h3>
-						<p class="text-gray-700 dark:text-slate-300" data-i18n="home.value1.desc">
+						<p class="text-gray-300" data-i18n="home.value1.desc">
 							从真实问题出发，在探索中学习，在解决问题中成长
 						</p>
-					</div>
-				</div>
-
-				<!-- 价值2：跨学科融合 -->
-				<div class="group relative p-8 bg-gradient-to-br from-tech-50 to-tech-100 dark:from-tech-950 dark:to-tech-900 rounded-2xl shadow-tech hover:shadow-glow transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
-					<div class="absolute top-0 right-0 w-32 h-32 bg-tech-500 opacity-5 rounded-bl-full"></div>
-					<div class="relative">
-						<div class="w-16 h-16 bg-tech-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-							<Icon name="tabler:atom" class="w-8 h-8 text-white" />
+						<div class="mt-6 flex items-center gap-2 text-neon-purple font-mono text-sm">
+							<span>Learn More</span>
+							<Icon name="tabler:arrow-right" class="w-4 h-4" />
 						</div>
-						<h3 class="text-2xl font-bold mb-4" data-i18n="home.value2.title">跨学科融合</h3>
-						<p class="text-gray-700 dark:text-slate-300" data-i18n="home.value2.desc">
+					</div>
+				</Card>
+
+				<!-- 价值 2 - Holographic 风格 -->
+				<Card variant="holographic" glow="cyan">
+					<div class="relative">
+						<div class="flex items-center gap-4 mb-6">
+							<div class="w-14 h-14 bg-neon-blue rounded-lg flex items-center justify-center">
+								<Icon name="tabler:atom" class="w-8 h-8 text-white" />
+							</div>
+							<div>
+								<div class="font-mono text-xs text-gray-500 uppercase">002</div>
+								<h3 class="font-display text-2xl font-bold text-white" data-i18n="home.value2.title">
+									跨学科融合
+								</h3>
+							</div>
+						</div>
+						<p class="text-gray-300" data-i18n="home.value2.desc">
 							打破学科边界，培养综合思维和创新能力
 						</p>
-					</div>
-				</div>
-
-				<!-- 价值3：实践导向 -->
-				<div class="group relative p-8 bg-gradient-to-br from-secondary-50 to-secondary-100 dark:from-secondary-950 dark:to-secondary-900 rounded-2xl shadow-tech hover:shadow-glow transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
-					<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-500 opacity-5 rounded-bl-full"></div>
-					<div class="relative">
-						<div class="w-16 h-16 bg-secondary-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-							<Icon name="tabler:flask" class="w-8 h-8 text-white" />
+						<div class="mt-6 flex items-center gap-2 text-neon-blue font-mono text-sm">
+							<span>Learn More</span>
+							<Icon name="tabler:arrow-right" class="w-4 h-4" />
 						</div>
-						<h3 class="text-2xl font-bold mb-4" data-i18n="home.value3.title">实践导向</h3>
-						<p class="text-gray-700 dark:text-slate-300" data-i18n="home.value3.desc">
+					</div>
+				</Card>
+
+				<!-- 价值 3 - Neon 风格 -->
+				<Card variant="neon" glow="green">
+					<div class="relative">
+						<div class="flex items-center gap-4 mb-6">
+							<div class="w-14 h-14 bg-neon-green rounded-lg flex items-center justify-center">
+								<Icon name="tabler:flask" class="w-8 h-8 text-black" />
+							</div>
+							<div>
+								<div class="font-mono text-xs text-gray-500 uppercase">003</div>
+								<h3 class="font-display text-2xl font-bold text-white" data-i18n="home.value3.title">
+									实践导向
+								</h3>
+							</div>
+						</div>
+						<p class="text-gray-300" data-i18n="home.value3.desc">
 							动手实践，在做中学，培养解决实际问题的能力
 						</p>
+						<div class="mt-6 flex items-center gap-2 text-neon-green font-mono text-sm">
+							<span>Learn More</span>
+							<Icon name="tabler:arrow-right" class="w-4 h-4" />
+						</div>
 					</div>
-				</div>
+				</Card>
 			</div>
 		</div>
 	</section>
 
-	<!-- 快速导航卡片 -->
-	<section class="py-20 bg-gradient-dark">
-		<div class="max-w-6xl mx-auto px-4 sm:px-6">
-			<div class="text-center mb-16">
-				<h2 class="text-4xl md:text-5xl font-bold text-white mb-4 font-display" data-aos="fade-up">
-					<span data-i18n="home.explore.title">探索更多</span>
+	<!-- 快速导航 - 不对称网格 -->
+	<section class="relative py-32 bg-black/50">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6">
+			<!-- Section Header -->
+			<div class="text-center mb-20">
+				<div class="font-mono text-sm text-neon-blue uppercase tracking-widest mb-4">
+					[ NAVIGATION_MENU ]
+				</div>
+				<h2 class="font-display font-black text-6xl md:text-7xl text-white mb-6" data-i18n="home.explore.title">
+					探索更多
 				</h2>
-				<p class="text-xl text-gray-300" data-aos="fade-up" data-aos-delay="100">
-					<span data-i18n="home.explore.subtitle">深入了解我们的教育体系和课程</span>
-				</p>
 			</div>
 
+			<!-- 不对称网格布局 -->
 			<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 				<!-- 关于我们 -->
-				<a
-					href={getPermalink('/about')}
-					class="group relative p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-glow"
-					data-aos="fade-up"
-					data-aos-delay="200"
-				>
-					<div class="mb-4">
-						<div class="w-12 h-12 bg-primary-500/20 rounded-lg flex items-center justify-center group-hover:bg-primary-500/30 transition-colors">
-							<Icon name="tabler:info-circle" class="w-6 h-6 text-primary-400" />
+				<Card variant="glass" href={getPermalink('/about')} className="group">
+					<div class="flex flex-col h-full">
+						<div class="flex items-center justify-between mb-4">
+							<Icon name="tabler:info-circle" class="w-10 h-10 text-primary-400 group-hover:animate-pulse" />
+							<span class="font-mono text-xs text-gray-500">01</span>
+						</div>
+						<h3 class="font-display text-2xl font-bold text-white mb-2" data-i18n="nav.about">关于我们</h3>
+						<p class="text-gray-400 text-sm flex-1" data-i18n="home.card.about">了解我们的愿景和使命</p>
+						<div class="mt-4 flex items-center gap-2 text-primary-400 font-mono text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+							<span>Enter</span>
+							<Icon name="tabler:arrow-right" class="w-4 h-4" />
 						</div>
 					</div>
-					<h3 class="text-xl font-bold text-white mb-2" data-i18n="nav.about">关于我们</h3>
-					<p class="text-gray-400 text-sm" data-i18n="home.card.about">了解我们的愿景和使命</p>
-				</a>
+				</Card>
 
-				<!-- 教育体系 -->
-				<a
-					href={getPermalink('/education')}
-					class="group relative p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-glow"
-					data-aos="fade-up"
-					data-aos-delay="300"
-				>
-					<div class="mb-4">
-						<div class="w-12 h-12 bg-tech-500/20 rounded-lg flex items-center justify-center group-hover:bg-tech-500/30 transition-colors">
-							<Icon name="tabler:school" class="w-6 h-6 text-tech-400" />
+				<!-- 教育体系 - 占据更大空间 -->
+				<Card variant="holographic" href={getPermalink('/education')} className="md:col-span-2 lg:col-span-1 group">
+					<div class="flex flex-col h-full">
+						<div class="flex items-center justify-between mb-4">
+							<Icon name="tabler:school" class="w-10 h-10 text-tech-400 group-hover:animate-pulse" />
+							<span class="font-mono text-xs text-gray-500">02</span>
+						</div>
+						<h3 class="font-display text-2xl font-bold text-white mb-2" data-i18n="nav.education">教育体系</h3>
+						<p class="text-gray-400 text-sm flex-1" data-i18n="home.card.education">创生教育和问题驱动学习</p>
+						<div class="mt-4 flex items-center gap-2 text-tech-400 font-mono text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+							<span>Enter</span>
+							<Icon name="tabler:arrow-right" class="w-4 h-4" />
 						</div>
 					</div>
-					<h3 class="text-xl font-bold text-white mb-2" data-i18n="nav.education">教育体系</h3>
-					<p class="text-gray-400 text-sm" data-i18n="home.card.education">创生教育和问题驱动学习</p>
-				</a>
+				</Card>
 
 				<!-- 课程体系 -->
-				<a
-					href={getPermalink('/curriculum')}
-					class="group relative p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-glow"
-					data-aos="fade-up"
-					data-aos-delay="400"
-				>
-					<div class="mb-4">
-						<div class="w-12 h-12 bg-secondary-500/20 rounded-lg flex items-center justify-center group-hover:bg-secondary-500/30 transition-colors">
-							<Icon name="tabler:stairs-up" class="w-6 h-6 text-secondary-400" />
+				<Card variant="neon" href={getPermalink('/curriculum')} className="group">
+					<div class="flex flex-col h-full">
+						<div class="flex items-center justify-between mb-4">
+							<Icon name="tabler:stairs-up" class="w-10 h-10 text-secondary-400 group-hover:animate-pulse" />
+							<span class="font-mono text-xs text-gray-500">03</span>
+						</div>
+						<h3 class="font-display text-2xl font-bold text-white mb-2" data-i18n="nav.curriculum">课程体系</h3>
+						<p class="text-gray-400 text-sm flex-1" data-i18n="home.card.curriculum">进阶式学习路径 B0-B3</p>
+						<div class="mt-4 flex items-center gap-2 text-secondary-400 font-mono text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+							<span>Enter</span>
+							<Icon name="tabler:arrow-right" class="w-4 h-4" />
 						</div>
 					</div>
-					<h3 class="text-xl font-bold text-white mb-2" data-i18n="nav.curriculum">课程体系</h3>
-					<p class="text-gray-400 text-sm" data-i18n="home.card.curriculum">进阶式学习路径 B0-B3</p>
-				</a>
+				</Card>
 
 				<!-- 科学挑战 -->
-				<a
-					href={getPermalink('/challenges')}
-					class="group relative p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-glow"
-					data-aos="fade-up"
-					data-aos-delay="500"
-				>
-					<div class="mb-4">
-						<div class="w-12 h-12 bg-neon-purple/20 rounded-lg flex items-center justify-center group-hover:bg-neon-purple/30 transition-colors">
-							<Icon name="tabler:target" class="w-6 h-6 text-purple-400" />
+				<Card variant="brutal" href={getPermalink('/challenges')} className="group">
+					<div class="flex flex-col h-full">
+						<div class="flex items-center justify-between mb-4">
+							<Icon name="tabler:target" class="w-10 h-10 text-neon-purple group-hover:animate-pulse" />
+							<span class="font-mono text-xs text-gray-500">04</span>
+						</div>
+						<h3 class="font-display text-2xl font-bold text-white mb-2" data-i18n="nav.challenges">科学挑战</h3>
+						<p class="text-gray-400 text-sm flex-1" data-i18n="home.card.challenges">前沿科研项目和挑战</p>
+						<div class="mt-4 flex items-center gap-2 text-neon-purple font-mono text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+							<span>Enter</span>
+							<Icon name="tabler:arrow-right" class="w-4 h-4" />
 						</div>
 					</div>
-					<h3 class="text-xl font-bold text-white mb-2" data-i18n="nav.challenges">科学挑战</h3>
-					<p class="text-gray-400 text-sm" data-i18n="home.card.challenges">前沿科研项目和挑战</p>
-				</a>
+				</Card>
 			</div>
 		</div>
 	</section>
 
-	<!-- CTA 区域 -->
-	<CallToAction />
+	<!-- CTA Section - 全宽霓虹 -->
+	<section class="relative py-32 overflow-hidden">
+		<!-- 背景效果 -->
+		<div class="absolute inset-0 bg-gradient-cyber opacity-10"></div>
+		<div class="absolute inset-0 bg-grid bg-grid opacity-5"></div>
+
+		<div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center z-10">
+			<div class="font-mono text-sm text-neon-green uppercase tracking-widest mb-6">
+				[ SYSTEM_MESSAGE ]
+			</div>
+			<h2 class="font-display font-black text-5xl md:text-7xl text-white mb-8">
+				准备好开始了吗？
+			</h2>
+			<p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+				加入我们，一起探索未知的世界，创造属于未来的可能
+			</p>
+
+			<div class="flex flex-wrap gap-6 justify-center items-center">
+				<MagneticButton
+					client:visible
+					href={getPermalink('/contact')}
+					variant="neon"
+					strength={0.3}
+					className="text-xl"
+				>
+					<Icon name="tabler:rocket" class="w-6 h-6 mr-2" />
+					立即加入
+				</MagneticButton>
+
+				<Button variant="ghost" size="xl" glitch={true}>
+					<Icon name="tabler:brand-github" class="w-6 h-6 mr-2" />
+					查看项目
+				</Button>
+			</div>
+
+			<!-- 装饰性终端输出 -->
+			<div class="mt-16 bg-black/80 backdrop-blur-sm border border-white/10 rounded-lg p-6 text-left max-w-2xl mx-auto">
+				<div class="flex items-center gap-2 mb-4">
+					<div class="w-3 h-3 rounded-full bg-neon-green"></div>
+					<div class="w-3 h-3 rounded-full bg-neon-yellow"></div>
+					<div class="w-3 h-3 rounded-full bg-neon-pink"></div>
+					<span class="ml-auto font-mono text-xs text-gray-500">terminal.sh</span>
+				</div>
+				<TerminalText
+					client:visible
+					text="Welcome to Open Wisdom Lab. Initialize your journey now..."
+					speed={40}
+					delay={0.5}
+				/>
+			</div>
+		</div>
+	</section>
 </Layout>
+
+<style>
+	/* 确保深色背景 */
+	:global(body) {
+		background: #030303;
+	}
+
+	/* 平滑滚动 */
+	:global(html) {
+		scroll-behavior: smooth;
+	}
+
+	/* 自定义滚动条 */
+	:global(::-webkit-scrollbar) {
+		width: 10px;
+	}
+
+	:global(::-webkit-scrollbar-track) {
+		background: #0a0a0a;
+	}
+
+	:global(::-webkit-scrollbar-thumb) {
+		background: linear-gradient(180deg, #BF00FF 0%, #00F0FF 100%);
+		border-radius: 5px;
+	}
+
+	:global(::-webkit-scrollbar-thumb:hover) {
+		background: linear-gradient(180deg, #D946EF 0%, #6366F1 100%);
+	}
+</style>
