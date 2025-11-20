@@ -8,6 +8,7 @@ import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
+import react from '@astrojs/react';
 
 import { remarkReadingTime } from './src/utils/frontmatter';
 import { SITE } from './src/config';
@@ -31,6 +32,7 @@ export default defineConfig({
 		sitemap(),
 		mdx(),
 		icon(),
+		react(),
 
 		...whenExternalScripts(() =>
 			partytown({
