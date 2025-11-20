@@ -8,6 +8,7 @@ import Card from '~/components/ui/Card.astro';
 import Button from '~/components/ui/Button.astro';
 import MagneticButton from '~/components/ui/MagneticButton';
 import TerminalText from '~/components/ui/TerminalText';
+import ActivityGallery from '~/components/widgets/ActivityGallery.astro';
 
 const meta = {
 	title: SITE.title,
@@ -44,9 +45,19 @@ const meta = {
 							</span>
 						</h1>
 
-						<!-- 英文副标题 - 更小的字体 -->
-						<div class="font-mono text-xs md:text-sm text-gray-500 uppercase tracking-wider pl-2 border-l-2 border-primary-500/50">
-							Open Wisdom Lab
+						<!-- 英文副标题 - 未来科技风格 -->
+						<div class="relative group">
+							<div class="font-display text-lg md:text-2xl font-bold tracking-[0.2em] uppercase">
+								<span class="relative inline-block">
+									<span class="text-transparent bg-gradient-to-r from-primary-400 via-tech-400 to-secondary-400 bg-clip-text
+										bg-[length:200%_auto] animate-holographic">
+										Open Wisdom Lab
+									</span>
+									<!-- 科技感扫描线效果 -->
+									<span class="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary-400 to-transparent
+										opacity-50 group-hover:opacity-100 transition-opacity"></span>
+								</span>
+							</div>
 						</div>
 					</div>
 
@@ -151,8 +162,8 @@ const meta = {
 				<Card variant="glass" className="group hover:border-primary-500/30 transition-all">
 					<div class="relative">
 						<div class="flex items-start gap-4 mb-6">
-							<div class="w-12 h-12 bg-primary-500/10 border border-primary-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-								<Icon name="tabler:bulb" class="w-6 h-6 text-primary-400" />
+							<div class="w-12 h-12 bg-primary-500/10 border border-primary-500/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+								<Icon name="tabler:question-mark" class="w-6 h-6 text-primary-400" />
 							</div>
 							<div class="flex-1">
 								<div class="font-mono text-xs text-gray-600 uppercase mb-2">001</div>
@@ -171,8 +182,8 @@ const meta = {
 				<Card variant="glass" className="group hover:border-secondary-500/30 transition-all">
 					<div class="relative">
 						<div class="flex items-start gap-4 mb-6">
-							<div class="w-12 h-12 bg-secondary-500/10 border border-secondary-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-								<Icon name="tabler:atom" class="w-6 h-6 text-secondary-400" />
+							<div class="w-12 h-12 bg-secondary-500/10 border border-secondary-500/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+								<Icon name="tabler:atom-2" class="w-6 h-6 text-secondary-400" />
 							</div>
 							<div class="flex-1">
 								<div class="font-mono text-xs text-gray-600 uppercase mb-2">002</div>
@@ -191,8 +202,8 @@ const meta = {
 				<Card variant="glass" className="group hover:border-tech-500/30 transition-all">
 					<div class="relative">
 						<div class="flex items-start gap-4 mb-6">
-							<div class="w-12 h-12 bg-tech-500/10 border border-tech-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-								<Icon name="tabler:flask" class="w-6 h-6 text-tech-400" />
+							<div class="w-12 h-12 bg-tech-500/10 border border-tech-500/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+								<Icon name="tabler:tool" class="w-6 h-6 text-tech-400" />
 							</div>
 							<div class="flex-1">
 								<div class="font-mono text-xs text-gray-600 uppercase mb-2">003</div>
@@ -204,6 +215,146 @@ const meta = {
 						<p class="text-gray-400 text-sm leading-relaxed" data-i18n="home.value3.desc">
 							动手实践，在做中学，培养解决实际问题的能力
 						</p>
+					</div>
+				</Card>
+			</div>
+		</div>
+	</section>
+
+	<!-- 空间理念 - 猫头鹰实验室的设计核心理念 -->
+	<section class="relative py-24 overflow-hidden bg-gradient-to-b from-transparent via-primary-500/5 to-transparent">
+		<div class="relative max-w-7xl mx-auto px-4 sm:px-6 z-10">
+			<!-- Section Header -->
+			<div class="text-center mb-16">
+				<div class="font-mono text-xs text-secondary-400 uppercase tracking-widest mb-4">
+					[ DESIGN PHILOSOPHY ]
+				</div>
+				<h2 class="font-display font-black text-5xl md:text-6xl text-white mb-4">
+					空间理念
+				</h2>
+				<p class="text-lg text-gray-400 max-w-2xl mx-auto">
+					猫头鹰实验室的设计核心理念和原则
+				</p>
+			</div>
+
+			<!-- 理念卡片 -->
+			<div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+				<!-- 理念 1: 以学生为中心 -->
+				<Card variant="glass" className="group hover:border-primary-500/30 transition-all">
+					<div class="relative p-2">
+						<div class="flex items-start gap-4">
+							<div class="flex-shrink-0">
+								<div class="w-14 h-14 bg-primary-500/10 border border-primary-500/20 rounded-xl flex items-center justify-center">
+									<Icon name="tabler:users" class="w-7 h-7 text-primary-400" />
+								</div>
+							</div>
+							<div class="flex-1 space-y-3">
+								<h3 class="font-display text-xl font-bold text-white">
+									以学生为中心
+								</h3>
+								<p class="text-gray-400 text-sm leading-relaxed">
+									开放自由的氛围，没有标准答案。我们相信每个学生都有独特的学习路径和创造潜力。
+								</p>
+							</div>
+						</div>
+					</div>
+				</Card>
+
+				<!-- 理念 2: 鼓励探索与试错 -->
+				<Card variant="glass" className="group hover:border-secondary-500/30 transition-all">
+					<div class="relative p-2">
+						<div class="flex items-start gap-4">
+							<div class="flex-shrink-0">
+								<div class="w-14 h-14 bg-secondary-500/10 border border-secondary-500/20 rounded-xl flex items-center justify-center">
+									<Icon name="tabler:bulb" class="w-7 h-7 text-secondary-400" />
+								</div>
+							</div>
+							<div class="flex-1 space-y-3">
+								<h3 class="font-display text-xl font-bold text-white">
+									鼓励大胆探索
+								</h3>
+								<p class="text-gray-400 text-sm leading-relaxed">
+									允许犯错，包容失败。在探索未知的过程中，错误是最宝贵的学习机会。
+								</p>
+							</div>
+						</div>
+					</div>
+				</Card>
+
+				<!-- 理念 3: 科技感与未来感 -->
+				<Card variant="glass" className="group hover:border-tech-500/30 transition-all">
+					<div class="relative p-2">
+						<div class="flex items-start gap-4">
+							<div class="flex-shrink-0">
+								<div class="w-14 h-14 bg-tech-500/10 border border-tech-500/20 rounded-xl flex items-center justify-center">
+									<Icon name="tabler:rocket" class="w-7 h-7 text-tech-400" />
+								</div>
+							</div>
+							<div class="flex-1 space-y-3">
+								<h3 class="font-display text-xl font-bold text-white">
+									科技感与未来感
+								</h3>
+								<p class="text-gray-400 text-sm leading-relaxed">
+									具有科技感和未来感的设计，激发创新想法诞生，让学习空间成为灵感的孵化器。
+								</p>
+							</div>
+						</div>
+					</div>
+				</Card>
+
+				<!-- 理念 4: 灵活多样的空间 -->
+				<Card variant="glass" className="group hover:border-accent-500/30 transition-all">
+					<div class="relative p-2">
+						<div class="flex items-start gap-4">
+							<div class="flex-shrink-0">
+								<div class="w-14 h-14 bg-accent-500/10 border border-accent-500/20 rounded-xl flex items-center justify-center">
+									<Icon name="tabler:layout-grid" class="w-7 h-7 text-accent-400" />
+								</div>
+							</div>
+							<div class="flex-1 space-y-3">
+								<h3 class="font-display text-xl font-bold text-white">
+									灵活流动的空间
+								</h3>
+								<p class="text-gray-400 text-sm leading-relaxed">
+									灵活、流动和多样化的学习空间代替隔离、固定的空间，支持不同的学习方式和协作模式。
+								</p>
+							</div>
+						</div>
+					</div>
+				</Card>
+			</div>
+
+			<!-- 特殊理念：创意自由区 -->
+			<div class="mt-8 max-w-5xl mx-auto">
+				<Card variant="glass" className="group hover:border-neon-purple/30 transition-all">
+					<div class="relative p-4">
+						<div class="flex flex-col md:flex-row items-start gap-6">
+							<div class="flex-shrink-0">
+								<div class="w-16 h-16 bg-gradient-to-br from-neon-purple/20 to-neon-pink/20 border border-neon-purple/30 rounded-xl flex items-center justify-center">
+									<Icon name="tabler:pencil" class="w-8 h-8 text-neon-purple" />
+								</div>
+							</div>
+							<div class="flex-1 space-y-3">
+								<h3 class="font-display text-2xl font-bold text-white">
+									创意自由区
+								</h3>
+								<p class="text-gray-300 leading-relaxed">
+									留有学生自由涂鸦和可破坏的"混乱"空间。我们相信，真正的创造力需要自由的表达空间，
+									<span class="text-neon-purple font-semibold">无拘无束的探索往往带来最意想不到的创新</span>。
+								</p>
+								<div class="flex flex-wrap gap-2 pt-2">
+									<span class="px-3 py-1 bg-neon-purple/10 border border-neon-purple/30 rounded-full text-xs text-neon-purple font-mono">
+										#自由表达
+									</span>
+									<span class="px-3 py-1 bg-neon-pink/10 border border-neon-pink/30 rounded-full text-xs text-neon-pink font-mono">
+										#创意无限
+									</span>
+									<span class="px-3 py-1 bg-tech-500/10 border border-tech-500/30 rounded-full text-xs text-tech-400 font-mono">
+										#打破常规
+									</span>
+								</div>
+							</div>
+						</div>
 					</div>
 				</Card>
 			</div>
@@ -229,7 +380,7 @@ const meta = {
 				<Card variant="glass" href={getPermalink('/about')} className="group hover:border-primary-500/30 transition-all">
 					<div class="flex flex-col h-full">
 						<div class="flex items-center justify-between mb-4">
-							<Icon name="tabler:info-circle" class="w-8 h-8 text-primary-400 group-hover:scale-110 transition-transform" />
+							<Icon name="tabler:circle-dashed" class="w-8 h-8 text-primary-400 group-hover:scale-110 group-hover:rotate-180 transition-all duration-500" />
 							<span class="font-mono text-xs text-gray-600">01</span>
 						</div>
 						<h3 class="font-display text-xl font-bold text-white mb-2" data-i18n="nav.about">关于我们</h3>
@@ -241,7 +392,7 @@ const meta = {
 				<Card variant="glass" href={getPermalink('/education')} className="group hover:border-secondary-500/30 transition-all">
 					<div class="flex flex-col h-full">
 						<div class="flex items-center justify-between mb-4">
-							<Icon name="tabler:school" class="w-8 h-8 text-secondary-400 group-hover:scale-110 transition-transform" />
+							<Icon name="tabler:brain" class="w-8 h-8 text-secondary-400 group-hover:scale-110 transition-transform" />
 							<span class="font-mono text-xs text-gray-600">02</span>
 						</div>
 						<h3 class="font-display text-xl font-bold text-white mb-2" data-i18n="nav.education">教育体系</h3>
@@ -253,7 +404,7 @@ const meta = {
 				<Card variant="glass" href={getPermalink('/curriculum')} className="group hover:border-tech-500/30 transition-all">
 					<div class="flex flex-col h-full">
 						<div class="flex items-center justify-between mb-4">
-							<Icon name="tabler:stairs-up" class="w-8 h-8 text-tech-400 group-hover:scale-110 transition-transform" />
+							<Icon name="tabler:hexagons" class="w-8 h-8 text-tech-400 group-hover:scale-110 transition-transform" />
 							<span class="font-mono text-xs text-gray-600">03</span>
 						</div>
 						<h3 class="font-display text-xl font-bold text-white mb-2" data-i18n="nav.curriculum">课程体系</h3>
@@ -265,7 +416,7 @@ const meta = {
 				<Card variant="glass" href={getPermalink('/challenges')} className="group hover:border-accent-500/30 transition-all">
 					<div class="flex flex-col h-full">
 						<div class="flex items-center justify-between mb-4">
-							<Icon name="tabler:target" class="w-8 h-8 text-accent-400 group-hover:scale-110 transition-transform" />
+							<Icon name="tabler:medal" class="w-8 h-8 text-accent-400 group-hover:scale-110 transition-transform" />
 							<span class="font-mono text-xs text-gray-600">04</span>
 						</div>
 						<h3 class="font-display text-xl font-bold text-white mb-2" data-i18n="nav.challenges">科学挑战</h3>
@@ -275,6 +426,9 @@ const meta = {
 			</div>
 		</div>
 	</section>
+
+	<!-- Activity Gallery -->
+	<ActivityGallery />
 
 	<!-- CTA Section -->
 	<section class="relative py-24 overflow-hidden">
