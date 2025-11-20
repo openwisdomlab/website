@@ -6,24 +6,36 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				// Light Future 设计系统
-				// 底色：极致白、银灰、淡蓝灰
+				// 现代暗色设计系统 - 统一配色方案
+				// 基础暗色
+				'cyber-black': '#030303',
+				'dark-bg': '#0a0a0a',
+				'dark-surface': '#151515',
+				'dark-border': '#2a2a2a',
+
+				// 霓虹色系 - 克制使用
+				'neon-purple': '#BF00FF',
+				'neon-blue': '#00F0FF',
+				'neon-green': '#00FF94',
+				'neon-pink': '#FF0080',
+				'neon-yellow': '#FFE500',
+
+				// Light Future 设计系统（保留支持）
 				background: {
-					DEFAULT: '#f8f9fc', // Off-white with slight cool tone
+					DEFAULT: '#f8f9fc',
 					light: '#fafbfd',
 					white: '#ffffff',
 					gray: '#f4f5f7',
 				},
 
-				// 表面色：纯白 + 玻璃态
 				surface: {
 					DEFAULT: '#ffffff',
 					glass: 'rgba(255, 255, 255, 0.7)',
 					'glass-strong': 'rgba(255, 255, 255, 0.9)',
-					border: '#e4e7eb', // zinc-200 equivalent
+					border: '#e4e7eb',
 				},
 
-				// 全息渐变 - Electric Blue
+				// 全息渐变
 				holographic: {
 					blue: '#007AFF',
 					purple: '#7C3AED',
@@ -38,8 +50,8 @@ module.exports = {
 					100: '#e0e9ff',
 					200: '#c7d7fe',
 					300: '#a5bbfc',
-					400: '#8b9ff8',
-					500: '#007AFF', // Electric Blue
+					400: '#818cf8',
+					500: '#6366f1',
 					600: '#4f46e5',
 					700: '#4338ca',
 					800: '#3730a3',
@@ -54,36 +66,50 @@ module.exports = {
 					200: '#f5d0fe',
 					300: '#f0abfc',
 					400: '#e879f9',
-					500: '#7C3AED',
+					500: '#d946ef',
 					600: '#c026d3',
 					700: '#a21caf',
 					800: '#86198f',
 					900: '#701a75',
 				},
 
-				// 强调色 - 渐变色系
+				// 科技蓝色
+				tech: {
+					50: '#f0f9ff',
+					100: '#e0f2fe',
+					200: '#bae6fd',
+					300: '#7dd3fc',
+					400: '#38bdf8',
+					500: '#0ea5e9',
+					600: '#0284c7',
+					700: '#0369a1',
+					800: '#075985',
+					900: '#0c4a6e',
+				},
+
+				// 强调色
 				accent: {
 					50: '#f0fdfa',
 					100: '#ccfbf1',
 					200: '#99f6e4',
 					300: '#5eead4',
 					400: '#2dd4bf',
-					500: '#06B6D4', // Cyan
+					500: '#06B6D4',
 					600: '#0891b2',
 					700: '#0e7490',
 					800: '#155e75',
 					900: '#164e63',
 				},
 
-				// 文字色 - Deep Slate
+				// 文字色
 				text: {
-					primary: '#1e293b', // slate-800
-					secondary: '#475569', // slate-600
-					tertiary: '#64748b', // slate-500
-					disabled: '#94a3b8', // slate-400
+					primary: '#1e293b',
+					secondary: '#475569',
+					tertiary: '#64748b',
+					disabled: '#94a3b8',
 				},
 
-				// 保留暗色模式的支持
+				// 暗色模式
 				dark: {
 					bg: '#0f172a',
 					surface: '#1e293b',
@@ -103,6 +129,11 @@ module.exports = {
 				'gradient-radial-top': 'radial-gradient(ellipse at top, var(--tw-gradient-stops))',
 				'gradient-radial-center': 'radial-gradient(ellipse at center, var(--tw-gradient-stops))',
 
+				// 赛博朋克渐变
+				'gradient-cyber': 'linear-gradient(135deg, #BF00FF 0%, #00F0FF 100%)',
+				'gradient-neon': 'linear-gradient(135deg, #FF0080 0%, #BF00FF 50%, #00F0FF 100%)',
+				'gradient-neon-green': 'linear-gradient(135deg, #00FF94 0%, #00F0FF 100%)',
+
 				// 全息渐变 - Light Future
 				'gradient-holographic': 'linear-gradient(135deg, #007AFF 0%, #7C3AED 50%, #94A3B8 100%)',
 				'gradient-holographic-alt': 'linear-gradient(135deg, #EC4899 0%, #06B6D4 100%)',
@@ -115,9 +146,12 @@ module.exports = {
 				// 玻璃态背景纹理
 				'glass-texture': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E\")",
 
-				// 网格背景 - 更细腻
-				'grid': "linear-gradient(rgba(0, 122, 255, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 122, 255, 0.06) 1px, transparent 1px)",
-				'grid-small': "linear-gradient(rgba(124, 58, 237, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(124, 58, 237, 0.04) 1px, transparent 1px)",
+				// 网格背景
+				'grid': "linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px)",
+				'grid-small': "linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px)",
+
+				// 噪点纹理
+				'noise': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E\")",
 
 				// 保留暗色模式渐变
 				'gradient-dark': 'linear-gradient(180deg, #0f172a 0%, #1e293b 100%)',
@@ -128,7 +162,7 @@ module.exports = {
 				'grid-small': '20px 20px',
 			},
 
-			// 阴影系统 - Soft Diffusion + Colored Shadows
+			// 阴影系统
 			boxShadow: {
 				// 柔和漫射光阴影 (Light Future 核心)
 				'soft': '0 4px 24px -4px rgba(0, 0, 0, 0.08), 0 2px 8px -2px rgba(0, 0, 0, 0.04)',
@@ -136,6 +170,13 @@ module.exports = {
 				'soft-md': '0 8px 32px -8px rgba(0, 0, 0, 0.1), 0 4px 12px -4px rgba(0, 0, 0, 0.05)',
 				'soft-lg': '0 12px 48px -12px rgba(0, 0, 0, 0.12), 0 8px 16px -8px rgba(0, 0, 0, 0.06)',
 				'soft-xl': '0 20px 64px -16px rgba(0, 0, 0, 0.15), 0 12px 24px -12px rgba(0, 0, 0, 0.08)',
+
+				// 霓虹发光阴影
+				'neon': '0 0 10px rgba(191, 0, 255, 0.5), 0 0 20px rgba(191, 0, 255, 0.3), 0 0 30px rgba(191, 0, 255, 0.1)',
+				'neon-lg': '0 0 20px rgba(191, 0, 255, 0.6), 0 0 40px rgba(191, 0, 255, 0.4), 0 0 60px rgba(191, 0, 255, 0.2)',
+				'glow': '0 0 10px rgba(99, 102, 241, 0.5), 0 0 20px rgba(99, 102, 241, 0.3)',
+				'glow-cyan': '0 0 10px rgba(0, 240, 255, 0.5), 0 0 20px rgba(0, 240, 255, 0.3)',
+				'glow-green': '0 0 10px rgba(0, 255, 148, 0.5), 0 0 20px rgba(0, 255, 148, 0.3)',
 
 				// 彩色阴影 - 全息效果
 				'colored-blue': '0 8px 32px -8px rgba(0, 122, 255, 0.24), 0 4px 12px -4px rgba(0, 122, 255, 0.12)',
@@ -150,6 +191,10 @@ module.exports = {
 				// 玻璃态阴影
 				'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07), 0 0 1px 0 rgba(0, 0, 0, 0.05)',
 				'glass-lg': '0 16px 64px 0 rgba(31, 38, 135, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.06)',
+
+				// Neo-Brutalism 阴影
+				'brutal': '4px 4px 0px 0px rgba(0, 0, 0, 1)',
+				'brutal-sm': '2px 2px 0px 0px rgba(0, 0, 0, 1)',
 
 				// 深度阴影（用于强调）
 				'depth': '0 1px 3px rgba(0, 0, 0, 0.05), 0 20px 40px -20px rgba(0, 0, 0, 0.1)',
