@@ -45,30 +45,30 @@ const social = [
 ];
 ---
 
-<footer class="border-t border-gray-200 dark:border-slate-800">
+<footer class="border-t border-surface-border dark:border-dark-border bg-background-light dark:bg-dark-surface">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6">
 		<div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
 			<div class="col-span-12 lg:col-span-4">
 				<div class="mb-2">
-					<a class="inline-block font-bold text-xl" href={getHomePermalink()}>猫头鹰实验室</a>
+					<a class="inline-block font-bold text-xl text-text-primary dark:text-white" href={getHomePermalink()}>猫头鹰实验室</a>
 				</div>
-				<div class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+				<div class="text-sm text-text-secondary dark:text-slate-400 mb-4">
 					Open Wisdom Lab
 				</div>
-				<div class="text-sm text-gray-600 dark:text-gray-400">
+				<div class="text-sm text-text-secondary dark:text-slate-400">
 					让有好奇心的人、天马行空的想法和有趣的问题在此汇聚和激发
 				</div>
 			</div>
 			{
 				links.map(({ title, items }) => (
 					<div class="col-span-6 md:col-span-3 lg:col-span-2">
-						<div class="text-gray-800 dark:text-gray-300 font-medium mb-2">{title}</div>
+						<div class="text-text-primary dark:text-slate-300 font-medium mb-2">{title}</div>
 						{items && Array.isArray(items) && items.length > 0 && (
 							<ul class="text-sm">
 								{items.map(({ title, href }) => (
 									<li class="mb-2">
 										<a
-											class="text-gray-600 hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out"
+											class="text-text-secondary hover:text-holographic-blue hover:underline dark:text-slate-400 dark:hover:text-white transition-all duration-200"
 											href={href}
 										>
 											{title}
@@ -87,7 +87,7 @@ const social = [
 					social.map(({ label, href, icon }) => (
 						<li>
 							<a
-								class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+								class="text-text-secondary dark:text-slate-400 hover:text-holographic-blue dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-lg text-sm p-2.5 inline-flex items-center transition-all duration-200"
 								aria-label={label}
 								href={href}
 							>
@@ -98,7 +98,7 @@ const social = [
 				}
 			</ul>
 
-			<div class="text-sm text-gray-700 mr-4 dark:text-slate-400">
+			<div class="text-sm text-text-secondary mr-4 dark:text-slate-400">
 				© {new Date().getFullYear()} 猫头鹰实验室 · Open Wisdom Lab · All rights reserved.
 			</div>
 		</div>

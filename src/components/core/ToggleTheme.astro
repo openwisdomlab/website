@@ -3,13 +3,18 @@ import { Icon } from 'astro-icon/components';
 
 const {
 	label = 'Toggle between Dark and Light mode',
-	class:
-		className = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center',
-	iconClass = 'w-6 h-6',
-	iconName = 'tabler:sun',
+	iconClass = 'w-5 h-5',
 } = Astro.props;
 ---
 
-<button type="button" class={className} aria-label={label} data-aw-toggle-color-scheme>
-	<Icon name={iconName} class={iconClass} />
+<button
+	type="button"
+	class="relative text-text-secondary dark:text-slate-400 hover:text-text-primary dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-lg text-sm p-2.5 inline-flex items-center transition-all duration-200"
+	aria-label={label}
+	data-aw-toggle-color-scheme
+>
+	<!-- Sun icon - visible in dark mode (when you can click to go to light mode) -->
+	<Icon name="tabler:sun" class={`${iconClass} dark:hidden`} />
+	<!-- Moon icon - visible in light mode (when you can click to go to dark mode) -->
+	<Icon name="tabler:moon" class={`${iconClass} hidden dark:block`} />
 </button>
