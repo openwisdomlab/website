@@ -6,77 +6,88 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				// Neo-Brutalism + Cyberpunk 配色
-				// 深邃背景色
-				'cyber-black': '#030303',
-				'cyber-dark': '#0a0a0a',
-
-				// 霓虹色系 - 电光紫
-				neon: {
-					purple: '#BF00FF',
-					pink: '#FF10F0',
-					blue: '#00F0FF',
-					green: '#39FF14',
-					yellow: '#FFFF00',
-					orange: '#FF6600',
+				// Light Future 设计系统
+				// 底色：极致白、银灰、淡蓝灰
+				background: {
+					DEFAULT: '#f8f9fc', // Off-white with slight cool tone
+					light: '#fafbfd',
+					white: '#ffffff',
+					gray: '#f4f5f7',
 				},
 
-				// 主色系 - 赛博蓝紫
+				// 表面色：纯白 + 玻璃态
+				surface: {
+					DEFAULT: '#ffffff',
+					glass: 'rgba(255, 255, 255, 0.7)',
+					'glass-strong': 'rgba(255, 255, 255, 0.9)',
+					border: '#e4e7eb', // zinc-200 equivalent
+				},
+
+				// 全息渐变 - Electric Blue
+				holographic: {
+					blue: '#007AFF',
+					purple: '#7C3AED',
+					pink: '#EC4899',
+					cyan: '#06B6D4',
+					silver: '#94A3B8',
+				},
+
+				// 主色系 - 优雅的蓝紫渐变
 				primary: {
-					50: '#F0F4FF',
-					100: '#E0E9FF',
-					200: '#C7D7FE',
-					300: '#A5BBFC',
-					400: '#8B9FF8',
-					500: '#6366F1',
-					600: '#4F46E5',
-					700: '#4338CA',
-					800: '#3730A3',
-					900: '#312E81',
-					950: '#1E1B4B',
+					50: '#f0f4ff',
+					100: '#e0e9ff',
+					200: '#c7d7fe',
+					300: '#a5bbfc',
+					400: '#8b9ff8',
+					500: '#007AFF', // Electric Blue
+					600: '#4f46e5',
+					700: '#4338ca',
+					800: '#3730a3',
+					900: '#312e81',
+					950: '#1e1b4b',
 				},
 
-				// 次要色系 - 电光紫
+				// 次要色系 - 紫色
 				secondary: {
-					50: '#FDF4FF',
-					100: '#FAE8FF',
-					200: '#F5D0FE',
-					300: '#F0ABFC',
-					400: '#E879F9',
-					500: '#D946EF',
-					600: '#C026D3',
-					700: '#A21CAF',
-					800: '#86198F',
-					900: '#701A75',
+					50: '#fdf4ff',
+					100: '#fae8ff',
+					200: '#f5d0fe',
+					300: '#f0abfc',
+					400: '#e879f9',
+					500: '#7C3AED',
+					600: '#c026d3',
+					700: '#a21caf',
+					800: '#86198f',
+					900: '#701a75',
 				},
 
-				// 强调色 - 酸性绿
+				// 强调色 - 渐变色系
 				accent: {
-					50: '#F0FFF4',
-					100: '#C6F6D5',
-					200: '#9AE6B4',
-					300: '#68D391',
-					400: '#48BB78',
-					500: '#39FF14',  // 酸性绿
-					600: '#2F855A',
-					700: '#276749',
-					800: '#22543D',
-					900: '#1C4532',
+					50: '#f0fdfa',
+					100: '#ccfbf1',
+					200: '#99f6e4',
+					300: '#5eead4',
+					400: '#2dd4bf',
+					500: '#06B6D4', // Cyan
+					600: '#0891b2',
+					700: '#0e7490',
+					800: '#155e75',
+					900: '#164e63',
 				},
 
-				// Tech/赛博色
-				tech: {
-					50: '#E6F7FF',
-					100: '#BAE7FF',
-					200: '#91D5FF',
-					300: '#69C0FF',
-					400: '#40A9FF',
-					500: '#1890FF',  // 赛博蓝
-					600: '#096DD9',
-					700: '#0050B3',
-					800: '#003A8C',
-					900: '#002766',
-					950: '#001529',
+				// 文字色 - Deep Slate
+				text: {
+					primary: '#1e293b', // slate-800
+					secondary: '#475569', // slate-600
+					tertiary: '#64748b', // slate-500
+					disabled: '#94a3b8', // slate-400
+				},
+
+				// 保留暗色模式的支持
+				dark: {
+					bg: '#0f172a',
+					surface: '#1e293b',
+					border: '#334155',
 				},
 			},
 
@@ -92,24 +103,24 @@ module.exports = {
 				'gradient-radial-top': 'radial-gradient(ellipse at top, var(--tw-gradient-stops))',
 				'gradient-radial-center': 'radial-gradient(ellipse at center, var(--tw-gradient-stops))',
 
-				// 霓虹渐变
-				'gradient-neon': 'linear-gradient(135deg, #BF00FF 0%, #00F0FF 100%)',
-				'gradient-neon-alt': 'linear-gradient(135deg, #FF10F0 0%, #39FF14 100%)',
-				'gradient-cyber': 'linear-gradient(135deg, #6366F1 0%, #D946EF 50%, #00F0FF 100%)',
+				// 全息渐变 - Light Future
+				'gradient-holographic': 'linear-gradient(135deg, #007AFF 0%, #7C3AED 50%, #94A3B8 100%)',
+				'gradient-holographic-alt': 'linear-gradient(135deg, #EC4899 0%, #06B6D4 100%)',
+				'gradient-future': 'linear-gradient(135deg, #007AFF 0%, #7C3AED 100%)',
 
-				// 全息渐变
-				'gradient-holographic': 'linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff)',
+				// 渐变光晕
+				'gradient-light': 'radial-gradient(ellipse at top, rgba(0, 122, 255, 0.1) 0%, transparent 50%)',
+				'gradient-light-purple': 'radial-gradient(ellipse at center, rgba(124, 58, 237, 0.1) 0%, transparent 60%)',
 
-				// 深色背景
-				'gradient-dark': 'linear-gradient(180deg, #030303 0%, #0a0a0a 100%)',
-				'gradient-dark-radial': 'radial-gradient(ellipse at top, #1a1a2e 0%, #030303 100%)',
+				// 玻璃态背景纹理
+				'glass-texture': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E\")",
 
-				// 噪点纹理（通过 SVG 实现）
-				'noise': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E\")",
+				// 网格背景 - 更细腻
+				'grid': "linear-gradient(rgba(0, 122, 255, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 122, 255, 0.06) 1px, transparent 1px)",
+				'grid-small': "linear-gradient(rgba(124, 58, 237, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(124, 58, 237, 0.04) 1px, transparent 1px)",
 
-				// 网格背景
-				'grid': "linear-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px)",
-				'grid-small': "linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px)",
+				// 保留暗色模式渐变
+				'gradient-dark': 'linear-gradient(180deg, #0f172a 0%, #1e293b 100%)',
 			},
 
 			backgroundSize: {
@@ -117,37 +128,32 @@ module.exports = {
 				'grid-small': '20px 20px',
 			},
 
-			// 发光阴影
+			// 阴影系统 - Soft Diffusion + Colored Shadows
 			boxShadow: {
-				// 霓虹发光
-				'neon': '0 0 5px rgba(191, 0, 255, 0.5), 0 0 20px rgba(191, 0, 255, 0.3)',
-				'neon-sm': '0 0 3px rgba(191, 0, 255, 0.5), 0 0 10px rgba(191, 0, 255, 0.2)',
-				'neon-lg': '0 0 10px rgba(191, 0, 255, 0.7), 0 0 30px rgba(191, 0, 255, 0.4), 0 0 50px rgba(191, 0, 255, 0.2)',
+				// 柔和漫射光阴影 (Light Future 核心)
+				'soft': '0 4px 24px -4px rgba(0, 0, 0, 0.08), 0 2px 8px -2px rgba(0, 0, 0, 0.04)',
+				'soft-sm': '0 2px 12px -2px rgba(0, 0, 0, 0.06), 0 1px 4px -1px rgba(0, 0, 0, 0.03)',
+				'soft-md': '0 8px 32px -8px rgba(0, 0, 0, 0.1), 0 4px 12px -4px rgba(0, 0, 0, 0.05)',
+				'soft-lg': '0 12px 48px -12px rgba(0, 0, 0, 0.12), 0 8px 16px -8px rgba(0, 0, 0, 0.06)',
+				'soft-xl': '0 20px 64px -16px rgba(0, 0, 0, 0.15), 0 12px 24px -12px rgba(0, 0, 0, 0.08)',
 
-				// 蓝色发光
-				'glow': '0 0 5px rgba(99, 102, 241, 0.5), 0 0 20px rgba(99, 102, 241, 0.3)',
-				'glow-sm': '0 0 3px rgba(99, 102, 241, 0.5), 0 0 10px rgba(99, 102, 241, 0.2)',
-				'glow-lg': '0 0 10px rgba(99, 102, 241, 0.7), 0 0 30px rgba(99, 102, 241, 0.4), 0 0 50px rgba(99, 102, 241, 0.2)',
+				// 彩色阴影 - 全息效果
+				'colored-blue': '0 8px 32px -8px rgba(0, 122, 255, 0.24), 0 4px 12px -4px rgba(0, 122, 255, 0.12)',
+				'colored-purple': '0 8px 32px -8px rgba(124, 58, 237, 0.24), 0 4px 12px -4px rgba(124, 58, 237, 0.12)',
+				'colored-pink': '0 8px 32px -8px rgba(236, 72, 153, 0.24), 0 4px 12px -4px rgba(236, 72, 153, 0.12)',
+				'colored-cyan': '0 8px 32px -8px rgba(6, 182, 212, 0.24), 0 4px 12px -4px rgba(6, 182, 212, 0.12)',
 
-				// 青色发光
-				'glow-cyan': '0 0 5px rgba(0, 240, 255, 0.5), 0 0 20px rgba(0, 240, 255, 0.3)',
-				'glow-cyan-lg': '0 0 10px rgba(0, 240, 255, 0.7), 0 0 30px rgba(0, 240, 255, 0.4), 0 0 50px rgba(0, 240, 255, 0.2)',
+				// 全息混合阴影
+				'holographic': '0 8px 32px -8px rgba(0, 122, 255, 0.2), 0 4px 16px -4px rgba(124, 58, 237, 0.15)',
+				'holographic-lg': '0 12px 48px -12px rgba(0, 122, 255, 0.25), 0 8px 24px -8px rgba(124, 58, 237, 0.2)',
 
-				// 绿色发光
-				'glow-green': '0 0 5px rgba(57, 255, 20, 0.5), 0 0 20px rgba(57, 255, 20, 0.3)',
-				'glow-green-lg': '0 0 10px rgba(57, 255, 20, 0.7), 0 0 30px rgba(57, 255, 20, 0.4), 0 0 50px rgba(57, 255, 20, 0.2)',
+				// 玻璃态阴影
+				'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07), 0 0 1px 0 rgba(0, 0, 0, 0.05)',
+				'glass-lg': '0 16px 64px 0 rgba(31, 38, 135, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.06)',
 
-				// 全息效果
-				'holographic': '0 0 15px rgba(191, 0, 255, 0.3), 0 0 30px rgba(0, 240, 255, 0.2)',
-
-				// 柔和科技感阴影
-				'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
-				'soft-lg': '0 10px 40px -10px rgba(99, 102, 241, 0.15)',
-
-				// 深度阴影
-				'brutal': '8px 8px 0px rgba(0, 0, 0, 0.8)',
-				'brutal-sm': '4px 4px 0px rgba(0, 0, 0, 0.8)',
-				'brutal-lg': '12px 12px 0px rgba(0, 0, 0, 0.8)',
+				// 深度阴影（用于强调）
+				'depth': '0 1px 3px rgba(0, 0, 0, 0.05), 0 20px 40px -20px rgba(0, 0, 0, 0.1)',
+				'depth-lg': '0 1px 3px rgba(0, 0, 0, 0.05), 0 28px 56px -28px rgba(0, 0, 0, 0.15)',
 			},
 
 			// 玻璃态效果
