@@ -3,12 +3,15 @@
  * Activity Gallery Component
  * Displays a grid of activity photos from the lab
  */
+import { Image } from 'astro:assets';
+import roboticsLabSession from '~/assets/images/activities/robotics-lab-session.png';
+import marsSpacesuitDesign from '~/assets/images/activities/mars-spacesuit-design.jpg';
 
 interface Props {
 	title?: string;
 	subtitle?: string;
 	images?: Array<{
-		src: string;
+		src: ImageMetadata;
 		alt: string;
 	}>;
 	variant?: 'grid' | 'masonry';
@@ -21,10 +24,10 @@ const {
 	variant = 'grid',
 } = Astro.props;
 
-// Activity photos from the lab
+// Activity photos from the lab - using imported images for proper Astro asset handling
 const defaultImages = [
-	{ src: '/src/assets/images/activities/robotics-lab-session.png', alt: '学生参与机器人实验室实践活动' },
-	{ src: '/src/assets/images/activities/mars-spacesuit-design.jpg', alt: '火星宇航服原创设计项目展示' },
+	{ src: roboticsLabSession, alt: '学生参与机器人实验室实践活动' },
+	{ src: marsSpacesuitDesign, alt: '火星宇航服原创设计项目展示' },
 ];
 
 const displayImages = images.length > 0 ? images : defaultImages;
@@ -55,7 +58,7 @@ const displayImages = images.length > 0 ? images : defaultImages;
 						data-aos-delay={index * 100}
 					>
 						<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
-						<img
+						<Image
 							src={image.src}
 							alt={image.alt}
 							class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -76,7 +79,7 @@ const displayImages = images.length > 0 ? images : defaultImages;
 						data-aos-delay={index * 100}
 					>
 						<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
-						<img
+						<Image
 							src={image.src}
 							alt={image.alt}
 							class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-500"

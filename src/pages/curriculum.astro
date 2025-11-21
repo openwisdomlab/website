@@ -3,14 +3,17 @@ import { SITE } from '~/config';
 import { getCanonical, getPermalink } from '~/utils/permalinks';
 import Layout from '~/layouts/PageLayout.astro';
 
+import IME from '~/components/widgets/IME.astro';
+import ProblemDrivenLearning from '~/components/widgets/ProblemDrivenLearning.astro';
 import CurriculumSection from '~/components/widgets/Curriculum.astro';
 import MiddleSchool from '~/components/widgets/MiddleSchool.astro';
+import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const meta = {
 	title: '课程体系 | ' + SITE.title,
-	description: '探索猫头鹰实验室的进阶式课程体系，从 B0 到 B3 的完整学习路径',
+	description: '探索猫头鹰实验室的创生教育理念和进阶式课程体系，从 B0 到 B3 的完整学习路径',
 	canonical: getCanonical(getPermalink('/curriculum')),
 };
 ---
@@ -35,7 +38,7 @@ const meta = {
 					data-aos-delay="200"
 					data-i18n="page.curriculum.subtitle"
 				>
-					进阶式探索之旅，从兴趣启蒙到创新突破
+					基于创生教育理念，以问题驱动的进阶式探索之旅
 				</p>
 			</div>
 		</div>
@@ -44,11 +47,20 @@ const meta = {
 		<div class="absolute top-1/2 right-1/4 w-64 h-64 bg-secondary-500/5 rounded-full filter blur-3xl -translate-y-1/2"></div>
 	</section>
 
+	<!-- 创生教育 (IME) - 教育理念解读 -->
+	<IME />
+
+	<!-- 问题驱动学习 -->
+	<ProblemDrivenLearning />
+
 	<!-- 课程体系总览 (B0-B3) -->
 	<CurriculumSection />
 
 	<!-- 中学生专区 -->
 	<MiddleSchool />
+
+	<!-- 教育特色 / 多维人才评价 -->
+	<Features />
 
 	<!-- 学习步骤/路径 -->
 	<Steps />
