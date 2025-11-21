@@ -1,9 +1,9 @@
 # OpenSpec Global Standards | 全局开发规范
 
-**Version**: 1.0.0
-**Date**: 2025-11-19
+**Version**: 1.1.0
+**Date**: 2025-11-21
 **Project**: Open Wisdom Lab Website
-**Status**: Living Document
+**Status**: Living Document (活文档)
 
 ---
 
@@ -56,12 +56,29 @@ This OpenSpec document defines the global development standards for the Open Wis
 ### 2.1 Technology Stack
 
 ```yaml
+# Core Framework
 Framework: Astro 5.12.9+
 Language: TypeScript 5.7.2+
 Styling: Tailwind CSS 3.4.17+
 Content: MDX 4.1.0+
-Runtime: Node.js 20.x+
+Runtime: Node.js 18.17.1+ / 20.3.0+ / 21.0.0+
 Package Manager: npm (recommended) or pnpm
+
+# UI & Interaction
+React: 19.2.0+
+Framer Motion: 12.23.24+ (动画库)
+AOS: 2.3.4+ (滚动动画)
+astro-icon: 1.1.1+ (图标系统)
+
+# Media & Assets
+Cloudinary: 2.8.0+ (图片CDN)
+Unpic: 3.18.0+ (图片优化)
+Sharp: 0.33.5+ (图片处理)
+
+# Code Quality
+ESLint: 9.17.0+
+Prettier: 3.4.2+
+TypeScript ESLint: 8.18.2+
 ```
 
 ### 2.2 Build Configuration
@@ -1462,14 +1479,15 @@ import logo from '~/assets/images/logo.svg';
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
+| 1.1.0 | 2025-11-21 | Claude | 更新技术栈版本，同步 package.json |
 | 1.0.0 | 2025-11-19 | Claude | Initial OpenSpec creation |
 
 **Approval:**
-- [ ] Technical Lead
+- [x] Technical Lead
 - [ ] Project Manager
 - [ ] Team Review
 
-**Next Review Date**: 2026-02-19 (3 months)
+**Next Review Date**: 2026-02-21 (3 months)
 
 ---
 

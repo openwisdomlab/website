@@ -1,7 +1,7 @@
 # Design System | 设计系统文档
 
-**Version**: 1.0.0
-**Last Updated**: 2025-11-19
+**Version**: 1.1.0
+**Last Updated**: 2025-11-21
 **Project**: Open Wisdom Lab Website
 **Related**: OPENSPEC.md
 
