@@ -90,8 +90,8 @@ const meta = {
 					<!-- 英文副标题 -->
 					<ScrollReveal client:visible variant="slide-up" delay={0.2}>
 						<div class="relative inline-block group">
-							<div class="dark:hidden px-6 py-3 bg-white border-2 border-slate-200 shadow-lg">
-								<span class="font-mono text-lg sm:text-xl md:text-2xl font-bold tracking-[0.3em] uppercase text-slate-800">
+							<div class="dark:hidden px-6 py-3 bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all duration-200">
+								<span class="font-mono text-lg sm:text-xl md:text-2xl font-black tracking-[0.3em] uppercase text-black">
 									OPEN<span class="text-indigo-600">_</span>WISDOM<span class="text-violet-600">_</span>LAB
 								</span>
 							</div>
@@ -111,15 +111,15 @@ const meta = {
 					<ScrollReveal client:visible variant="slide-up" delay={0.3}>
 						<div class="max-w-2xl space-y-4">
 							<!-- 亮色模式 - 简洁卡片 -->
-							<div class="dark:hidden bg-white border-2 border-slate-200 rounded-lg p-5 shadow-lg">
-								<p class="text-slate-700 text-base sm:text-lg leading-relaxed">
-									一个<span class="text-indigo-600 font-bold px-1 bg-indigo-50 rounded">开放</span>、
-									<span class="text-violet-600 font-bold px-1 bg-violet-50 rounded">包容</span>、
-									<span class="text-emerald-600 font-bold px-1 bg-emerald-50 rounded">创新</span>的学习空间。
+							<div class="dark:hidden bg-white border-4 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+								<p class="text-black text-base sm:text-lg leading-relaxed font-medium">
+									一个<span class="bg-indigo-600 text-white font-bold px-1">开放</span>、
+									<span class="bg-violet-600 text-white font-bold px-1">包容</span>、
+									<span class="bg-emerald-600 text-white font-bold px-1">创新</span>的学习空间。
 									<br class="hidden sm:block"/>
 									让有好奇心的人、天马行空的想法和有趣的问题在此
-									<span class="text-rose-600 font-bold">汇聚</span>和
-									<span class="text-amber-600 font-bold">激发</span>。
+									<span class="text-rose-600 font-black underline decoration-4 decoration-rose-200 underline-offset-4">汇聚</span>和
+									<span class="text-amber-600 font-black underline decoration-4 decoration-amber-200 underline-offset-4">激发</span>。
 								</p>
 							</div>
 							<!-- 暗色模式 - 终端风格 -->
@@ -160,11 +160,11 @@ const meta = {
 						<div class="flex flex-wrap gap-4 items-center pt-4">
 							<!-- 亮色模式按钮 -->
 							<a href={getPermalink('/about')}
-								class="dark:hidden inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 text-white font-bold text-lg rounded-lg hover:bg-indigo-700 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+								class="dark:hidden inline-flex items-center gap-2 px-8 py-4 bg-black text-white font-black text-lg border-2 border-transparent hover:bg-white hover:text-black hover:border-black transition-all shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5">
 								探索世界 →
 							</a>
 							<a href={getPermalink('/contact')}
-								class="dark:hidden inline-flex items-center gap-2 px-8 py-4 bg-white text-slate-800 font-bold text-lg rounded-lg border-2 border-slate-300 hover:border-indigo-500 hover:text-indigo-600 transition-all">
+								class="dark:hidden inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-black text-lg border-2 border-black hover:bg-black hover:text-white transition-all shadow-[6px_6px_0px_0px_rgba(0,0,0,0.1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
 								联系我们
 							</a>
 							<!-- 暗色模式按钮 -->
@@ -295,23 +295,23 @@ const meta = {
 			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
 				<!-- 卡片 1 - 问题驱动学习 -->
 				<ScrollReveal client:visible variant="brutal" delay={0}>
-					<div class="h-full bg-white dark:bg-slate-900/50 border-2 border-slate-200 dark:border-neon-purple/30 rounded-lg dark:rounded-none p-6 hover:border-indigo-500 dark:hover:border-neon-purple transition-all duration-300 dark:hover:shadow-neon">
+					<div class="h-full bg-white dark:bg-slate-900/50 border-4 border-black dark:border-neon-purple/30 p-6 hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-neon transition-all duration-200 group">
 						<div class="space-y-4">
 							<div class="flex items-start justify-between">
-								<div class="w-14 h-14 bg-indigo-100 dark:bg-neon-purple/10 border-2 border-indigo-200 dark:border-neon-purple/30 flex items-center justify-center rounded-lg dark:rounded-none font-display font-black text-2xl text-indigo-600 dark:text-neon-purple">
+								<div class="w-14 h-14 bg-black text-white dark:bg-neon-purple/10 border-2 border-black dark:border-neon-purple/30 flex items-center justify-center font-display font-black text-2xl dark:text-neon-purple group-hover:bg-indigo-600 dark:group-hover:bg-neon-purple/20 transition-colors">
 									?
 								</div>
-								<span class="font-mono text-xs text-emerald-600 dark:text-neon-green">001</span>
+								<span class="font-mono text-xs font-bold text-black dark:text-neon-green">001</span>
 							</div>
-							<h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white">
+							<h3 class="font-display text-2xl font-black text-black dark:text-white">
 								问题驱动学习
 							</h3>
-							<p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed">
+							<p class="text-slate-700 dark:text-gray-400 text-sm leading-relaxed font-medium">
 								从真实问题出发，在探索中学习，在解决问题中成长。
-								<span class="text-indigo-600 dark:text-neon-purple font-medium">Learning by questioning.</span>
+								<span class="block mt-2 text-indigo-600 dark:text-neon-purple font-bold uppercase tracking-wider text-xs">Learning by questioning.</span>
 							</p>
 							<div class="pt-2">
-								<div class="h-[2px] w-full bg-gradient-to-r from-indigo-500 via-violet-500 dark:from-neon-purple dark:via-neon-blue to-transparent"></div>
+								<div class="h-2 w-full bg-black dark:bg-gradient-to-r dark:from-indigo-500 dark:via-violet-500 dark:to-transparent"></div>
 							</div>
 						</div>
 					</div>
@@ -319,23 +319,23 @@ const meta = {
 
 				<!-- 卡片 2 - 跨学科融合 -->
 				<ScrollReveal client:visible variant="brutal" delay={0.1}>
-					<div class="h-full bg-white dark:bg-slate-900/50 border-2 border-slate-200 dark:border-neon-blue/30 rounded-lg dark:rounded-none p-6 hover:border-violet-500 dark:hover:border-neon-blue transition-all duration-300 dark:hover:shadow-glow-cyan">
+					<div class="h-full bg-white dark:bg-slate-900/50 border-4 border-black dark:border-neon-blue/30 p-6 hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-glow-cyan transition-all duration-200 group">
 						<div class="space-y-4">
 							<div class="flex items-start justify-between">
-								<div class="w-14 h-14 bg-violet-100 dark:bg-neon-blue/10 border-2 border-violet-200 dark:border-neon-blue/30 flex items-center justify-center rounded-lg dark:rounded-none font-display font-black text-2xl text-violet-600 dark:text-neon-blue">
+								<div class="w-14 h-14 bg-black text-white dark:bg-neon-blue/10 border-2 border-black dark:border-neon-blue/30 flex items-center justify-center font-display font-black text-2xl dark:text-neon-blue group-hover:bg-violet-600 dark:group-hover:bg-neon-blue/20 transition-colors">
 									+
 								</div>
-								<span class="font-mono text-xs text-violet-600 dark:text-neon-blue">002</span>
+								<span class="font-mono text-xs font-bold text-black dark:text-neon-blue">002</span>
 							</div>
-							<h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white">
+							<h3 class="font-display text-2xl font-black text-black dark:text-white">
 								跨学科融合
 							</h3>
-							<p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed">
+							<p class="text-slate-700 dark:text-gray-400 text-sm leading-relaxed font-medium">
 								打破学科边界，培养综合思维和创新能力。
-								<span class="text-violet-600 dark:text-neon-blue font-medium">Cross-disciplinary thinking.</span>
+								<span class="block mt-2 text-violet-600 dark:text-neon-blue font-bold uppercase tracking-wider text-xs">Cross-disciplinary thinking.</span>
 							</p>
 							<div class="pt-2">
-								<div class="h-[2px] w-full bg-gradient-to-r from-violet-500 via-emerald-500 dark:from-neon-blue dark:via-neon-green to-transparent"></div>
+								<div class="h-2 w-full bg-black dark:bg-gradient-to-r dark:from-violet-500 dark:via-emerald-500 dark:to-transparent"></div>
 							</div>
 						</div>
 					</div>
@@ -343,23 +343,23 @@ const meta = {
 
 				<!-- 卡片 3 - 实践导向 -->
 				<ScrollReveal client:visible variant="brutal" delay={0.2}>
-					<div class="h-full bg-white dark:bg-slate-900/50 border-2 border-slate-200 dark:border-neon-green/30 rounded-lg dark:rounded-none p-6 hover:border-emerald-500 dark:hover:border-neon-green transition-all duration-300 dark:hover:shadow-glow-green">
+					<div class="h-full bg-white dark:bg-slate-900/50 border-4 border-black dark:border-neon-green/30 p-6 hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-glow-green transition-all duration-200 group">
 						<div class="space-y-4">
 							<div class="flex items-start justify-between">
-								<div class="w-14 h-14 bg-emerald-100 dark:bg-neon-green/10 border-2 border-emerald-200 dark:border-neon-green/30 flex items-center justify-center rounded-lg dark:rounded-none font-display font-black text-2xl text-emerald-600 dark:text-neon-green">
+								<div class="w-14 h-14 bg-black text-white dark:bg-neon-green/10 border-2 border-black dark:border-neon-green/30 flex items-center justify-center font-display font-black text-2xl dark:text-neon-green group-hover:bg-emerald-600 dark:group-hover:bg-neon-green/20 transition-colors">
 									*
 								</div>
-								<span class="font-mono text-xs text-emerald-600 dark:text-neon-green">003</span>
+								<span class="font-mono text-xs font-bold text-black dark:text-neon-green">003</span>
 							</div>
-							<h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white">
+							<h3 class="font-display text-2xl font-black text-black dark:text-white">
 								实践导向
 							</h3>
-							<p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed">
+							<p class="text-slate-700 dark:text-gray-400 text-sm leading-relaxed font-medium">
 								动手实践，在做中学，培养解决实际问题的能力。
-								<span class="text-emerald-600 dark:text-neon-green font-medium">Hands-on learning.</span>
+								<span class="block mt-2 text-emerald-600 dark:text-neon-green font-bold uppercase tracking-wider text-xs">Hands-on learning.</span>
 							</p>
 							<div class="pt-2">
-								<div class="h-[2px] w-full bg-gradient-to-r from-emerald-500 via-amber-500 dark:from-neon-green dark:via-neon-yellow to-transparent"></div>
+								<div class="h-2 w-full bg-black dark:bg-gradient-to-r dark:from-emerald-500 dark:via-amber-500 dark:to-transparent"></div>
 							</div>
 						</div>
 					</div>
