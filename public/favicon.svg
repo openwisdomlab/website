@@ -1,11 +1,70 @@
-<svg width="256" height="256" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <style>
-        #flame { fill: #FF5D01; }
-        #a { fill: #000014; }
-        @media (prefers-color-scheme: dark) {
-            #a { fill: #fff; }
-        }
-    </style>
-    <path id="a" fill-rule="evenodd" clip-rule="evenodd" d="M163.008 18.929c1.944 2.413 2.935 5.67 4.917 12.181l43.309 142.27a180.277 180.277 0 00-51.778-17.53l-28.198-95.29a3.67 3.67 0 00-7.042.01l-27.857 95.232a180.225 180.225 0 00-52.01 17.557l43.52-142.281c1.99-6.502 2.983-9.752 4.927-12.16a15.999 15.999 0 016.484-4.798c2.872-1.154 6.271-1.154 13.07-1.154h31.085c6.807 0 10.211 0 13.086 1.157a16.004 16.004 0 016.487 4.806z" />
-    <path id="flame" fill-rule="evenodd" clip-rule="evenodd" d="M168.19 180.151c-7.139 6.105-21.39 10.268-37.804 10.268-20.147 0-37.033-6.272-41.513-14.707-1.602 4.835-1.961 10.367-1.961 13.902 0 0-1.056 17.355 11.015 29.426 0-6.268 5.081-11.349 11.349-11.349 10.743 0 10.731 9.373 10.721 16.977v.679c0 11.542 7.054 21.436 17.086 25.606a23.27 23.27 0 01-2.339-10.2c0-11.008 6.463-15.107 13.974-19.87 5.976-3.79 12.616-8.001 17.192-16.449a31.024 31.024 0 003.743-14.82c0-3.299-.513-6.479-1.463-9.463z" />
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="owlGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF0080"/>
+      <stop offset="50%" style="stop-color:#BF00FF"/>
+      <stop offset="100%" style="stop-color:#6366f1"/>
+    </linearGradient>
+    <linearGradient id="eyeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00F0FF"/>
+      <stop offset="100%" style="stop-color:#00FF94"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Owl body/wings - stylized geometric owl -->
+  <g filter="url(#glow)">
+    <!-- Left wing -->
+    <path d="M28 128 C28 80 48 40 88 28 L88 88 C88 108 68 128 48 148 C28 168 28 148 28 128Z"
+          fill="url(#owlGradient)" opacity="0.9"/>
+
+    <!-- Right wing -->
+    <path d="M228 128 C228 80 208 40 168 28 L168 88 C168 108 188 128 208 148 C228 168 228 148 228 128Z"
+          fill="url(#owlGradient)" opacity="0.9"/>
+
+    <!-- Head/body center -->
+    <ellipse cx="128" cy="108" rx="60" ry="70" fill="url(#owlGradient)"/>
+
+    <!-- Ear tufts -->
+    <path d="M88 48 L108 78 L78 68 Z" fill="url(#owlGradient)"/>
+    <path d="M168 48 L148 78 L178 68 Z" fill="url(#owlGradient)"/>
+
+    <!-- Eye socket left -->
+    <ellipse cx="103" cy="100" rx="28" ry="30" fill="#030303"/>
+
+    <!-- Eye socket right -->
+    <ellipse cx="153" cy="100" rx="28" ry="30" fill="#030303"/>
+
+    <!-- Left eye -->
+    <ellipse cx="103" cy="100" rx="18" ry="20" fill="url(#eyeGradient)"/>
+
+    <!-- Right eye -->
+    <ellipse cx="153" cy="100" rx="18" ry="20" fill="url(#eyeGradient)"/>
+
+    <!-- Pupil left -->
+    <ellipse cx="108" cy="100" rx="8" ry="10" fill="#030303"/>
+
+    <!-- Pupil right -->
+    <ellipse cx="158" cy="100" rx="8" ry="10" fill="#030303"/>
+
+    <!-- Eye highlights -->
+    <circle cx="100" cy="94" r="4" fill="white" opacity="0.8"/>
+    <circle cx="150" cy="94" r="4" fill="white" opacity="0.8"/>
+
+    <!-- Beak -->
+    <path d="M128 118 L118 138 L128 158 L138 138 Z" fill="#FFE500"/>
+
+    <!-- Chest feathers pattern -->
+    <path d="M98 160 Q128 200 158 160 L158 220 Q128 240 98 220 Z" fill="url(#owlGradient)" opacity="0.7"/>
+
+    <!-- Feet -->
+    <path d="M108 228 L98 248 L108 248 L118 248 L108 228" fill="url(#owlGradient)"/>
+    <path d="M148 228 L138 248 L148 248 L158 248 L148 228" fill="url(#owlGradient)"/>
+  </g>
 </svg>
