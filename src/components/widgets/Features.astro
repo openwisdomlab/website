@@ -1,25 +1,35 @@
 ---
-import { Icon } from 'astro-icon/components';
+type ColorKey = 'indigo' | 'violet' | 'emerald' | 'teal' | 'rose';
 
-const items = [
+interface Item {
+	title: string;
+	description: string;
+	number: string;
+	color: ColorKey;
+}
+
+const items: Item[][] = [
 	[
 		{
 			title: '开放性 Openness',
 			description:
 				'对所有有好奇心、有想法、有问题的学习者开放。不设门槛，欢迎各种"异想天开"的创意，包容失败，重视探索过程。',
-			icon: 'tabler:door-enter',
+			number: '01',
+			color: 'indigo',
 		},
 		{
 			title: '交叉性 Interdisciplinary',
 			description:
 				'打破学科壁垒，强调科学、技术、工程、艺术、数学等多学科的交叉融合。创新往往发生在学科交叉的边界上。',
-			icon: 'tabler:circle-dashed',
+			number: '02',
+			color: 'violet',
 		},
 		{
 			title: '连接性 Connectivity',
 			description:
 				'连接产业界、学术界、社会组织，让学生的探索与真实世界的挑战相连接，构建全球性的猫头鹰网络。',
-			icon: 'tabler:network',
+			number: '03',
+			color: 'emerald',
 		},
 	],
 	[
@@ -27,28 +37,56 @@ const items = [
 			title: '可持续性 Sustainability',
 			description:
 				'培养学生的可持续思维，关注技术创新的社会影响和环境责任，思考如何让创新成果惠及更多人。',
-			icon: 'tabler:leaf',
+			number: '04',
+			color: 'teal',
 		},
 		{
 			title: '黑科技 Advanced Technology',
 			description:
 				'鼓励学生接触和使用前沿工具，培养对未来技术的敏感度和驾驭能力。从基因编辑到量子计算，探索技术的无限可能。',
-			icon: 'tabler:rocket',
+			number: '05',
+			color: 'rose',
 		},
 	],
 ];
+
+const colorClasses: Record<ColorKey, { bg: string; text: string; border: string }> = {
+	indigo: {
+		bg: 'bg-indigo-100 dark:bg-indigo-900/30',
+		text: 'text-indigo-600 dark:text-indigo-400',
+		border: 'border-indigo-200 dark:border-indigo-800',
+	},
+	violet: {
+		bg: 'bg-violet-100 dark:bg-violet-900/30',
+		text: 'text-violet-600 dark:text-violet-400',
+		border: 'border-violet-200 dark:border-violet-800',
+	},
+	emerald: {
+		bg: 'bg-emerald-100 dark:bg-emerald-900/30',
+		text: 'text-emerald-600 dark:text-emerald-400',
+		border: 'border-emerald-200 dark:border-emerald-800',
+	},
+	teal: {
+		bg: 'bg-teal-100 dark:bg-teal-900/30',
+		text: 'text-teal-600 dark:text-teal-400',
+		border: 'border-teal-200 dark:border-teal-800',
+	},
+	rose: {
+		bg: 'bg-rose-100 dark:bg-rose-900/30',
+		text: 'text-rose-600 dark:text-rose-400',
+		border: 'border-rose-200 dark:border-rose-800',
+	},
+};
 ---
 
-<section class="scroll-mt-16" id="features">
+<section class="scroll-mt-16 bg-slate-50 dark:bg-slate-900/50" id="features">
 	<div class="px-4 py-16 mx-auto max-w-6xl lg:px-8 lg:py-20">
 		<div class="mb-10 md:mx-auto sm:text-center md:mb-12 max-w-3xl" data-aos="fade-up">
-			<p class="text-base text-primary-600 dark:text-primary-200 font-semibold tracking-wide uppercase">核心理念</p>
-		<div class="mb-10 md:mx-auto sm:text-center md:mb-12 max-w-3xl">
-			<p class="text-base text-primary-600 dark:text-primary-200 font-semibold tracking-wide uppercase">实验室特色</p>
-			<h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading" id="values">
+			<p class="text-base text-indigo-600 dark:text-indigo-400 font-semibold tracking-wide uppercase">实验室特色</p>
+			<h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-slate-900 dark:text-white">
 				五大核心理念
 			</h2>
-			<p class="max-w-3xl mx-auto sm:text-center text-xl text-gray-600 dark:text-slate-400">
+			<p class="max-w-3xl mx-auto sm:text-center text-xl text-slate-600 dark:text-slate-400">
 				这些理念不仅指导着实验室的空间设计和运营管理，更深刻影响着所有参与者的思维方式。
 			</p>
 		</div>
@@ -56,20 +94,20 @@ const items = [
 			{
 				items.map((subitems, colIndex) => (
 					<div class="space-y-8 sm:px-8">
-						{subitems.map(({ title, description, icon }, itemIndex) => (
+						{subitems.map(({ title, description, number, color }, itemIndex) => (
 							<div
 								class="flex flex-row max-w-md"
 								data-aos="fade-right"
 								data-aos-delay={colIndex * 100 + itemIndex * 150}
 							>
 								<div class="mb-4 mr-4">
-									<div class="flex items-center justify-center w-12 h-12 rounded-full bg-primary-500 dark:bg-primary-700">
-										{icon && <Icon name={icon} class="w-6 h-6 text-white icon-light" />}
+									<div class={`flex items-center justify-center w-12 h-12 rounded-lg border-2 ${colorClasses[color].bg} ${colorClasses[color].border}`}>
+										<span class={`font-display font-black text-lg ${colorClasses[color].text}`}>{number}</span>
 									</div>
 								</div>
 								<div>
-									<h3 class="mb-3 text-xl font-bold">{title}</h3>
-									<p class="text-gray-600 dark:text-slate-400">{description}</p>
+									<h3 class="mb-3 text-xl font-bold text-slate-900 dark:text-white">{title}</h3>
+									<p class="text-slate-600 dark:text-slate-400">{description}</p>
 								</div>
 							</div>
 						))}
