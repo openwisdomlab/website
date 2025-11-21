@@ -2,6 +2,7 @@
 import { SITE } from '~/config';
 import { getCanonical, getPermalink } from '~/utils/permalinks';
 import Layout from '~/layouts/PageLayout.astro';
+import { GlitchText, ScrollReveal, GridBackground, NoiseOverlay } from '~/components/ui/cyber';
 
 import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
@@ -14,24 +15,39 @@ const meta = {
 ---
 
 <Layout {meta}>
+	<!-- Global Noise -->
+	<NoiseOverlay client:load opacity={0.02} />
+
 	<!-- 页面标题区域 -->
-	<section class="bg-gradient-dark py-20">
-		<div class="max-w-6xl mx-auto px-4 sm:px-6">
+	<section class="relative py-20 overflow-hidden bg-white dark:bg-cyber-black transition-colors duration-300">
+		<!-- Dynamic Grid Background -->
+		<div class="hidden dark:block">
+			<GridBackground client:load variant="cyber" animated />
+		</div>
+
+		<!-- Light Mode Grid -->
+		<div class="absolute inset-0 dark:hidden bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
 			<div class="text-center">
-				<h1
-					class="text-5xl md:text-6xl font-bold text-white mb-6 font-display"
-					data-aos="fade-up"
-				>
-					<span data-i18n="page.contact.title">联系我们</span>
-				</h1>
-				<p
-					class="text-xl text-gray-300 max-w-3xl mx-auto"
-					data-aos="fade-up"
-					data-aos-delay="200"
-					data-i18n="page.contact.subtitle"
-				>
-					有任何问题或想法？我们很乐意听到您的声音
-				</p>
+				<ScrollReveal client:visible variant="brutal">
+					<h1 class="text-5xl md:text-7xl font-black text-black dark:text-white mb-6 font-display uppercase tracking-tighter">
+						<span class="dark:hidden">联系我们</span>
+						<span class="hidden dark:block">
+							<GlitchText client:visible variant="rgb" triggerOnHover>
+								联系我们
+							</GlitchText>
+						</span>
+					</h1>
+				</ScrollReveal>
+
+				<ScrollReveal client:visible variant="slide-up" delay={0.2}>
+					<div class="inline-block bg-black dark:bg-indigo-900/30 text-white border-4 border-black dark:border-indigo-500 p-4 transform -rotate-1 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] dark:shadow-[0_0_20px_rgba(79,70,229,0.3)]">
+						<p class="text-xl md:text-2xl font-mono font-bold" data-i18n="page.contact.subtitle">
+							有任何问题或想法？我们很乐意听到您的声音
+						</p>
+					</div>
+				</ScrollReveal>
 			</div>
 		</div>
 	</section>

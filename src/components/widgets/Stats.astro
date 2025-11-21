@@ -1,25 +1,37 @@
 ---
+import { ScrollReveal } from '~/components/ui/cyber';
 ---
 
 <div class="px-4 py-8 md:py-16 sm:px-6 mx-auto md:px-24 lg:px-8 lg:py-20 max-w-6xl">
-	<div class="grid grid-cols-2 row-gap-8 md:grid-cols-4">
-		<div class="text-center md:border-r dark:md:border-slate-500 mb-10 md:mb-0" data-aos="fade-up" data-aos-delay="100">
-			<div class="text-4xl font-bold lg:text-5xl xl:text-6xl text-primary-500 font-heading">13+</div>
-			<p class="text-sm font-medium tracking-widest text-gray-800 dark:text-slate-400 uppercase lg:text-base">
-				发展年限
-			</p>
-		</div>
-		<div class="text-center md:border-r dark:md:border-slate-500 mb-10 md:mb-0" data-aos="fade-up" data-aos-delay="200">
-			<div class="text-4xl font-bold lg:text-5xl xl:text-6xl text-primary-500 font-heading">6500</div>
-			<p class="text-sm font-medium tracking-widest text-gray-800 dark:text-slate-400 uppercase lg:text-base">平方米空间</p>
-		</div>
-		<div class="text-center md:border-r dark:md:border-slate-500 font-heading" data-aos="fade-up" data-aos-delay="300">
-			<div class="text-4xl font-bold lg:text-5xl xl:text-6xl text-primary-500">4</div>
-			<p class="text-sm font-medium tracking-widest text-gray-800 dark:text-slate-400 uppercase lg:text-base">主要空间</p>
-		</div>
-		<div class="text-center" data-aos="fade-up" data-aos-delay="400">
-			<div class="text-4xl font-bold lg:text-5xl xl:text-6xl text-primary-500 font-heading">1000+</div>
-			<p class="text-sm font-medium tracking-widest text-gray-800 dark:text-slate-400 uppercase lg:text-base">服务学生</p>
-		</div>
+	<div class="grid grid-cols-2 row-gap-8 md:grid-cols-4 gap-4">
+		<ScrollReveal client:visible variant="brutal" delay={0}>
+			<div class="text-center p-6 border-4 border-black dark:border-indigo-500 bg-white dark:bg-black/40 h-full flex flex-col justify-center hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[0_0_20px_rgba(99,102,241,0.3)] transition-all duration-200">
+				<div class="text-4xl font-black lg:text-5xl xl:text-6xl text-indigo-600 dark:text-indigo-400 font-display mb-2">13+</div>
+				<p class="text-sm font-bold tracking-widest text-black dark:text-white uppercase lg:text-base font-mono">
+					发展年限
+				</p>
+			</div>
+		</ScrollReveal>
+
+		<ScrollReveal client:visible variant="brutal" delay={0.1}>
+			<div class="text-center p-6 border-4 border-black dark:border-violet-500 bg-white dark:bg-black/40 h-full flex flex-col justify-center hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] transition-all duration-200">
+				<div class="text-4xl font-black lg:text-5xl xl:text-6xl text-violet-600 dark:text-violet-400 font-display mb-2">6500</div>
+				<p class="text-sm font-bold tracking-widest text-black dark:text-white uppercase lg:text-base font-mono">平方米空间</p>
+			</div>
+		</ScrollReveal>
+
+		<ScrollReveal client:visible variant="brutal" delay={0.2}>
+			<div class="text-center p-6 border-4 border-black dark:border-emerald-500 bg-white dark:bg-black/40 h-full flex flex-col justify-center hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all duration-200">
+				<div class="text-4xl font-black lg:text-5xl xl:text-6xl text-emerald-600 dark:text-emerald-400 font-display mb-2">4</div>
+				<p class="text-sm font-bold tracking-widest text-black dark:text-white uppercase lg:text-base font-mono">主要空间</p>
+			</div>
+		</ScrollReveal>
+
+		<ScrollReveal client:visible variant="brutal" delay={0.3}>
+			<div class="text-center p-6 border-4 border-black dark:border-rose-500 bg-white dark:bg-black/40 h-full flex flex-col justify-center hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[0_0_20px_rgba(244,63,94,0.3)] transition-all duration-200">
+				<div class="text-4xl font-black lg:text-5xl xl:text-6xl text-rose-600 dark:text-rose-400 font-display mb-2">1000+</div>
+				<p class="text-sm font-bold tracking-widest text-black dark:text-white uppercase lg:text-base font-mono">服务学生</p>
+			</div>
+		</ScrollReveal>
 	</div>
 </div>
