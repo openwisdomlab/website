@@ -170,7 +170,7 @@ export default function CyberCard({
 
 	return (
 		<CardWrapper
-			ref={ref}
+			ref={ref as any}
 			className={baseStyles}
 			style={motionStyle}
 			onMouseMove={handleMouseMove}

@@ -13,6 +13,13 @@ module.exports = {
 				'dark-surface': '#151515',
 				'dark-border': '#2a2a2a',
 
+				// Light theme semantic colors
+				'text-primary': '#1a1a2e',
+				'text-secondary': '#6b7280',
+				'background': '#ffffff',
+				'background-light': '#f9fafb',
+				'surface-border': '#e5e7eb',
+
 				// 霓虹色系 - Cybernetic 核心色
 				'neon-purple': '#BF00FF',
 				'neon-blue': '#00F0FF',
@@ -159,6 +166,9 @@ module.exports = {
 
 			// 阴影系统
 			boxShadow: {
+				// Light theme shadows
+				'soft': '0 4px 24px -4px rgba(0, 0, 0, 0.1), 0 2px 8px -2px rgba(0, 0, 0, 0.08)',
+
 				// 霓虹发光阴影
 				'neon': '0 0 10px rgba(191, 0, 255, 0.5), 0 0 20px rgba(191, 0, 255, 0.3), 0 0 30px rgba(191, 0, 255, 0.1)',
 				'neon-lg': '0 0 20px rgba(191, 0, 255, 0.6), 0 0 40px rgba(191, 0, 255, 0.4), 0 0 60px rgba(191, 0, 255, 0.2)',
