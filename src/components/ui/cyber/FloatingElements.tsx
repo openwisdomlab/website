@@ -101,7 +101,7 @@ export default function FloatingElements({ count = 20, className = '' }: Floatin
 						ease: 'easeInOut',
 					}}
 				>
-					{renderShape(el.type, el.color, el.size)}
+					{renderShape(el.type || 'circle', el.color || 'neon-purple', el.size)}
 				</motion.div>
 			))}
 		</div>

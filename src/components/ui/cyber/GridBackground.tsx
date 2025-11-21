@@ -13,7 +13,6 @@ interface GridBackgroundProps {
 export default function GridBackground({
 	variant = 'default',
 	animated = false,
-	color = 'white',
 	className = '',
 }: GridBackgroundProps) {
 	const gridStyles = {

@@ -36,7 +36,7 @@
 @layer components {
 	/* 玻璃态面板 - Light Future 核心组件 */
 	.glass-panel {
-		@apply bg-white/70 backdrop-blur-md border border-surface-border rounded-xl;
+		@apply bg-white/70 backdrop-blur-md border border-gray-200 rounded-xl;
 		box-shadow: var(--shadow-glass);
 		background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
 	}
@@ -47,7 +47,7 @@
 
 	/* 玻璃态面板变体 */
 	.glass-panel-strong {
-		@apply bg-white/90 backdrop-blur-lg border border-surface-border rounded-xl;
+		@apply bg-white/90 backdrop-blur-lg border border-gray-200 rounded-xl;
 		box-shadow: var(--shadow-glass);
 	}
 
@@ -58,7 +58,7 @@
 	/* 按钮系统 - 统一设计 */
 	.btn {
 		@apply inline-flex items-center justify-center rounded-lg font-medium text-center text-base leading-snug transition-all duration-200 py-3 px-6 md:px-8;
-		@apply bg-white border border-surface-border text-text-primary;
+		@apply bg-white border border-gray-200 text-text-primary;
 		@apply hover:shadow-soft hover:scale-[1.02] active:scale-[0.98];
 		@apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
 		box-shadow: var(--shadow-soft);
