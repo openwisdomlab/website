@@ -12,7 +12,7 @@ export const ui = {
     'nav.about': '关于我们',
     'nav.education': '教育体系',
     'nav.curriculum': '课程体系',
-    'nav.challenges': '科学挑战',
+    'nav.challenges': 'Science 125问题',
     'nav.blog': '动态',
     'nav.contact': '联系我们',
 
@@ -101,7 +101,7 @@ export const ui = {
     'nav.about': 'About',
     'nav.education': 'Education',
     'nav.curriculum': 'Curriculum',
-    'nav.challenges': 'Challenges',
+    'nav.challenges': '125 Questions: Exploration and Discovery',
     'nav.blog': 'Blog',
     'nav.contact': 'Contact',
 
