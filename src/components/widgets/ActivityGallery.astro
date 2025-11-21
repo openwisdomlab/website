@@ -21,13 +21,10 @@ const {
 	variant = 'grid',
 } = Astro.props;
 
-// Default placeholder images - replace with actual activity photos
+// Activity photos from the lab
 const defaultImages = [
-	{ src: '/src/assets/images/default.png', alt: '学生进行科学实验' },
-	{ src: '/src/assets/images/default.png', alt: '教育体系讲座' },
-	{ src: '/src/assets/images/default.png', alt: '实验室研究项目' },
-	{ src: '/src/assets/images/default.png', alt: '团队协作活动' },
-	{ src: '/src/assets/images/default.png', alt: '创新设备展示' },
+	{ src: '/src/assets/images/activities/robotics-lab-session.png', alt: '学生参与机器人实验室实践活动' },
+	{ src: '/src/assets/images/activities/mars-spacesuit-design.jpg', alt: '火星宇航服原创设计项目展示' },
 ];
 
 const displayImages = images.length > 0 ? images : defaultImages;
