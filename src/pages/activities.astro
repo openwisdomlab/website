@@ -29,7 +29,7 @@ const meta = {
 					class="text-xl text-gray-300 dark:text-gray-400 max-w-3xl mx-auto"
 					data-aos="fade-up"
 					data-aos-delay="200"
-					data-i18n="page.activities.subtitle"
+					data-i18n="activities.features.subtitle"
 				>
 					科技与人文交融，探索与创造同行
 				</p>
@@ -50,12 +50,12 @@ const meta = {
 						<span class="text-tech-400 font-mono text-sm uppercase tracking-wider">X-Camp</span>
 					</div>
 					<h2 class="text-4xl md:text-5xl font-black text-white mb-6 font-display">
-						X-Camp<br/>
-						<span class="text-transparent bg-clip-text bg-gradient-to-r from-tech-400 to-secondary-400">
+						<span data-i18n="activities.xcamp.title">X-Camp</span><br/>
+						<span class="text-transparent bg-clip-text bg-gradient-to-r from-tech-400 to-secondary-400" data-i18n="activities.xcamp.subtitle">
 							科研训练营
 						</span>
 					</h2>
-					<p class="text-lg text-gray-300 mb-6 leading-relaxed">
+					<p class="text-lg text-gray-300 mb-6 leading-relaxed" data-i18n="activities.xcamp.desc">
 						X-Camp是猫头鹰实验室的沉浸式科研训练项目，让学生深入体验真实的科研过程。
 						在这里，学生将与科学家和研究者一起工作，参与前沿课题研究，培养科研思维和创新能力。
 					</p>
@@ -64,25 +64,25 @@ const meta = {
 							<span class="flex-shrink-0 w-6 h-6 bg-tech-500/20 rounded-full flex items-center justify-center mt-0.5">
 								<span class="text-tech-400 text-sm">1</span>
 							</span>
-							<span><strong class="text-white">真实科研项目</strong> - 参与实际科研课题，体验完整研究过程</span>
+							<span><strong class="text-white" data-i18n="activities.xcamp.feature1">真实科研项目</strong> - <span data-i18n="activities.xcamp.feature1Desc">参与实际科研课题，体验完整研究过程</span></span>
 						</li>
 						<li class="flex items-start gap-3">
 							<span class="flex-shrink-0 w-6 h-6 bg-tech-500/20 rounded-full flex items-center justify-center mt-0.5">
 								<span class="text-tech-400 text-sm">2</span>
 							</span>
-							<span><strong class="text-white">导师一对一指导</strong> - 来自清华、北大等顶尖高校的研究专家</span>
+							<span><strong class="text-white" data-i18n="activities.xcamp.feature2">导师一对一指导</strong> - <span data-i18n="activities.xcamp.feature2Desc">来自清华、北大等顶尖高校的研究专家</span></span>
 						</li>
 						<li class="flex items-start gap-3">
 							<span class="flex-shrink-0 w-6 h-6 bg-tech-500/20 rounded-full flex items-center justify-center mt-0.5">
 								<span class="text-tech-400 text-sm">3</span>
 							</span>
-							<span><strong class="text-white">跨学科融合</strong> - 人工智能、生物科技、航天等多领域探索</span>
+							<span><strong class="text-white" data-i18n="activities.xcamp.feature3">跨学科融合</strong> - <span data-i18n="activities.xcamp.feature3Desc">人工智能、生物科技、航天等多领域探索</span></span>
 						</li>
 						<li class="flex items-start gap-3">
 							<span class="flex-shrink-0 w-6 h-6 bg-tech-500/20 rounded-full flex items-center justify-center mt-0.5">
 								<span class="text-tech-400 text-sm">4</span>
 							</span>
-							<span><strong class="text-white">成果展示</strong> - 论文发表、专利申请、学术会议报告机会</span>
+							<span><strong class="text-white" data-i18n="activities.xcamp.feature4">成果展示</strong> - <span data-i18n="activities.xcamp.feature4Desc">论文发表、专利申请、学术会议报告机会</span></span>
 						</li>
 					</ul>
 				</div>
@@ -134,37 +134,37 @@ const meta = {
 						<span class="text-accent-400 font-mono text-sm uppercase tracking-wider">Night at OWL</span>
 					</div>
 					<h2 class="text-4xl md:text-5xl font-black text-white mb-6 font-display">
-						猫头鹰奇妙夜<br/>
-						<span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-primary-400">
+						<span data-i18n="activities.owl.title">猫头鹰奇妙夜</span><br/>
+						<span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-primary-400" data-i18n="activities.owl.subtitle">
 							Night at OWL
 						</span>
 					</h2>
-					<p class="text-lg text-gray-300 mb-6 leading-relaxed">
+					<p class="text-lg text-gray-300 mb-6 leading-relaxed" data-i18n="activities.owl.desc">
 						「猫头鹰奇妙夜」是零一学院猫头鹰实验室的特色文化活动，以科技和人文艺术结合的主题，
 						多元化和富有想象力的活动形式受到了老师和学生的一致欢迎。
 					</p>
-					<p class="text-gray-400 mb-6 leading-relaxed">
+					<p class="text-gray-400 mb-6 leading-relaxed" data-i18n="activities.owl.desc2">
 						轻松而有趣的活动形式不仅促进了大家思维的连接，
 						也打破了人们对"天才学生"和科学家群体的固有认知。我们致力于创造一个对于创新友好的环境，
 						在清华钱班拔尖创新人才培养10多年探索的背后，钱班和零一文化得以在猫头鹰奇妙夜里充分展示和绽放。
 					</p>
 					<div class="bg-accent-500/10 border border-accent-500/20 rounded-xl p-6 mb-6">
-						<blockquote class="text-accent-300 italic text-lg">
+						<blockquote class="text-accent-300 italic text-lg" data-i18n="activities.owl.quote">
 							"让思维有地方闲逛，让想象力在无意中开花"
 						</blockquote>
-						<p class="text-gray-500 text-sm mt-2">—— 猫头鹰奇妙夜标语</p>
+						<p class="text-gray-500 text-sm mt-2" data-i18n="activities.owl.quoteAuthor">—— 猫头鹰奇妙夜标语</p>
 					</div>
 					<div class="flex flex-wrap gap-3">
-						<span class="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300">
+						<span class="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300" data-i18n="activities.owl.tag1">
 							#科技与人文
 						</span>
-						<span class="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300">
+						<span class="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300" data-i18n="activities.owl.tag2">
 							#创意思维
 						</span>
-						<span class="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300">
+						<span class="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300" data-i18n="activities.owl.tag3">
 							#跨界交流
 						</span>
-						<span class="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300">
+						<span class="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300" data-i18n="activities.owl.tag4">
 							#轻松有趣
 						</span>
 					</div>
@@ -177,10 +177,10 @@ const meta = {
 	<section class="relative py-24 overflow-hidden">
 		<div class="max-w-6xl mx-auto px-4 sm:px-6">
 			<div class="text-center mb-16">
-				<h2 class="text-3xl md:text-4xl font-black text-white mb-4 font-display" data-aos="fade-up">
+				<h2 class="text-3xl md:text-4xl font-black text-white mb-4 font-display" data-aos="fade-up" data-i18n="activities.features.title">
 					活动特色
 				</h2>
-				<p class="text-gray-400 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+				<p class="text-gray-400 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100" data-i18n="activities.features.subtitle">
 					我们的活动融合科技与人文，注重体验与互动，让每一次参与都成为难忘的成长经历
 				</p>
 			</div>
@@ -191,8 +191,8 @@ const meta = {
 					<div class="w-12 h-12 bg-primary-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
 						<span class="text-2xl">🎨</span>
 					</div>
-					<h3 class="text-lg font-bold text-white mb-2">科技与艺术融合</h3>
-					<p class="text-gray-400 text-sm">打破传统学科边界，让科技与人文艺术碰撞出创意火花</p>
+					<h3 class="text-lg font-bold text-white mb-2" data-i18n="activities.features.techArt">科技与艺术融合</h3>
+					<p class="text-gray-400 text-sm" data-i18n="activities.features.techArtDesc">打破传统学科边界，让科技与人文艺术碰撞出创意火花</p>
 				</div>
 
 				<!-- 特色卡片 2 -->
@@ -200,8 +200,8 @@ const meta = {
 					<div class="w-12 h-12 bg-tech-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
 						<span class="text-2xl">🧠</span>
 					</div>
-					<h3 class="text-lg font-bold text-white mb-2">思维连接</h3>
-					<p class="text-gray-400 text-sm">促进不同背景学生之间的交流，激发思维碰撞与创新灵感</p>
+					<h3 class="text-lg font-bold text-white mb-2" data-i18n="activities.features.mindConnect">思维连接</h3>
+					<p class="text-gray-400 text-sm" data-i18n="activities.features.mindConnectDesc">促进不同背景学生之间的交流，激发思维碰撞与创新灵感</p>
 				</div>
 
 				<!-- 特色卡片 3 -->
@@ -209,8 +209,8 @@ const meta = {
 					<div class="w-12 h-12 bg-accent-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
 						<span class="text-2xl">🌟</span>
 					</div>
-					<h3 class="text-lg font-bold text-white mb-2">轻松有趣</h3>
-					<p class="text-gray-400 text-sm">摒弃严肃刻板的形式，在轻松愉快的氛围中学习成长</p>
+					<h3 class="text-lg font-bold text-white mb-2" data-i18n="activities.features.funRelax">轻松有趣</h3>
+					<p class="text-gray-400 text-sm" data-i18n="activities.features.funRelaxDesc">摒弃严肃刻板的形式，在轻松愉快的氛围中学习成长</p>
 				</div>
 
 				<!-- 特色卡片 4 -->
@@ -218,8 +218,8 @@ const meta = {
 					<div class="w-12 h-12 bg-secondary-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
 						<span class="text-2xl">🚀</span>
 					</div>
-					<h3 class="text-lg font-bold text-white mb-2">创新友好</h3>
-					<p class="text-gray-400 text-sm">营造对创新友好的环境，鼓励大胆尝试和自由探索</p>
+					<h3 class="text-lg font-bold text-white mb-2" data-i18n="activities.features.innovationFriendly">创新友好</h3>
+					<p class="text-gray-400 text-sm" data-i18n="activities.features.innovationFriendlyDesc">营造对创新友好的环境，鼓励大胆尝试和自由探索</p>
 				</div>
 			</div>
 		</div>
