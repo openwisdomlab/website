@@ -1,8 +1,26 @@
 ---
 import { ScrollReveal } from '~/components/ui/cyber';
+
+/**
+ * Vision component showcasing the lab's vision and core values
+ *
+ * @component
+ * @example
+ * ```astro
+ * <Vision id="vision" />
+ * ```
+ */
+export interface Props {
+	/** Section ID for anchor navigation @default 'vision' */
+	id?: string;
+	/** Optional custom class name */
+	class?: string;
+}
+
+const { id = 'vision', class: className = '' } = Astro.props;
 ---
 
-<section class="scroll-mt-16 bg-white dark:bg-cyber-black transition-colors duration-300" id="vision">
+<section class={`scroll-mt-16 bg-white dark:bg-cyber-black transition-colors duration-300 ${className}`} id={id}>
 	<div class="px-4 py-16 mx-auto max-w-6xl lg:px-8 lg:py-20">
 		<div class="max-w-5xl mx-auto">
 			<ScrollReveal client:visible variant="slide-up">

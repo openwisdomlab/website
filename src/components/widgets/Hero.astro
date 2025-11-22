@@ -1,6 +1,22 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { Picture } from 'astro:assets';
+
+/**
+ * Hero component for landing pages
+ *
+ * @component
+ * @example
+ * ```astro
+ * <Hero />
+ * ```
+ */
+export interface Props {
+	/** Optional custom class name */
+	class?: string;
+}
+
+const { class: _className = '' } = Astro.props;
 ---
 
 <section>

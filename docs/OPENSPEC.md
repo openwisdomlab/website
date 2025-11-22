@@ -1,7 +1,7 @@
 # OpenSpec Global Standards | 全局开发规范
 
-**Version**: 1.1.0
-**Date**: 2025-11-21
+**Version**: 1.2.0
+**Date**: 2025-11-22
 **Project**: Open Wisdom Lab Website
 **Status**: Living Document (活文档)
 
@@ -9,6 +9,7 @@
 
 ## 📋 Table of Contents
 
+- [0. Documentation Architecture](#0-documentation-architecture)
 - [1. Introduction](#1-introduction)
 - [2. Architecture Standards](#2-architecture-standards)
 - [3. Code Organization](#3-code-organization)
@@ -23,6 +24,49 @@
 - [12. Git & Version Control](#12-git--version-control)
 - [13. Deployment Standards](#13-deployment-standards)
 - [14. Accessibility Standards](#14-accessibility-standards)
+
+---
+
+## 0. Documentation Architecture
+
+### 0.1 文档职责划分
+
+本项目有两个核心规范文档，各有侧重：
+
+| 文档 | 位置 | 目标读者 | 主要内容 |
+|------|------|---------|----------|
+| **CLAUDE.md** | `/CLAUDE.md` | AI 助手 (Claude Code) | 项目快速参考、开发命令、i18n 规范、代码审查清单 |
+| **OPENSPEC.md** | `/docs/OPENSPEC.md` | 人类开发者 | 完整架构标准、代码规范、测试规范、部署流程 |
+
+### 0.2 避免重复维护
+
+为避免信息不一致：
+
+1. **技术栈版本** - 以 `package.json` 为准，两文档引用时说明"详见 package.json"
+2. **项目结构** - OPENSPEC.md 为权威源，CLAUDE.md 仅保留精简版本
+3. **i18n 规范** - 两文档均需保留（AI 助手高频使用），保持同步
+4. **组件开发规范** - OPENSPEC.md 为完整版，CLAUDE.md 保留快速参考
+
+### 0.3 更新原则
+
+- **新增规范** → 先更新 OPENSPEC.md，再同步简化版到 CLAUDE.md
+- **版本变更** → 更新 package.json，两文档均添加"详见 package.json"引用
+- **审查变更** → 每次更新时检查两文档的一致性
+
+### 0.4 相关文档索引
+
+```
+docs/
+├── OPENSPEC.md          # 本文档 - 全局开发规范 (权威源)
+├── ROADMAP.md           # 产品路线图与开发计划
+├── DESIGN_SYSTEM.md     # 设计系统规范
+├── ARCHITECTURE.md      # 系统架构说明
+├── DEPLOYMENT.md        # 部署流程指南
+├── CONSISTENCY_AUDIT.md # 代码一致性审核
+├── CONTENT_GAPS.md      # 内容缺口分析
+├── DEVELOPMENT.md       # 开发环境搭建
+└── component-props-guide.md  # 组件 Props 类型化指南
+```
 
 ---
 
@@ -1479,6 +1523,7 @@ import logo from '~/assets/images/logo.svg';
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
+| 1.2.0 | 2025-11-22 | Claude | 添加文档架构章节(Section 0)，明确 CLAUDE.md 与 OPENSPEC.md 职责划分 |
 | 1.1.0 | 2025-11-21 | Claude | 更新技术栈版本，同步 package.json |
 | 1.0.0 | 2025-11-19 | Claude | Initial OpenSpec creation |
 

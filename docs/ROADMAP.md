@@ -1,6 +1,6 @@
 # Product Roadmap 2025-2026 | 产品路线图
 
-**Version**: 1.3.0
+**Version**: 1.4.0
 **Last Updated**: 2025-11-22
 **Project**: Open Wisdom Lab Website
 **Related Documents**: [docs/](./docs/) 目录下的所有文档
@@ -70,6 +70,7 @@
   - [x] 移除 6 个未使用组件 (HighlightedPosts, LatestPosts, Button, Card, Pricing, Announcement)
   - [x] 优化 PageLayout 移除重复的背景动画组件
   - [x] 补充 Note.astro 组件双语翻译
+  - [x] 移除 9 个 cyber 组件的 'use client' 指令 (消除 sourcemap 警告)
 
 #### Week 3-4: TypeScript 迁移
 - [x] 添加类型定义
@@ -77,15 +78,16 @@
   - [x] 定义 `SiteConfig.ts`
   - [x] 定义 `BlogPost.ts`
   - [x] 定义 `Navigation.ts`
-- [ ] 组件 Props 类型化
-  - [ ] 为所有组件添加 `export interface Props`
+- [x] 组件 Props 类型化 (部分完成)
+  - [x] 为核心 widgets 组件添加 Props (Hero, Vision, CallToAction)
+  - [ ] 为剩余 ~19 个组件添加 `export interface Props`
 - [ ] 配置重构
   - [ ] 创建 `src/config/` 模块化配置
 
 **Deliverables:**
 - [x] 完整的开发规范文档
-- [ ] 100% TypeScript 覆盖
-- [ ] 0 ESLint/TypeScript 错误
+- [ ] 100% TypeScript 覆盖 (~80% 已完成)
+- [x] 0 ESLint/TypeScript 错误 (构建通过)
 - [x] 统一的代码风格
 
 **Metrics:**
@@ -757,6 +759,15 @@ Week 2:
 ---
 
 ## 📝 Changelog | 更新日志
+
+### Version 1.4.0 (2025-11-22)
+- **文档架构优化**
+  - 更新 OPENSPEC.md v1.2.0: 添加文档架构章节(Section 0)
+  - 明确 CLAUDE.md 与 OPENSPEC.md 的职责划分和更新原则
+- **构建质量提升**
+  - 移除 9 个 cyber 组件的 'use client' 指令，消除 sourcemap 警告
+  - 为核心组件添加 Props 类型定义 (Hero, Vision, CallToAction)
+- **构建状态**: 0 errors, 0 warnings, 1 hint
 
 ### Version 1.3.0 (2025-11-22)
 - **代码质量优化**
