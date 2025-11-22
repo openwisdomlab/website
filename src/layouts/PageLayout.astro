@@ -5,6 +5,7 @@ import Footer from '~/components/widgets/Footer.astro';
 import Announcement from '~/components/widgets/Announcement.astro';
 import PhysicsBackground from '~/components/widgets/PhysicsBackground.astro';
 import ParticlesBackground from '~/components/widgets/ParticlesBackground.astro';
+import ScrollToTop from '~/components/ui/ScrollToTop.astro';
 
 const { meta } = Astro.props;
 ---
@@ -18,4 +19,5 @@ const { meta } = Astro.props;
 		<slot />
 	</main>
 	<Footer />
+	<ScrollToTop />
 </Layout>

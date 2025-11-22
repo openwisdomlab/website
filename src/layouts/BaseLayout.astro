@@ -4,6 +4,7 @@ import '~/assets/styles/base.css';
 import MetaTags from '~/components/core/MetaTags.astro';
 import BasicScripts from '~/components/core/BasicScripts.astro';
 import AOSInit from '~/components/core/AOSInit.astro';
+import LenisInit from '~/components/core/LenisInit.astro';
 import { defaultLang } from '~/i18n/languages';
 
 const { meta = {} } = Astro.props;
@@ -19,6 +20,7 @@ const { meta = {} } = Astro.props;
 		<slot />
 		<BasicScripts />
 		<AOSInit />
+		<LenisInit />
 
 		<!-- Language initialization script -->
 		<script is:inline>
