@@ -135,6 +135,7 @@ export const ui = {
     'common.filter': '筛选',
     'common.sort': '排序',
     'common.all': '全部',
+    'common.scrollToTop': '返回顶部',
 
     // 表单
     'form.name': '姓名',
@@ -753,6 +754,7 @@ export const ui = {
     'common.filter': 'Filter',
     'common.sort': 'Sort',
     'common.all': 'All',
+    'common.scrollToTop': 'Back to Top',
 
     // Form
     'form.name': 'Name',
