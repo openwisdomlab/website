@@ -1,0 +1,263 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "education": "Education",
+    "curriculum": "Curriculum",
+    "challenges": "Challenges",
+    "blog": "Blog",
+    "contact": "Contact",
+    "activities": "Activities",
+    "spaces": "Spaces"
+  },
+  "site": {
+    "title": "Open Wisdom Lab | OWL - Future Innovation Space",
+    "description": "Open Wisdom Lab (OWL) is a creative education space full of imagination, creativity and exploration. Based on creative education philosophy, we are committed to cultivating future talents with innovative spirit and interdisciplinary thinking."
+  },
+  "hero": {
+    "title": "Open Wisdom Lab",
+    "subtitle": "OWL",
+    "description": "An open, inclusive, and innovative learning space where curious minds, creative ideas, and interesting questions converge and inspire. Through interdisciplinary integration, practice-driven and problem-oriented approaches, we cultivate innovative future talents.",
+    "descriptionShort": "An open, inclusive, and innovative learning space where curious minds, creative ideas, and interesting questions converge and inspire.",
+    "descriptionFull": "Through interdisciplinary integration, practice-driven and problem-oriented approaches, we cultivate innovative future talents.",
+    "buttonVision": "Explore Vision",
+    "buttonIme": "Creative Education",
+    "owl": "Open",
+    "lab": "Wisdom Lab",
+    "openWisdomLab": "OPEN_WISDOM_LAB",
+    "desc1": "An",
+    "open": "open",
+    "inclusive": "inclusive",
+    "innovative": "innovative",
+    "desc2": "learning space.",
+    "desc3": "Where curious minds, creative ideas, and interesting questions",
+    "converge": "converge",
+    "inspire": "inspire",
+    "terminal": "Explore the unknown, create the future...",
+    "exploreWorld": "Explore World →",
+    "contactUs": "Contact Us",
+    "projectsCreated": "Projects.created",
+    "membersActive": "Members.active",
+    "ideasUnlimited": "Ideas.unlimited",
+    "scrollDown": "scroll.down"
+  },
+  "page": {
+    "about": {
+      "title": "About Us",
+      "subtitle": "Explore the unknown, unlock potential, cultivate innovative future talents"
+    },
+    "education": {
+      "title": "Education System",
+      "subtitle": "Problem-driven, innovation-oriented creative education philosophy"
+    },
+    "curriculum": {
+      "title": "Curriculum",
+      "subtitle": "Progressive exploration journey, from interest to innovation breakthrough"
+    },
+    "challenges": {
+      "title": "Scientific Challenges",
+      "subtitle": "Facing frontier problems, exploring unknown fields, pursuing innovation"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "subtitle": "Have questions or ideas? We'd love to hear from you"
+    },
+    "activities": {
+      "title": "Activities",
+      "subtitle": "Exciting events, journey of exploration and discovery"
+    },
+    "spaces": {
+      "title": "Innovation Spaces",
+      "subtitle": "Experimental environments that inspire creativity"
+    }
+  },
+  "home": {
+    "cta": {
+      "explore": "Explore Our World",
+      "contact": "Contact Us",
+      "learnMore": "Learn More",
+      "getStarted": "Get Started"
+    },
+    "values": {
+      "title": "Our Core Values",
+      "subtitle": "Cultivating innovative talents for the future"
+    },
+    "value1": {
+      "title": "Problem-Driven Learning",
+      "desc": "Start from real problems, learn through exploration, grow through solving"
+    },
+    "value2": {
+      "title": "Interdisciplinary Integration",
+      "desc": "Break disciplinary boundaries, cultivate comprehensive thinking and innovation"
+    },
+    "value3": {
+      "title": "Practice-Oriented",
+      "desc": "Hands-on practice, learning by doing, cultivating practical problem-solving skills"
+    },
+    "explore": {
+      "title": "Explore More",
+      "subtitle": "Learn more about our education system and curriculum"
+    },
+    "card": {
+      "about": "Learn about our vision and mission",
+      "education": "Creative education and problem-driven learning",
+      "curriculum": "Progressive learning path B0-B3",
+      "challenges": "Frontier research projects and challenges"
+    },
+    "core": {
+      "title": "Core",
+      "value": "Values",
+      "subtitle": "// Cultivating innovative talents for the future",
+      "questionMark": "?",
+      "plus": "+",
+      "asterisk": "*",
+      "problemDriven": "Problem-Driven Learning",
+      "problemDrivenDesc": "Start from real problems, learn through exploration, grow through solving",
+      "interdisciplinary": "Interdisciplinary Integration",
+      "interdisciplinaryDesc": "Break disciplinary boundaries, cultivate comprehensive thinking and innovation",
+      "practiceOriented": "Practice-Oriented",
+      "practiceOrientedDesc": "Hands-on practice, learning by doing, cultivating practical problem-solving skills"
+    }
+  },
+  "curriculum": {
+    "title": "Progressive Exploration Journey",
+    "subtitle": "Progressive curriculum designed for students at different stages",
+    "b0": {
+      "title": "Research Exploration · Interest Awakening",
+      "desc": "The first stop to ignite scientific curiosity, let students experience the charm of research"
+    },
+    "b1": {
+      "title": "Research Experience · Method Introduction",
+      "desc": "Experience the complete research process, master basic research methods"
+    },
+    "b2": {
+      "title": "Research Challenge · Deep Exploration",
+      "desc": "Face real frontier problems, conduct in-depth research exploration"
+    },
+    "b3": {
+      "title": "Long-term Research · Innovation Breakthrough",
+      "desc": "Conduct long-term in-depth research, pursue innovation breakthroughs"
+    }
+  },
+  "features": {
+    "title": "System Features",
+    "subtitle": "Our unique educational approach",
+    "progressive": "Progressive Growth",
+    "progressiveDesc": "Respect individual differences, provide clear growth paths and progression channels",
+    "problem": "Problem-Driven",
+    "problemDesc": "Start from real problems, learn and grow through solving problems",
+    "mentor": "Mentorship",
+    "mentorDesc": "Scientist+Teacher dual-mentor team, full guidance and support",
+    "openness": "Openness",
+    "opennessDesc": "Open to all curious, creative, and questioning learners",
+    "interdisciplinary": "Interdisciplinary",
+    "interdisciplinaryDesc": "Break disciplinary barriers, emphasize cross-disciplinary integration",
+    "connectivity": "Connectivity",
+    "connectivityDesc": "Connect industry, academia, and social organizations",
+    "sustainability": "Sustainability",
+    "sustainabilityDesc": "Cultivate sustainable thinking, focus on social impact of tech innovation",
+    "technology": "Cutting-edge Tech",
+    "technologyDesc": "Encourage students to access and use cutting-edge tools"
+  },
+  "challenges": {
+    "title": "Frontier Scientific Challenges",
+    "subtitle": "Based on problem-driven learning, cultivating scientific thinking and innovation",
+    "explore": "Explore Challenges",
+    "viewAll": "View All"
+  },
+  "research": {
+    "title": "Problem-Driven Learning",
+    "subtitle": "Five characteristics of good questions",
+    "authenticity": "Authenticity",
+    "authenticityDesc": "Questions should come from real-world challenges, not artificially created for teaching",
+    "openness": "Openness",
+    "opennessDesc": "Good questions have no single correct answer, allowing multiple exploration paths",
+    "challenge": "Challenge",
+    "challengeDesc": "Difficulty should be within the zone of proximal development, not too easy or too hard",
+    "interdisciplinary": "Interdisciplinary",
+    "interdisciplinaryDesc": "Real-world problems often require integrating knowledge from multiple disciplines",
+    "meaning": "Meaningfulness",
+    "meaningDesc": "Questions should let students feel the value and see the potential impact of solving them"
+  },
+  "common": {
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "viewDetails": "View Details",
+    "backToHome": "Back to Home",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "close": "Close",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "all": "All"
+  },
+  "form": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "subject": "Subject",
+    "required": "Required",
+    "optional": "Optional",
+    "send": "Send",
+    "sending": "Sending...",
+    "sent": "Sent",
+    "error": "Failed to send, please retry"
+  },
+  "footer": {
+    "copyright": "© 2025 Open Wisdom Lab. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "followUs": "Follow Us",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "description": "Open Wisdom Lab is dedicated to cultivating future talents with innovative spirit and interdisciplinary thinking."
+  },
+  "blog": {
+    "title": "Latest News",
+    "subtitle": "Stay updated with our latest activities and educational insights",
+    "readTime": "Read Time",
+    "minutes": "min",
+    "publishedOn": "Published on",
+    "author": "Author",
+    "tags": "Tags",
+    "categories": "Categories",
+    "relatedPosts": "Related Posts",
+    "prevPost": "Previous",
+    "nextPost": "Next"
+  },
+  "vision": {
+    "title": "Our Vision",
+    "subtitle": "Building the Future Education Ecosystem",
+    "card1": {
+      "title": "Inspire Curiosity",
+      "desc": "Cultivate students' desire to explore the unknown world"
+    },
+    "card2": {
+      "title": "Foster Innovation",
+      "desc": "Encourage creative thinking and problem-solving abilities"
+    },
+    "card3": {
+      "title": "Connect the Future",
+      "desc": "Cultivate interdisciplinary talents for the AI era"
+    }
+  },
+  "cta": {
+    "title": "Ready to Start Exploring?",
+    "subtitle": "Join us to explore the unknown and create the future",
+    "button": "Get Started"
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode",
+    "system": "System"
+  },
+  "language": {
+    "zh": "中文",
+    "en": "English"
+  }
+}

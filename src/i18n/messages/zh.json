@@ -1,0 +1,263 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "education": "教育体系",
+    "curriculum": "课程体系",
+    "challenges": "科学问题",
+    "blog": "动态",
+    "contact": "联系我们",
+    "activities": "活动",
+    "spaces": "空间"
+  },
+  "site": {
+    "title": "猫头鹰实验室 | Open Wisdom Lab - 未来科技创新空间",
+    "description": "猫头鹰实验室（OWL）是一个充满想象力、创造力和探索乐趣的创新教育空间。基于创生教育理念,我们致力于培养AI时代具有创新精神和跨学科思维的未来人才。"
+  },
+  "hero": {
+    "title": "猫头鹰实验室",
+    "subtitle": "Open Wisdom Lab",
+    "description": "一个开放、包容、创新的学习空间，让有好奇心的人、天马行空的想法和有趣的问题在此汇聚和激发。我们通过跨学科融合、实践驱动和问题导向，培养具有创新精神的未来人才。",
+    "descriptionShort": "一个开放、包容、创新的学习空间，让有好奇心的人、天马行空的想法和有趣的问题在此汇聚和激发。",
+    "descriptionFull": "我们通过跨学科融合、实践驱动和问题导向，培养具有创新精神的未来人才。",
+    "buttonVision": "探索愿景",
+    "buttonIme": "创生教育",
+    "owl": "猫头鹰",
+    "lab": "实验室",
+    "openWisdomLab": "OPEN_WISDOM_LAB",
+    "desc1": "一个",
+    "open": "开放",
+    "inclusive": "包容",
+    "innovative": "创新",
+    "desc2": "的学习空间。",
+    "desc3": "让有好奇心的人、天马行空的想法和有趣的问题在此",
+    "converge": "汇聚",
+    "inspire": "激发",
+    "terminal": "探索未知，创造未来...",
+    "exploreWorld": "探索世界 →",
+    "contactUs": "联系我们",
+    "projectsCreated": "Projects.created",
+    "membersActive": "Members.active",
+    "ideasUnlimited": "Ideas.unlimited",
+    "scrollDown": "scroll.down"
+  },
+  "page": {
+    "about": {
+      "title": "关于我们",
+      "subtitle": "探索未知，激发潜能，培养未来的创新人才"
+    },
+    "education": {
+      "title": "教育体系",
+      "subtitle": "以问题为驱动，以创新为目标的创生教育理念"
+    },
+    "curriculum": {
+      "title": "课程体系",
+      "subtitle": "进阶式探索之旅，从兴趣启蒙到创新突破"
+    },
+    "challenges": {
+      "title": "科学挑战",
+      "subtitle": "面向前沿问题，探索未知领域，追求创新突破"
+    },
+    "contact": {
+      "title": "联系我们",
+      "subtitle": "有任何问题或想法？我们很乐意听到您的声音"
+    },
+    "activities": {
+      "title": "活动动态",
+      "subtitle": "精彩活动，探索与发现的旅程"
+    },
+    "spaces": {
+      "title": "创新空间",
+      "subtitle": "激发创造力的实验环境"
+    }
+  },
+  "home": {
+    "cta": {
+      "explore": "探索我们的世界",
+      "contact": "联系我们",
+      "learnMore": "了解更多",
+      "getStarted": "开始探索"
+    },
+    "values": {
+      "title": "我们的核心价值",
+      "subtitle": "培养面向未来的创新人才"
+    },
+    "value1": {
+      "title": "问题驱动学习",
+      "desc": "从真实问题出发，在探索中学习，在解决问题中成长"
+    },
+    "value2": {
+      "title": "跨学科融合",
+      "desc": "打破学科边界，培养综合思维和创新能力"
+    },
+    "value3": {
+      "title": "实践导向",
+      "desc": "动手实践，在做中学，培养解决实际问题的能力"
+    },
+    "explore": {
+      "title": "探索更多",
+      "subtitle": "深入了解我们的教育体系和课程"
+    },
+    "card": {
+      "about": "了解我们的愿景和使命",
+      "education": "创生教育和问题驱动学习",
+      "curriculum": "进阶式学习路径 B0-B3",
+      "challenges": "前沿科研项目和挑战"
+    },
+    "core": {
+      "title": "核心",
+      "value": "价值",
+      "subtitle": "// 培养面向未来的创新人才",
+      "questionMark": "?",
+      "plus": "+",
+      "asterisk": "*",
+      "problemDriven": "问题驱动学习",
+      "problemDrivenDesc": "从真实问题出发，在探索中学习，在解决问题中成长",
+      "interdisciplinary": "跨学科融合",
+      "interdisciplinaryDesc": "打破学科边界，培养综合思维和创新能力",
+      "practiceOriented": "实践导向",
+      "practiceOrientedDesc": "动手实践，在做中学，培养解决实际问题的能力"
+    }
+  },
+  "curriculum": {
+    "title": "进阶式探索之旅",
+    "subtitle": "为不同阶段的学生设计的进阶式课程体系",
+    "b0": {
+      "title": "科研探索 · 兴趣启蒙",
+      "desc": "点燃科学好奇心的第一站,让学生感受科研的魅力"
+    },
+    "b1": {
+      "title": "科研体验 · 方法入门",
+      "desc": "体验完整科研流程,掌握基本研究方法"
+    },
+    "b2": {
+      "title": "科研挑战 · 深度探究",
+      "desc": "面对真实前沿问题,进行深度科研探究"
+    },
+    "b3": {
+      "title": "长期研究 · 创新突破",
+      "desc": "开展长期深度研究,追求创新突破"
+    }
+  },
+  "features": {
+    "title": "体系特色",
+    "subtitle": "我们独特的教育方法",
+    "progressive": "阶梯式成长",
+    "progressiveDesc": "尊重学生的个体差异,提供清晰的成长路径和进阶通道",
+    "problem": "问题驱动",
+    "problemDesc": "从真实问题出发,在解决问题中学习和成长",
+    "mentor": "导师制指导",
+    "mentorDesc": "科学家+教师双师团队,全程陪伴和指导",
+    "openness": "开放性",
+    "opennessDesc": "对所有有好奇心、有想法、有问题的学习者开放",
+    "interdisciplinary": "交叉性",
+    "interdisciplinaryDesc": "打破学科壁垒，强调多学科的交叉融合",
+    "connectivity": "连接性",
+    "connectivityDesc": "连接产业界、学术界、社会组织",
+    "sustainability": "可持续性",
+    "sustainabilityDesc": "培养学生的可持续思维，关注技术创新的社会影响",
+    "technology": "黑科技",
+    "technologyDesc": "鼓励学生接触和使用前沿工具"
+  },
+  "challenges": {
+    "title": "前沿科学挑战",
+    "subtitle": "基于问题驱动学习,培养科学思维和创新能力",
+    "explore": "探索挑战",
+    "viewAll": "查看全部"
+  },
+  "research": {
+    "title": "问题驱动学习",
+    "subtitle": "好问题的五个特征",
+    "authenticity": "真实性",
+    "authenticityDesc": "问题应该来源于真实世界的挑战,而不是为了教学而人为制造的",
+    "openness": "开放性",
+    "opennessDesc": "好的问题没有唯一正确答案,允许多种探索路径",
+    "challenge": "挑战性",
+    "challengeDesc": "问题的难度应该在学生的最近发展区内,既不能太简单导致无聊,也不能太难导致无助",
+    "interdisciplinary": "跨学科性",
+    "interdisciplinaryDesc": "真实世界的问题往往需要整合多学科知识,这也是培养跨学科思维的最佳情境",
+    "meaning": "意义感",
+    "meaningDesc": "问题应该让学生感受到探索的价值和意义,能够看到解决问题可能带来的影响"
+  },
+  "common": {
+    "readMore": "阅读更多",
+    "learnMore": "了解更多",
+    "viewDetails": "查看详情",
+    "backToHome": "返回首页",
+    "loading": "加载中...",
+    "error": "出错了",
+    "success": "成功",
+    "submit": "提交",
+    "cancel": "取消",
+    "close": "关闭",
+    "search": "搜索",
+    "filter": "筛选",
+    "sort": "排序",
+    "all": "全部"
+  },
+  "form": {
+    "name": "姓名",
+    "email": "邮箱",
+    "phone": "电话",
+    "message": "留言",
+    "subject": "主题",
+    "required": "必填",
+    "optional": "选填",
+    "send": "发送",
+    "sending": "发送中...",
+    "sent": "已发送",
+    "error": "发送失败，请重试"
+  },
+  "footer": {
+    "copyright": "© 2025 猫头鹰实验室. 保留所有权利.",
+    "privacy": "隐私政策",
+    "terms": "使用条款",
+    "followUs": "关注我们",
+    "quickLinks": "快速链接",
+    "contact": "联系方式",
+    "description": "猫头鹰实验室致力于培养具有创新精神和跨学科思维的未来人才。"
+  },
+  "blog": {
+    "title": "最新动态",
+    "subtitle": "了解我们的最新活动和教育资讯",
+    "readTime": "阅读时间",
+    "minutes": "分钟",
+    "publishedOn": "发布于",
+    "author": "作者",
+    "tags": "标签",
+    "categories": "分类",
+    "relatedPosts": "相关文章",
+    "prevPost": "上一篇",
+    "nextPost": "下一篇"
+  },
+  "vision": {
+    "title": "我们的愿景",
+    "subtitle": "构建未来教育生态",
+    "card1": {
+      "title": "激发好奇心",
+      "desc": "培养学生对未知世界的探索欲望"
+    },
+    "card2": {
+      "title": "培养创新力",
+      "desc": "鼓励创造性思维和问题解决能力"
+    },
+    "card3": {
+      "title": "连接未来",
+      "desc": "为AI时代培养跨学科复合型人才"
+    }
+  },
+  "cta": {
+    "title": "准备好开始探索了吗？",
+    "subtitle": "加入我们，一起探索未知，创造未来",
+    "button": "立即开始"
+  },
+  "theme": {
+    "light": "浅色模式",
+    "dark": "深色模式",
+    "system": "跟随系统"
+  },
+  "language": {
+    "zh": "中文",
+    "en": "English"
+  }
+}
