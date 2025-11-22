@@ -12,6 +12,10 @@ const meta = {
 
 const spaces = [
 	{
+		nameKey: 'spaces.pingshan.name',
+		subtitleKey: 'spaces.pingshan.subtitle',
+		descKey: 'spaces.pingshan.desc',
+		featureKeys: ['spaces.pingshan.feature1', 'spaces.pingshan.feature2', 'spaces.pingshan.feature3', 'spaces.pingshan.feature4'],
 		name: '深圳坪山基地',
 		subtitle: 'Pingshan Base',
 		description: '猫头鹰实验室深圳坪山基地是我们的核心实验空间，配备先进的科研设备和创客工具，为学生提供沉浸式的科研体验环境。',
@@ -20,6 +24,10 @@ const spaces = [
 		icon: '🏭',
 	},
 	{
+		nameKey: 'spaces.tsinghua.name',
+		subtitleKey: 'spaces.tsinghua.subtitle',
+		descKey: 'spaces.tsinghua.desc',
+		featureKeys: ['spaces.tsinghua.feature1', 'spaces.tsinghua.feature2', 'spaces.tsinghua.feature3', 'spaces.tsinghua.feature4'],
 		name: '清华李兆基空间',
 		subtitle: 'Tsinghua Lee Shau Kee Space',
 		description: '位于清华大学校园内的创新空间，依托清华大学的学术资源，为学生提供与顶尖研究者交流学习的机会。',
@@ -28,6 +36,10 @@ const spaces = [
 		icon: '🎓',
 	},
 	{
+		nameKey: 'spaces.nanshan.name',
+		subtitleKey: 'spaces.nanshan.subtitle',
+		descKey: 'spaces.nanshan.desc',
+		featureKeys: ['spaces.nanshan.feature1', 'spaces.nanshan.feature2', 'spaces.nanshan.feature3', 'spaces.nanshan.feature4'],
 		name: '深圳南山总部',
 		subtitle: 'Nanshan Headquarters',
 		description: '猫头鹰实验室总部所在地，是行政管理和对外交流的中心，也是各类大型活动和展示的主要场所。',
@@ -169,15 +181,15 @@ const spaces = [
 										<span class="text-3xl">{space.icon}</span>
 									</div>
 									<div>
-										<h3 class="text-2xl font-black text-white">{space.name}</h3>
-										<p class={`text-${space.color}-400 font-mono text-sm`}>{space.subtitle}</p>
+										<h3 class="text-2xl font-black text-white" data-i18n={space.nameKey}>{space.name}</h3>
+										<p class={`text-${space.color}-400 font-mono text-sm`} data-i18n={space.subtitleKey}>{space.subtitle}</p>
 									</div>
 								</div>
-								<p class="text-gray-300 mb-6 leading-relaxed">{space.description}</p>
+								<p class="text-gray-300 mb-6 leading-relaxed" data-i18n={space.descKey}>{space.description}</p>
 								<div class="flex flex-wrap gap-3">
-									{space.features.map((feature) => (
-										<span class={`px-4 py-2 bg-${space.color}-500/10 border border-${space.color}-500/20 rounded-lg text-sm text-${space.color}-300`}>
-											{feature}
+									{space.featureKeys.map((featureKey, i) => (
+										<span class={`px-4 py-2 bg-${space.color}-500/10 border border-${space.color}-500/20 rounded-lg text-sm text-${space.color}-300`} data-i18n={featureKey}>
+											{space.features[i]}
 										</span>
 									))}
 								</div>
@@ -213,12 +225,12 @@ const spaces = [
 			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 				<!-- 设备类别 -->
 				{[
-					{ icon: '🤖', name: '机器人与自动化', items: ['工业机械臂', '移动机器人平台', '传感器套件', '控制系统'] },
-					{ icon: '🖨️', name: '数字制造', items: ['3D打印机', '激光切割机', 'CNC加工中心', '电子工作站'] },
-					{ icon: '🔬', name: '科学研究', items: ['生物实验设备', '化学分析仪器', '光学显微镜', '数据采集系统'] },
-					{ icon: '💻', name: '计算与AI', items: ['高性能工作站', 'GPU计算集群', '边缘计算设备', 'IoT开发板'] },
-					{ icon: '🎨', name: '创意设计', items: ['专业绘图板', '摄影摄像设备', 'VR/AR设备', '音频工作室'] },
-					{ icon: '📚', name: '学习资源', items: ['专业图书馆', '在线课程平台', '研究数据库', '学术期刊'] },
+					{ icon: '🤖', nameKey: 'spaces.equipment.roboticsName', name: '机器人与自动化', itemsKey: 'spaces.equipment.roboticsItems', items: ['工业机械臂', '移动机器人平台', '传感器套件', '控制系统'] },
+					{ icon: '🖨️', nameKey: 'spaces.equipment.digitalName', name: '数字制造', itemsKey: 'spaces.equipment.digitalItems', items: ['3D打印机', '激光切割机', 'CNC加工中心', '电子工作站'] },
+					{ icon: '🔬', nameKey: 'spaces.equipment.scienceName', name: '科学研究', itemsKey: 'spaces.equipment.scienceItems', items: ['生物实验设备', '化学分析仪器', '光学显微镜', '数据采集系统'] },
+					{ icon: '💻', nameKey: 'spaces.equipment.computingName', name: '计算与AI', itemsKey: 'spaces.equipment.computingItems', items: ['高性能工作站', 'GPU计算集群', '边缘计算设备', 'IoT开发板'] },
+					{ icon: '🎨', nameKey: 'spaces.equipment.creativeName', name: '创意设计', itemsKey: 'spaces.equipment.creativeItems', items: ['专业绘图板', '摄影摄像设备', 'VR/AR设备', '音频工作室'] },
+					{ icon: '📚', nameKey: 'spaces.equipment.learningName', name: '学习资源', itemsKey: 'spaces.equipment.learningItems', items: ['专业图书馆', '在线课程平台', '研究数据库', '学术期刊'] },
 				].map((category, index) => (
 					<div
 						class="group relative bg-white/5 border border-white/10 rounded-xl p-6 hover:border-primary-500/50 transition-all duration-300"
@@ -227,9 +239,9 @@ const spaces = [
 					>
 						<div class="flex items-center gap-3 mb-4">
 							<span class="text-2xl">{category.icon}</span>
-							<h3 class="text-lg font-bold text-white">{category.name}</h3>
+							<h3 class="text-lg font-bold text-white" data-i18n={category.nameKey}>{category.name}</h3>
 						</div>
-						<ul class="space-y-2">
+						<ul class="space-y-2" data-i18n-list={category.itemsKey}>
 							{category.items.map((item) => (
 								<li class="flex items-center gap-2 text-gray-400 text-sm">
 									<span class="w-1.5 h-1.5 bg-primary-500 rounded-full"></span>
