@@ -67,7 +67,7 @@ const meta = {
 					<ScrollReveal client:visible variant="brutal" delay={0.1}>
 						<div class="space-y-2">
 							<h1 class="font-display font-black text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] leading-none tracking-tighter">
-								<span class="block text-slate-900 dark:text-white dark:hidden">猫头鹰</span>
+								<span class="block text-slate-900 dark:text-white dark:hidden" data-i18n="home.hero.owl">猫头鹰</span>
 								<span class="hidden dark:block">
 									<GlitchText
 										client:visible
@@ -75,12 +75,12 @@ const meta = {
 										triggerOnHover
 										className="block text-white"
 									>
-										猫头鹰
+										<span data-i18n="home.hero.owl">猫头鹰</span>
 									</GlitchText>
 								</span>
 							</h1>
 							<h1 class="font-display font-black text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-none tracking-tighter">
-								<span class="text-transparent bg-gradient-to-r from-indigo-600 to-violet-600 dark:from-neon-purple dark:to-neon-blue bg-clip-text bg-[length:200%_auto] dark:animate-holographic">
+								<span class="text-transparent bg-gradient-to-r from-indigo-600 to-violet-600 dark:from-neon-purple dark:to-neon-blue bg-clip-text bg-[length:200%_auto] dark:animate-holographic" data-i18n="home.hero.lab">
 									实验室
 								</span>
 							</h1>
@@ -113,13 +113,13 @@ const meta = {
 							<!-- 亮色模式 - 简洁卡片 -->
 							<div class="dark:hidden bg-white border-4 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
 								<p class="text-black text-base sm:text-lg leading-relaxed font-medium">
-									一个<span class="bg-indigo-600 text-white font-bold px-1">开放</span>、
-									<span class="bg-violet-600 text-white font-bold px-1">包容</span>、
-									<span class="bg-emerald-600 text-white font-bold px-1">创新</span>的学习空间。
+									<span data-i18n="home.hero.desc1">一个</span><span class="bg-indigo-600 text-white font-bold px-1" data-i18n="home.hero.open">开放</span>、
+									<span class="bg-violet-600 text-white font-bold px-1" data-i18n="home.hero.inclusive">包容</span>、
+									<span class="bg-emerald-600 text-white font-bold px-1" data-i18n="home.hero.innovative">创新</span><span data-i18n="home.hero.desc2">的学习空间。</span>
 									<br class="hidden sm:block"/>
-									让有好奇心的人、天马行空的想法和有趣的问题在此
-									<span class="text-rose-600 font-black underline decoration-4 decoration-rose-200 underline-offset-4">汇聚</span>和
-									<span class="text-amber-600 font-black underline decoration-4 decoration-amber-200 underline-offset-4">激发</span>。
+									<span data-i18n="home.hero.desc3">让有好奇心的人、天马行空的想法和有趣的问题在此</span>
+									<span class="text-rose-600 font-black underline decoration-4 decoration-rose-200 underline-offset-4" data-i18n="home.hero.converge">汇聚</span><span>和</span>
+									<span class="text-amber-600 font-black underline decoration-4 decoration-amber-200 underline-offset-4" data-i18n="home.hero.inspire">激发</span>。
 								</p>
 							</div>
 							<!-- 暗色模式 - 终端风格 -->
@@ -129,13 +129,13 @@ const meta = {
 									<span>cat mission.txt</span>
 								</div>
 								<p class="text-gray-200 text-sm sm:text-base leading-relaxed">
-									一个<span class="text-neon-purple font-bold px-1 bg-neon-purple/10">开放</span>、
-									<span class="text-neon-blue font-bold px-1 bg-neon-blue/10">包容</span>、
-									<span class="text-neon-green font-bold px-1 bg-neon-green/10">创新</span>的学习空间。
+									<span data-i18n="home.hero.desc1">一个</span><span class="text-neon-purple font-bold px-1 bg-neon-purple/10" data-i18n="home.hero.open">开放</span>、
+									<span class="text-neon-blue font-bold px-1 bg-neon-blue/10" data-i18n="home.hero.inclusive">包容</span>、
+									<span class="text-neon-green font-bold px-1 bg-neon-green/10" data-i18n="home.hero.innovative">创新</span><span data-i18n="home.hero.desc2">的学习空间。</span>
 									<br class="hidden sm:block"/>
-									让有好奇心的人、天马行空的想法和有趣的问题在此
-									<span class="text-neon-pink font-bold">汇聚</span>和
-									<span class="text-neon-yellow font-bold">激发</span>。
+									<span data-i18n="home.hero.desc3">让有好奇心的人、天马行空的想法和有趣的问题在此</span>
+									<span class="text-neon-pink font-bold" data-i18n="home.hero.converge">汇聚</span><span>和</span>
+									<span class="text-neon-yellow font-bold" data-i18n="home.hero.inspire">激发</span>。
 								</p>
 							</div>
 
@@ -149,7 +149,7 @@ const meta = {
 								/>
 							</div>
 							<!-- 亮色模式提示文字 -->
-							<p class="dark:hidden text-sm text-slate-500 italic">
+							<p class="dark:hidden text-sm text-slate-500 italic" data-i18n="home.hero.terminal">
 								探索未知，创造未来...
 							</p>
 						</div>
@@ -160,11 +160,11 @@ const meta = {
 						<div class="flex flex-wrap gap-4 items-center pt-4">
 							<!-- 亮色模式按钮 -->
 							<a href={getPermalink('/about')}
-								class="dark:hidden inline-flex items-center gap-2 px-8 py-4 bg-black text-white font-black text-lg border-2 border-transparent hover:bg-white hover:text-black hover:border-black transition-all shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5">
+								class="dark:hidden inline-flex items-center gap-2 px-8 py-4 bg-black text-white font-black text-lg border-2 border-transparent hover:bg-white hover:text-black hover:border-black transition-all shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5" data-i18n="home.hero.exploreWorld">
 								探索世界 →
 							</a>
 							<a href={getPermalink('/contact')}
-								class="dark:hidden inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-black text-lg border-2 border-black hover:bg-black hover:text-white transition-all shadow-[6px_6px_0px_0px_rgba(0,0,0,0.1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+								class="dark:hidden inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-black text-lg border-2 border-black hover:bg-black hover:text-white transition-all shadow-[6px_6px_0px_0px_rgba(0,0,0,0.1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]" data-i18n="home.hero.contactUs">
 								联系我们
 							</a>
 							<!-- 暗色模式按钮 -->
@@ -175,7 +175,7 @@ const meta = {
 									variant="brutal"
 									size="lg"
 								>
-									探索世界
+									<span data-i18n="home.hero.exploreWorld">探索世界</span>
 								</CyberButton>
 								<CyberButton
 									client:visible
@@ -183,7 +183,7 @@ const meta = {
 									variant="outline"
 									size="lg"
 								>
-									联系我们
+									<span data-i18n="home.hero.contactUs">联系我们</span>
 								</CyberButton>
 							</div>
 						</div>
@@ -283,9 +283,9 @@ const meta = {
 						CORE::VALUES
 					</div>
 					<h2 class="font-display font-black text-5xl sm:text-6xl md:text-7xl text-slate-900 dark:text-white mb-6">
-						核心<span class="text-transparent bg-gradient-to-r from-indigo-600 to-violet-600 dark:bg-gradient-cyber bg-clip-text">价值</span>
+						<span data-i18n="home.core.title">核心</span><span class="text-transparent bg-gradient-to-r from-indigo-600 to-violet-600 dark:bg-gradient-cyber bg-clip-text" data-i18n="home.core.value">价值</span>
 					</h2>
-					<p class="text-xl text-slate-600 dark:text-gray-400 font-mono">
+					<p class="text-xl text-slate-600 dark:text-gray-400 font-mono" data-i18n="home.core.subtitle">
 						// 培养面向未来的创新人才
 					</p>
 				</div>
@@ -303,12 +303,12 @@ const meta = {
 								</div>
 								<span class="font-mono text-xs font-bold text-black dark:text-neon-green">001</span>
 							</div>
-							<h3 class="font-display text-2xl font-black text-black dark:text-white">
+							<h3 class="font-display text-2xl font-black text-black dark:text-white" data-i18n="home.core.problemDriven">
 								问题驱动学习
 							</h3>
 							<p class="text-slate-700 dark:text-gray-400 text-sm leading-relaxed font-medium">
-								从真实问题出发，在探索中学习，在解决问题中成长。
-								<span class="block mt-2 text-indigo-600 dark:text-neon-purple font-bold uppercase tracking-wider text-xs">Learning by questioning.</span>
+								<span data-i18n="home.core.problemDrivenDesc">从真实问题出发，在探索中学习，在解决问题中成长。</span>
+								<span class="block mt-2 text-indigo-600 dark:text-neon-purple font-bold uppercase tracking-wider text-xs" data-i18n="home.core.problemDrivenEn">Learning by questioning.</span>
 							</p>
 							<div class="pt-2">
 								<div class="h-2 w-full bg-black dark:bg-gradient-to-r dark:from-indigo-500 dark:via-violet-500 dark:to-transparent"></div>
@@ -327,12 +327,12 @@ const meta = {
 								</div>
 								<span class="font-mono text-xs font-bold text-black dark:text-neon-blue">002</span>
 							</div>
-							<h3 class="font-display text-2xl font-black text-black dark:text-white">
+							<h3 class="font-display text-2xl font-black text-black dark:text-white" data-i18n="home.core.interdisciplinary">
 								跨学科融合
 							</h3>
 							<p class="text-slate-700 dark:text-gray-400 text-sm leading-relaxed font-medium">
-								打破学科边界，培养综合思维和创新能力。
-								<span class="block mt-2 text-violet-600 dark:text-neon-blue font-bold uppercase tracking-wider text-xs">Cross-disciplinary thinking.</span>
+								<span data-i18n="home.core.interdisciplinaryDesc">打破学科边界，培养综合思维和创新能力。</span>
+								<span class="block mt-2 text-violet-600 dark:text-neon-blue font-bold uppercase tracking-wider text-xs" data-i18n="home.core.interdisciplinaryEn">Cross-disciplinary thinking.</span>
 							</p>
 							<div class="pt-2">
 								<div class="h-2 w-full bg-black dark:bg-gradient-to-r dark:from-violet-500 dark:via-emerald-500 dark:to-transparent"></div>
@@ -351,12 +351,12 @@ const meta = {
 								</div>
 								<span class="font-mono text-xs font-bold text-black dark:text-neon-green">003</span>
 							</div>
-							<h3 class="font-display text-2xl font-black text-black dark:text-white">
+							<h3 class="font-display text-2xl font-black text-black dark:text-white" data-i18n="home.core.practice">
 								实践导向
 							</h3>
 							<p class="text-slate-700 dark:text-gray-400 text-sm leading-relaxed font-medium">
-								动手实践，在做中学，培养解决实际问题的能力。
-								<span class="block mt-2 text-emerald-600 dark:text-neon-green font-bold uppercase tracking-wider text-xs">Hands-on learning.</span>
+								<span data-i18n="home.core.practiceDesc">动手实践，在做中学，培养解决实际问题的能力。</span>
+								<span class="block mt-2 text-emerald-600 dark:text-neon-green font-bold uppercase tracking-wider text-xs" data-i18n="home.core.practiceEn">Hands-on learning.</span>
 							</p>
 							<div class="pt-2">
 								<div class="h-2 w-full bg-black dark:bg-gradient-to-r dark:from-emerald-500 dark:via-amber-500 dark:to-transparent"></div>
@@ -382,9 +382,9 @@ const meta = {
 						[ DESIGN_PHILOSOPHY ]
 					</div>
 					<h2 class="font-display font-black text-5xl sm:text-6xl md:text-7xl text-slate-900 dark:text-white mb-6">
-						空间<span class="text-transparent bg-gradient-to-r from-rose-500 to-violet-600 dark:bg-gradient-holographic-alt bg-clip-text">理念</span>
+						<span data-i18n="home.philosophy.space">空间</span><span class="text-transparent bg-gradient-to-r from-rose-500 to-violet-600 dark:bg-gradient-holographic-alt bg-clip-text" data-i18n="home.philosophy.concept">理念</span>
 					</h2>
-					<p class="text-xl text-slate-600 dark:text-gray-400 max-w-2xl mx-auto">
+					<p class="text-xl text-slate-600 dark:text-gray-400 max-w-2xl mx-auto" data-i18n="home.philosophy.subtitle">
 						猫头鹰实验室的设计核心理念
 					</p>
 				</div>
@@ -400,8 +400,8 @@ const meta = {
 								01
 							</div>
 							<div class="space-y-2">
-								<h3 class="font-display text-xl font-bold text-slate-900 dark:text-white">以学生为中心</h3>
-								<p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed">
+								<h3 class="font-display text-xl font-bold text-slate-900 dark:text-white" data-i18n="home.philosophy.studentCentered">以学生为中心</h3>
+								<p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed" data-i18n="home.philosophy.studentCenteredDesc">
 									开放自由的氛围，没有标准答案。我们相信每个学生都有独特的学习路径。
 								</p>
 							</div>
@@ -417,8 +417,8 @@ const meta = {
 								02
 							</div>
 							<div class="space-y-2">
-								<h3 class="font-display text-xl font-bold text-slate-900 dark:text-white">鼓励大胆探索</h3>
-								<p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed">
+								<h3 class="font-display text-xl font-bold text-slate-900 dark:text-white" data-i18n="home.philosophy.boldExploration">鼓励大胆探索</h3>
+								<p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed" data-i18n="home.philosophy.boldExplorationDesc">
 									允许犯错，包容失败。在探索未知的过程中，错误是最宝贵的学习机会。
 								</p>
 							</div>
@@ -434,8 +434,8 @@ const meta = {
 								03
 							</div>
 							<div class="space-y-2">
-								<h3 class="font-display text-xl font-bold text-slate-900 dark:text-white">科技感与未来感</h3>
-								<p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed">
+								<h3 class="font-display text-xl font-bold text-slate-900 dark:text-white" data-i18n="home.philosophy.techFuture">科技感与未来感</h3>
+								<p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed" data-i18n="home.philosophy.techFutureDesc">
 									具有科技感和未来感的设计，激发创新想法诞生，让学习空间成为灵感的孵化器。
 								</p>
 							</div>
@@ -451,8 +451,8 @@ const meta = {
 								04
 							</div>
 							<div class="space-y-2">
-								<h3 class="font-display text-xl font-bold text-slate-900 dark:text-white">灵活流动的空间</h3>
-								<p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed">
+								<h3 class="font-display text-xl font-bold text-slate-900 dark:text-white" data-i18n="home.philosophy.flexible">灵活流动的空间</h3>
+								<p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed" data-i18n="home.philosophy.flexibleDesc">
 									灵活、流动和多样化的学习空间代替隔离、固定的空间。
 								</p>
 							</div>
@@ -507,21 +507,21 @@ const meta = {
 								~
 							</div>
 							<div class="space-y-4">
-								<h3 class="font-display text-3xl font-black uppercase">
+								<h3 class="font-display text-3xl font-black uppercase" data-i18n="home.philosophy.creativeZone">
 									创意自由区
 								</h3>
 								<p class="text-lg leading-relaxed">
-									留有学生自由涂鸦和可破坏的"混乱"空间。我们相信，真正的创造力需要自由的表达空间，
-									<span class="bg-black text-neon-yellow px-2 py-1 font-bold">无拘无束的探索往往带来最意想不到的创新</span>。
+									<span data-i18n="home.philosophy.creativeZoneDesc">留有学生自由涂鸦和可破坏的"混乱"空间。我们相信，真正的创造力需要自由的表达空间，</span>
+									<span class="bg-black text-neon-yellow px-2 py-1 font-bold" data-i18n="home.philosophy.creativeZoneHighlight">无拘无束的探索往往带来最意想不到的创新</span>。
 								</p>
 								<div class="flex flex-wrap gap-3 pt-2">
-									<span class="px-4 py-2 bg-black text-neon-purple font-mono text-sm border-2 border-black">
+									<span class="px-4 py-2 bg-black text-neon-purple font-mono text-sm border-2 border-black" data-i18n="home.philosophy.freeExpression">
 										#自由表达
 									</span>
-									<span class="px-4 py-2 bg-black text-neon-pink font-mono text-sm border-2 border-black">
+									<span class="px-4 py-2 bg-black text-neon-pink font-mono text-sm border-2 border-black" data-i18n="home.philosophy.unlimitedCreativity">
 										#创意无限
 									</span>
-									<span class="px-4 py-2 bg-black text-neon-green font-mono text-sm border-2 border-black">
+									<span class="px-4 py-2 bg-black text-neon-green font-mono text-sm border-2 border-black" data-i18n="home.philosophy.breakRules">
 										#打破常规
 									</span>
 								</div>
@@ -548,7 +548,7 @@ const meta = {
 						[ EXPLORE::MORE ]
 					</div>
 					<h2 class="font-display font-black text-5xl sm:text-6xl md:text-7xl text-slate-900 dark:text-white">
-						探索<span class="text-transparent bg-gradient-to-r from-emerald-500 to-teal-600 dark:bg-gradient-neon-green bg-clip-text">更多</span>
+						<span data-i18n="home.explore.title">探索</span><span class="text-transparent bg-gradient-to-r from-emerald-500 to-teal-600 dark:bg-gradient-neon-green bg-clip-text" data-i18n="home.explore.more">更多</span>
 					</h2>
 				</div>
 			</ScrollReveal>
@@ -571,10 +571,10 @@ const meta = {
 									</div>
 									<span class="font-mono text-xs text-slate-400 dark:text-gray-600">01</span>
 								</div>
-								<h3 class="font-display text-xl font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-neon-purple transition-colors">
+								<h3 class="font-display text-xl font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-neon-purple transition-colors" data-i18n="home.explore.curriculumTitle">
 									课程体系
 								</h3>
-								<p class="text-slate-500 dark:text-gray-500 text-sm">创生教育理念与进阶课程</p>
+								<p class="text-slate-500 dark:text-gray-500 text-sm" data-i18n="home.explore.curriculumDesc">创生教育理念与进阶课程</p>
 								<div class="pt-2">
 									<span class="font-mono text-xs text-indigo-600 dark:text-neon-purple opacity-0 group-hover:opacity-100 transition-opacity">
 										→ ENTER
@@ -601,10 +601,10 @@ const meta = {
 									</div>
 									<span class="font-mono text-xs text-slate-400 dark:text-gray-600">02</span>
 								</div>
-								<h3 class="font-display text-xl font-bold text-slate-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-neon-blue transition-colors">
+								<h3 class="font-display text-xl font-bold text-slate-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-neon-blue transition-colors" data-i18n="home.explore.challengesTitle">
 									科学问题
 								</h3>
-								<p class="text-slate-500 dark:text-gray-500 text-sm">前沿科学挑战与探索</p>
+								<p class="text-slate-500 dark:text-gray-500 text-sm" data-i18n="home.explore.challengesDesc">前沿科学挑战与探索</p>
 								<div class="pt-2">
 									<span class="font-mono text-xs text-violet-600 dark:text-neon-blue opacity-0 group-hover:opacity-100 transition-opacity">
 										→ ENTER
@@ -631,10 +631,10 @@ const meta = {
 									</div>
 									<span class="font-mono text-xs text-slate-400 dark:text-gray-600">03</span>
 								</div>
-								<h3 class="font-display text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-neon-green transition-colors">
+								<h3 class="font-display text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-neon-green transition-colors" data-i18n="home.explore.activitiesTitle">
 									特色活动
 								</h3>
-								<p class="text-slate-500 dark:text-gray-500 text-sm">X-Camp与猫头鹰奇妙夜</p>
+								<p class="text-slate-500 dark:text-gray-500 text-sm" data-i18n="home.explore.activitiesDesc">X-Camp与猫头鹰奇妙夜</p>
 								<div class="pt-2">
 									<span class="font-mono text-xs text-emerald-600 dark:text-neon-green opacity-0 group-hover:opacity-100 transition-opacity">
 										→ ENTER
@@ -661,10 +661,10 @@ const meta = {
 									</div>
 									<span class="font-mono text-xs text-slate-400 dark:text-gray-600">04</span>
 								</div>
-								<h3 class="font-display text-xl font-bold text-slate-900 dark:text-white group-hover:text-rose-600 dark:group-hover:text-neon-pink transition-colors">
+								<h3 class="font-display text-xl font-bold text-slate-900 dark:text-white group-hover:text-rose-600 dark:group-hover:text-neon-pink transition-colors" data-i18n="home.explore.spacesTitle">
 									实验室空间
 								</h3>
-								<p class="text-slate-500 dark:text-gray-500 text-sm">创新学习环境与设施</p>
+								<p class="text-slate-500 dark:text-gray-500 text-sm" data-i18n="home.explore.spacesDesc">创新学习环境与设施</p>
 								<div class="pt-2">
 									<span class="font-mono text-xs text-rose-600 dark:text-neon-pink opacity-0 group-hover:opacity-100 transition-opacity">
 										→ ENTER
@@ -702,8 +702,8 @@ const meta = {
 
 					<!-- 亮色模式标题 -->
 					<h2 class="dark:hidden font-display font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-slate-900">
-						准备好<br class="md:hidden"/>
-						<span class="text-transparent bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text">
+						<span data-i18n="home.cta.ready">准备好</span><br class="md:hidden"/>
+						<span class="text-transparent bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text" data-i18n="home.cta.start">
 							开始了吗？
 						</span>
 					</h2>
@@ -716,7 +716,7 @@ const meta = {
 					</h2>
 
 					<!-- 亮色模式描述 -->
-					<p class="dark:hidden text-xl text-slate-600 max-w-2xl mx-auto">
+					<p class="dark:hidden text-xl text-slate-600 max-w-2xl mx-auto" data-i18n="home.cta.joinDesc">
 						加入我们，一起探索未知的世界，创造属于未来的可能
 					</p>
 					<!-- 暗色模式描述 -->
@@ -728,11 +728,11 @@ const meta = {
 					<div class="flex flex-wrap gap-6 justify-center items-center pt-8">
 						<!-- 亮色模式按钮 -->
 						<a href={getPermalink('/contact')}
-							class="dark:hidden inline-flex items-center gap-2 px-10 py-5 bg-indigo-600 text-white font-bold text-xl rounded-xl hover:bg-indigo-700 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+							class="dark:hidden inline-flex items-center gap-2 px-10 py-5 bg-indigo-600 text-white font-bold text-xl rounded-xl hover:bg-indigo-700 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1" data-i18n="home.cta.joinNow">
 							立即加入 →
 						</a>
 						<a href="#"
-							class="dark:hidden inline-flex items-center gap-2 px-10 py-5 bg-white text-slate-800 font-bold text-xl rounded-xl border-2 border-slate-300 hover:border-indigo-500 hover:text-indigo-600 transition-all">
+							class="dark:hidden inline-flex items-center gap-2 px-10 py-5 bg-white text-slate-800 font-bold text-xl rounded-xl border-2 border-slate-300 hover:border-indigo-500 hover:text-indigo-600 transition-all" data-i18n="home.cta.viewProjects">
 							查看项目
 						</a>
 						<!-- 暗色模式按钮 -->
@@ -744,14 +744,14 @@ const meta = {
 								size="xl"
 								glitchOnHover
 							>
-								立即加入
+								<span data-i18n="home.cta.joinNow">立即加入</span>
 							</CyberButton>
 							<CyberButton
 								client:visible
 								variant="outline"
 								size="xl"
 							>
-								查看项目
+								<span data-i18n="home.cta.viewProjects">查看项目</span>
 							</CyberButton>
 						</div>
 					</div>
@@ -793,7 +793,7 @@ const meta = {
 							<br/>
 							<span class="font-display font-bold text-lg text-slate-800">Open Wisdom Lab</span>
 							<br/>
-							<span class="text-sm">探索 · 创新 · 成长</span>
+							<span class="text-sm" data-i18n="home.cta.owlSlogan">探索 · 创新 · 成长</span>
 						</p>
 					</div>
 				</div>
