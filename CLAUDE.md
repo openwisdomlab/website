@@ -42,8 +42,8 @@ website/
 │   │   ├── blog/             # 博客组件 (Grid, List, SinglePost)
 │   │   ├── core/             # 核心组件 (MetaTags, LanguageSwitch, ToggleTheme)
 │   │   ├── forms/            # 表单组件 (ImageUpload)
-│   │   ├── ui/               # UI 组件 (Button, Card, Input)
-│   │   │   └── cyber/        # Cyberpunk React 组件
+│   │   ├── ui/               # UI 组件 (Input, ScrollToTop)
+│   │   │   └── cyber/        # Cyberpunk React 组件 (CyberButton, CyberCard, GlitchText 等)
 │   │   └── widgets/          # 功能组件 (Header, Footer, Hero, Vision)
 │   ├── i18n/                 # 国际化
 │   │   └── languages.ts      # 所有翻译键 (400+ 条目)
