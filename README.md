@@ -23,7 +23,9 @@ Open Wisdom Lab (OWL) is an innovative educational space filled with imagination
 ### UI & Animation | 界面与动画
 
 - **[Framer Motion](https://www.framer.com/motion/)** 12.23.24 - 动画库 / Animation Library
+- **[Lenis](https://lenis.darkroom.engineering/)** 1.3.15 - 平滑滚动 / Smooth Scrolling
 - **[AOS](https://michalsnik.github.io/aos/)** 2.3.4 - 滚动动画 / Scroll Animations
+- **[Matter.js](https://brm.io/matter-js/)** 0.20.0 - 物理引擎 / Physics Engine
 - **[astro-icon](https://www.astroicon.dev/)** 1.1.1 - 图标系统 / Icon System
 
 ### Media | 媒体处理
@@ -99,6 +101,7 @@ npm run format
 │   │   ├── atoms/       # 原子组件 / Atomic components
 │   │   ├── blog/        # 博客组件 / Blog components
 │   │   ├── core/        # 核心组件 / Core components
+│   │   ├── forms/       # 表单组件 / Form components
 │   │   ├── ui/          # UI 组件 / UI components
 │   │   └── widgets/     # 页面板块 / Page widgets
 │   ├── i18n/            # 国际化 / Internationalization
