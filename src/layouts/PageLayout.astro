@@ -2,18 +2,14 @@
 import Layout from '~/layouts/BaseLayout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Footer from '~/components/widgets/Footer.astro';
-import Announcement from '~/components/widgets/Announcement.astro';
 import PhysicsBackground from '~/components/widgets/PhysicsBackground.astro';
-import ParticlesBackground from '~/components/widgets/ParticlesBackground.astro';
 import ScrollToTop from '~/components/ui/ScrollToTop.astro';
 
 const { meta } = Astro.props;
 ---
 
 <Layout {meta}>
-	<ParticlesBackground />
 	<PhysicsBackground />
-	<Announcement />
 	<Header />
 	<main class="relative z-10">
 		<slot />

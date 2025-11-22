@@ -625,6 +625,14 @@ export const ui = {
     'timeline.owl3.tag1': '分布式',
     'timeline.owl3.tag2': '智能化',
     'timeline.owl3.tag3': '无边界',
+
+    // Note 组件
+    'note.concept': 'OWL理念：',
+    'note.openness': '开放',
+    'note.interdisciplinary': '交叉',
+    'note.connectivity': '连接',
+    'note.sustainability': '可持续',
+    'note.technology': '黑科技',
   },
   en: {
     // Navigation
@@ -1244,6 +1252,14 @@ export const ui = {
     'timeline.owl3.tag1': 'Distributed',
     'timeline.owl3.tag2': 'Intelligent',
     'timeline.owl3.tag3': 'Boundless',
+
+    // Note Component
+    'note.concept': 'OWL Philosophy:',
+    'note.openness': 'Openness',
+    'note.interdisciplinary': 'Interdisciplinary',
+    'note.connectivity': 'Connectivity',
+    'note.sustainability': 'Sustainability',
+    'note.technology': 'High-Tech',
   },
 } as const;
 

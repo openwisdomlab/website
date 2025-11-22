@@ -25,7 +25,7 @@ const {
 	variant = 'default',
 } = Astro.props;
 
-const inputId = id || name || `input-${Math.random().toString(36).substr(2, 9)}`;
+const inputId = id || name || `input-${Math.random().toString(36).substring(2, 11)}`;
 
 // 变体样式
 const variantClasses = {

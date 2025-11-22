@@ -1,7 +1,7 @@
 # Product Roadmap 2025-2026 | 产品路线图
 
-**Version**: 1.2.0
-**Last Updated**: 2025-11-21
+**Version**: 1.3.0
+**Last Updated**: 2025-11-22
 **Project**: Open Wisdom Lab Website
 **Related Documents**: [docs/](./docs/) 目录下的所有文档
 
@@ -63,10 +63,13 @@
   - [x] Prettier + ESLint 配置完成
   - [ ] Pre-commit hooks (Husky + lint-staged)
   - [x] TypeScript strict mode (已配置)
-- [ ] 代码格式化和修复
-  - [ ] 运行 Prettier 格式化所有文件
-  - [ ] 统一 Import 路径为 `~/` 别名
-  - [ ] 修复所有 ESLint 警告
+- [x] 代码格式化和修复
+  - [x] 修复 deprecated APIs (substr -> substring)
+  - [x] 修复 RSS endpoint handler (get -> GET)
+  - [x] 添加 script is:inline 指令修复 hints
+  - [x] 移除 6 个未使用组件 (HighlightedPosts, LatestPosts, Button, Card, Pricing, Announcement)
+  - [x] 优化 PageLayout 移除重复的背景动画组件
+  - [x] 补充 Note.astro 组件双语翻译
 
 #### Week 3-4: TypeScript 迁移
 - [x] 添加类型定义
@@ -755,6 +758,19 @@ Week 2:
 
 ## 📝 Changelog | 更新日志
 
+### Version 1.3.0 (2025-11-22)
+- **代码质量优化**
+  - 修复 deprecated API (substr -> substring)
+  - 修复 RSS endpoint handler 命名 (get -> GET)
+  - 添加 script is:inline 指令修复 Astro hints
+- **架构精简**
+  - 移除 6 个未使用组件 (HighlightedPosts, LatestPosts, Button, Card, Pricing, Announcement)
+  - 优化 PageLayout: 移除重复的 ParticlesBackground 和空的 Announcement 组件
+  - 保留单一 PhysicsBackground 动画，提升页面加载性能
+- **i18n 完善**
+  - 补充 Note.astro 组件的双语翻译 (note.* 翻译键)
+- **构建状态**: 0 errors, 0 warnings, 1 hint (ImageUpload 的 define:vars 为预期行为)
+
 ### Version 1.2.0 (2025-11-21)
 - 更新 Phase 1 完成状态
 - 标记设计系统相关任务为完成
@@ -790,8 +806,8 @@ Week 2:
 
 ---
 
-**Last Updated**: 2025-11-21
-**Next Review**: 2025-12-21
+**Last Updated**: 2025-11-22
+**Next Review**: 2025-12-22
 **Document Owner**: Product Team
 
 ---
