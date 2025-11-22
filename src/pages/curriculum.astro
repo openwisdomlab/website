@@ -1,0 +1,90 @@
+---
+import { SITE } from '~/config';
+import { getCanonical, getPermalink } from '~/utils/permalinks';
+import Layout from '~/layouts/PageLayout.astro';
+import { GlitchText, ScrollReveal, GridBackground, NoiseOverlay } from '~/components/ui/cyber';
+
+import IME from '~/components/widgets/IME.astro';
+import ProblemDrivenLearning from '~/components/widgets/ProblemDrivenLearning.astro';
+import CurriculumSection from '~/components/widgets/Curriculum.astro';
+import MiddleSchool from '~/components/widgets/MiddleSchool.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const meta = {
+	title: '课程体系 | ' + SITE.title,
+	description: '探索猫头鹰实验室的创生教育理念和进阶式课程体系，从 B0 到 B3 的完整学习路径',
+	canonical: getCanonical(getPermalink('/curriculum')),
+};
+---
+
+<Layout {meta}>
+	<!-- 全局噪点纹理 -->
+	<NoiseOverlay client:load opacity={0.02} />
+
+	<!-- 页面标题区域 -->
+	<section class="relative py-20 overflow-hidden bg-slate-50 dark:bg-cyber-black transition-colors duration-300">
+		<!-- 动态网格背景 - 仅暗色模式显示 -->
+		<div class="hidden dark:block">
+			<GridBackground client:load variant="cyber" animated />
+		</div>
+
+		<!-- 亮色模式背景 -->
+		<div class="absolute inset-0 dark:hidden">
+			<div class="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:40px_40px] opacity-50"></div>
+		</div>
+
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+			<div class="text-center">
+				<ScrollReveal client:visible variant="slide-down">
+					<div class="font-mono text-xs md:text-sm text-indigo-600 dark:text-neon-blue uppercase tracking-[0.3em] mb-6 inline-block px-4 py-1 border border-indigo-200 dark:border-neon-blue/30 bg-white/50 dark:bg-black/50 backdrop-blur">
+						[ CURRICULUM_SYSTEM_V2.0 ]
+					</div>
+				</ScrollReveal>
+
+				<ScrollReveal client:visible variant="brutal" delay={0.1}>
+					<h1 class="text-5xl md:text-7xl font-black text-slate-900 dark:text-white mb-8 font-display tracking-tight">
+						<span class="dark:hidden" data-i18n="page.curriculum.title">课程体系</span>
+						<span class="hidden dark:block">
+							<GlitchText client:visible variant="rgb" triggerOnHover>
+								<span data-i18n="page.curriculum.title">课程体系</span>
+							</GlitchText>
+						</span>
+					</h1>
+				</ScrollReveal>
+
+				<ScrollReveal client:visible variant="slide-up" delay={0.2}>
+					<div class="max-w-3xl mx-auto">
+						<div class="bg-white dark:bg-black/60 border-4 border-black dark:border-neon-purple/30 p-6 md:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-none backdrop-blur-sm">
+							<p class="text-xl md:text-2xl text-slate-800 dark:text-gray-300 font-medium leading-relaxed" data-i18n="page.curriculum.subtitle">
+								基于<span class="text-indigo-600 dark:text-neon-purple font-bold">创生教育</span>理念，以<span class="text-violet-600 dark:text-neon-blue font-bold">问题驱动</span>的进阶式探索之旅
+							</p>
+						</div>
+					</div>
+				</ScrollReveal>
+			</div>
+		</div>
+	</section>
+
+	<!-- 创生教育 (IME) - 教育理念解读 -->
+	<IME />
+
+	<!-- 问题驱动学习 -->
+	<ProblemDrivenLearning />
+
+	<!-- 课程体系总览 (B0-B3) -->
+	<CurriculumSection />
+
+	<!-- 中学生专区 -->
+	<MiddleSchool />
+
+	<!-- 教育特色 / 多维人才评价 -->
+	<Features />
+
+	<!-- 学习步骤/路径 -->
+	<Steps />
+
+	<!-- 行动号召 -->
+	<CallToAction />
+</Layout>

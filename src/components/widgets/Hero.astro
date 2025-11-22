@@ -1,0 +1,77 @@
+---
+import { Icon } from 'astro-icon/components';
+import { Picture } from 'astro:assets';
+---
+
+<section>
+	<div class="max-w-6xl mx-auto px-4 sm:px-6">
+		<div class="py-12 md:py-20">
+			<div class="text-center pb-10 md:pb-16 max-w-5xl mx-auto">
+				<h1
+					class="text-5xl md:text-[3.50rem] font-bold leading-tighter tracking-tighter mb-4 font-heading text-text-primary dark:text-white"
+					data-aos="fade-down"
+					data-aos-duration="1000"
+				>
+					<span data-i18n="hero.title">猫头鹰实验室</span>
+					<span
+						class="bg-clip-text text-transparent bg-gradient-to-r from-holographic-blue via-holographic-purple to-holographic-pink holographic-gradient"
+						data-aos="fade-up"
+						data-aos-delay="200"
+						data-i18n="hero.subtitle"
+					>
+						Open Wisdom Lab
+					</span>
+				</h1>
+				<div class="max-w-3xl mx-auto">
+					<p
+						class="text-xl text-text-secondary mb-8 dark:text-slate-400"
+						data-aos="fade-up"
+						data-aos-delay="400"
+						data-i18n="hero.description"
+					>
+						一个<span class="font-semibold underline decoration-wavy decoration-2 decoration-holographic-blue underline-offset-4">开放、包容、创新</span>的学习空间，让有好奇心的人、天马行空的想法和有趣的问题在此汇聚和激发。我们通过跨学科融合、实践驱动和问题导向，培养具有创新精神的未来人才。
+					</p>
+					<div
+						class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4"
+						data-aos="fade-up"
+						data-aos-delay="600"
+					>
+						<div class="flex w-full sm:w-auto">
+							<a
+								class="btn btn-primary sm:mb-0 w-full"
+								href="#vision"
+							>
+								<Icon name="tabler:sparkles" class="w-5 h-5 mr-1 -ml-1.5" /> <span data-i18n="hero.button.vision">探索愿景</span>
+							</a>
+						</div>
+						<div class="flex w-full sm:w-auto">
+							<a
+								class="btn w-full"
+								href="#ime"><span data-i18n="hero.button.ime">创生教育</span></a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div
+					class="relative m-auto max-w-4xl glass-panel p-2"
+					data-aos="zoom-in"
+					data-aos-delay="800"
+					data-aos-duration="1200"
+				>
+					<Picture
+						src={import('~/assets/images/hero.jpg')}
+						class="mx-auto rounded-lg w-full shadow-soft-lg"
+						widths={[400, 768, 1480]}
+						sizes="(max-width: 767px) 400px, (max-width: 1479px) 768px, 1480px"
+						alt="Hero Image"
+							loading="eager"
+						width={1480}
+						height={833}
+					/>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,36 @@
+---
+// AOS (Animate On Scroll) Initialization
+---
+
+<script>
+	import AOS from 'aos';
+	import 'aos/dist/aos.css';
+
+	// Initialize AOS
+	const initAOS = () => {
+		AOS.init({
+			duration: 800,
+			easing: 'ease-out-cubic',
+			once: false,
+			mirror: true,
+			offset: 120,
+			delay: 50,
+			anchorPlacement: 'top-bottom',
+		});
+	};
+
+	// Initialize on page load
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', initAOS);
+	} else {
+		initAOS();
+	}
+
+	// Re-initialize on page navigation (for Astro view transitions)
+	document.addEventListener('astro:page-load', initAOS);
+
+	// Refresh AOS on route changes
+	document.addEventListener('astro:after-swap', () => {
+		AOS.refresh();
+	});
+</script>

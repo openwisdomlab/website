@@ -1,0 +1,154 @@
+---
+import { ScrollReveal } from '~/components/ui/cyber';
+---
+
+<section class="scroll-mt-16 bg-white dark:bg-cyber-black transition-colors duration-300" id="ime">
+	<div class="px-4 py-16 mx-auto max-w-6xl lg:px-8 lg:py-20">
+		<ScrollReveal client:visible variant="slide-up">
+			<div class="mb-10 md:mx-auto sm:text-center md:mb-12 max-w-3xl">
+				<div class="flex items-center justify-center gap-2 mb-4">
+					<span class="w-8 h-[2px] bg-black dark:bg-white"></span>
+					<p class="text-sm md:text-base text-black dark:text-white font-mono font-bold tracking-widest uppercase" data-i18n="ime.tag">创新驱动教育</p>
+					<span class="w-8 h-[2px] bg-black dark:bg-white"></span>
+				</div>
+				<h2 class="text-4xl md:text-6xl font-black leading-tighter tracking-tighter mb-4 font-display text-slate-900 dark:text-white" data-i18n="ime.title">
+					创生教育（IME）理念
+				</h2>
+				<p class="max-w-3xl mx-auto sm:text-center text-xl text-slate-600 dark:text-slate-400 font-medium" data-i18n="ime.subtitle">
+					Innovation-Motivated Education：让内在创新动力成为教育的核心引擎
+				</p>
+			</div>
+		</ScrollReveal>
+
+		<!-- 核心理念介绍 -->
+		<ScrollReveal client:visible variant="brutal" delay={0.1}>
+			<div class="bg-white dark:bg-black/40 p-8 mb-12 border-4 border-black dark:border-indigo-500/50 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[0_0_30px_rgba(99,102,241,0.15)]">
+				<div class="max-w-4xl mx-auto">
+					<div class="flex flex-col md:flex-row items-start gap-6 mb-6">
+						<div class="flex-shrink-0">
+							<div class="flex items-center justify-center w-16 h-16 border-4 border-black dark:border-indigo-400 bg-indigo-100 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400">
+								<span class="font-display font-black text-3xl">i</span>
+							</div>
+						</div>
+						<div>
+							<h3 class="text-2xl font-black mb-4 text-slate-900 dark:text-white font-display uppercase" data-i18n="ime.origin.title">理念起源</h3>
+							<p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-3 font-medium text-lg" data-i18n="ime.origin.desc">
+								由深圳零一学院创始院长郑泉水院士于2025年在其新书《破解创生》中系统提出。这一理念基于清华大学钱学森力学班十余年拔尖创新人才培养实践的深刻总结，为理解AI时代教育变革提供了清晰的理论框架。
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ScrollReveal>
+
+		<!-- 四大核心原则 -->
+		<div class="mb-12">
+			<ScrollReveal client:visible variant="slide-up" delay={0.2}>
+				<h3 class="text-3xl font-black text-center mb-8 text-slate-900 dark:text-white font-display" data-i18n="ime.principles.title">四大核心原则</h3>
+			</ScrollReveal>
+			<div class="grid md:grid-cols-2 gap-6">
+				<ScrollReveal client:visible variant="brutal" delay={0.3}>
+					<div class="bg-white dark:bg-black/40 p-6 border-4 border-black dark:border-amber-500/50 hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[0_0_20px_rgba(245,158,11,0.2)] transition-all duration-200 h-full">
+						<div class="flex items-start gap-4">
+							<div class="flex-shrink-0 w-12 h-12 border-4 border-black dark:border-amber-500 bg-amber-100 dark:bg-amber-900/20 flex items-center justify-center text-amber-600 dark:text-amber-400">
+								<span class="font-display font-black text-xl">1</span>
+							</div>
+							<div>
+								<h4 class="text-xl font-black mb-3 text-slate-900 dark:text-white font-display" data-i18n="ime.principle1.title">激发而非灌输</h4>
+								<p class="text-slate-600 dark:text-slate-400 font-medium" data-i18n="ime.principle1.desc">
+									好奇心是最宝贵的学习动力。保护和激发学生与生俱来的好奇心，让提问成为学习的起点，让探索成为学习的驱动力。
+								</p>
+							</div>
+						</div>
+					</div>
+				</ScrollReveal>
+
+				<ScrollReveal client:visible variant="brutal" delay={0.4}>
+					<div class="bg-white dark:bg-black/40 p-6 border-4 border-black dark:border-blue-500/50 hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all duration-200 h-full">
+						<div class="flex items-start gap-4">
+							<div class="flex-shrink-0 w-12 h-12 border-4 border-black dark:border-blue-500 bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400">
+								<span class="font-display font-black text-xl">2</span>
+							</div>
+							<div>
+								<h4 class="text-xl font-black mb-3 text-slate-900 dark:text-white font-display" data-i18n="ime.principle2.title">创造而非接受</h4>
+								<p class="text-slate-600 dark:text-slate-400 font-medium" data-i18n="ime.principle2.desc">
+									创造是最有效的学习方式。让学生在创造中学习、在实践中成长，从知识的被动接受者转变为知识的主动生产者。
+								</p>
+							</div>
+						</div>
+					</div>
+				</ScrollReveal>
+
+				<ScrollReveal client:visible variant="brutal" delay={0.5}>
+					<div class="bg-white dark:bg-black/40 p-6 border-4 border-black dark:border-rose-500/50 hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[0_0_20px_rgba(244,63,94,0.2)] transition-all duration-200 h-full">
+						<div class="flex items-start gap-4">
+							<div class="flex-shrink-0 w-12 h-12 border-4 border-black dark:border-rose-500 bg-rose-100 dark:bg-rose-900/20 flex items-center justify-center text-rose-600 dark:text-rose-400">
+								<span class="font-display font-black text-xl">3</span>
+							</div>
+							<div>
+								<h4 class="text-xl font-black mb-3 text-slate-900 dark:text-white font-display" data-i18n="ime.principle3.title">包容失败</h4>
+								<p class="text-slate-600 dark:text-slate-400 font-medium" data-i18n="ime.principle3.desc">
+									失败是最重要的学习机会。包容失败、从失败中学习，培养面对不确定性的勇气和韧性，让挫折成为成长的阶梯。
+								</p>
+							</div>
+						</div>
+					</div>
+				</ScrollReveal>
+
+				<ScrollReveal client:visible variant="brutal" delay={0.6}>
+					<div class="bg-white dark:bg-black/40 p-6 border-4 border-black dark:border-emerald-500/50 hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[0_0_20px_rgba(16,185,129,0.2)] transition-all duration-200 h-full">
+						<div class="flex items-start gap-4">
+							<div class="flex-shrink-0 w-12 h-12 border-4 border-black dark:border-emerald-500 bg-emerald-100 dark:bg-emerald-900/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+								<span class="font-display font-black text-xl">4</span>
+							</div>
+							<div>
+								<h4 class="text-xl font-black mb-3 text-slate-900 dark:text-white font-display" data-i18n="ime.principle4.title">协作创新</h4>
+								<p class="text-slate-600 dark:text-slate-400 font-medium" data-i18n="ime.principle4.desc">
+									协作是最真实的学习场景。让学生在团队中学习、在交流中成长，培养协作创新能力和社会责任感。
+								</p>
+							</div>
+						</div>
+					</div>
+				</ScrollReveal>
+			</div>
+		</div>
+
+		<!-- 实践模式 -->
+		<ScrollReveal client:visible variant="brutal" delay={0.7}>
+			<div class="bg-white dark:bg-black/40 p-8 border-4 border-black dark:border-slate-700 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-none">
+				<h3 class="text-2xl font-black text-center mb-8 text-slate-900 dark:text-white font-display" data-i18n="ime.practice.title">创生教育的实践模式</h3>
+				<div class="grid md:grid-cols-3 gap-6">
+					<div class="text-center group hover:-translate-y-1 transition-transform duration-200">
+						<div class="flex items-center justify-center w-20 h-20 mx-auto mb-4 bg-white dark:bg-black border-4 border-black dark:border-indigo-400 text-indigo-600 dark:text-indigo-400 group-hover:bg-indigo-50 dark:group-hover:bg-indigo-900/20 transition-colors">
+							<span class="font-display font-black text-3xl">A</span>
+						</div>
+						<h4 class="text-lg font-black mb-2 text-slate-900 dark:text-white font-display" data-i18n="ime.practice.a.title">内生动力第一</h4>
+						<p class="text-slate-600 dark:text-slate-400 text-sm font-medium" data-i18n="ime.practice.a.desc">
+							将创新内生动力置于教育核心，让学生成为自己学习的主人
+						</p>
+					</div>
+
+					<div class="text-center group hover:-translate-y-1 transition-transform duration-200">
+						<div class="flex items-center justify-center w-20 h-20 mx-auto mb-4 bg-white dark:bg-black border-4 border-black dark:border-violet-400 text-violet-600 dark:text-violet-400 group-hover:bg-violet-50 dark:group-hover:bg-violet-900/20 transition-colors">
+							<span class="font-display font-black text-3xl">B</span>
+						</div>
+						<h4 class="text-lg font-black mb-2 text-slate-900 dark:text-white font-display" data-i18n="ime.practice.b.title">问题驱动学习</h4>
+						<p class="text-slate-600 dark:text-slate-400 text-sm font-medium" data-i18n="ime.practice.b.desc">
+							基于真实前沿问题，让学生在解决问题中构建知识体系
+						</p>
+					</div>
+
+					<div class="text-center group hover:-translate-y-1 transition-transform duration-200">
+						<div class="flex items-center justify-center w-20 h-20 mx-auto mb-4 bg-white dark:bg-black border-4 border-black dark:border-emerald-400 text-emerald-600 dark:text-emerald-400 group-hover:bg-emerald-50 dark:group-hover:bg-emerald-900/20 transition-colors">
+							<span class="font-display font-black text-3xl">C</span>
+						</div>
+						<h4 class="text-lg font-black mb-2 text-slate-900 dark:text-white font-display" data-i18n="ime.practice.c.title">跨学科融合</h4>
+						<p class="text-slate-600 dark:text-slate-400 text-sm font-medium" data-i18n="ime.practice.c.desc">
+							打破学科壁垒，在交叉领域激发创新火花
+						</p>
+					</div>
+				</div>
+			</div>
+		</ScrollReveal>
+	</div>
+</section>

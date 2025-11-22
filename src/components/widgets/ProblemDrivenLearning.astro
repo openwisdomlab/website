@@ -1,0 +1,172 @@
+---
+import { ScrollReveal } from '~/components/ui/cyber';
+---
+
+<section class="scroll-mt-16 bg-slate-50 dark:bg-cyber-black transition-colors duration-300" id="research">
+  <div class="px-4 py-16 mx-auto max-w-6xl lg:px-8 lg:py-20">
+    <ScrollReveal client:visible variant="slide-up">
+      <div class="mb-12 md:mx-auto sm:text-center md:mb-16 max-w-3xl">
+        <div class="flex items-center justify-center gap-2 mb-4">
+          <span class="w-8 h-[2px] bg-indigo-600 dark:bg-indigo-400"></span>
+          <p class="text-sm md:text-base text-indigo-600 dark:text-indigo-400 font-mono font-bold tracking-widest uppercase" data-i18n="pdl.tag">
+            问题驱动学习 | Problem-Driven Learning
+          </p>
+          <span class="w-8 h-[2px] bg-indigo-600 dark:bg-indigo-400"></span>
+        </div>
+        <h2 class="text-4xl md:text-6xl font-black leading-tighter tracking-tighter mb-6 font-display mt-4 text-slate-900 dark:text-white" data-i18n="pdl.title">
+          好问题的五个特征
+        </h2>
+        <p class="max-w-3xl mx-auto sm:text-center text-xl text-slate-600 dark:text-slate-300 leading-relaxed font-medium" data-i18n="pdl.desc">
+          问题驱动学习是我们课程设计的核心方法论。但不是所有问题都能有效驱动学习，好的驱动性问题需要满足一系列标准。
+        </p>
+      </div>
+    </ScrollReveal>
+
+    <!-- 五个特征 -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      <!-- 1. 真实性 -->
+      <ScrollReveal client:visible variant="brutal" delay={0}>
+        <div class="bg-white dark:bg-black/40 p-6 border-4 border-black dark:border-rose-500/50 hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[0_0_20px_rgba(244,63,94,0.2)] transition-all duration-200 h-full group">
+          <div class="flex items-center justify-center w-14 h-14 mb-4 bg-rose-100 dark:bg-rose-900/20 border-4 border-black dark:border-rose-500 group-hover:rotate-3 transition-transform">
+            <span class="font-display font-black text-2xl text-rose-600 dark:text-rose-400">01</span>
+          </div>
+          <h3 class="text-xl font-black mb-3 text-slate-900 dark:text-white font-display">
+            <span data-i18n="pdl.authenticity">真实性</span> <span class="text-sm font-mono font-normal opacity-70 ml-2" data-i18n="pdl.authenticity.en">Authenticity</span>
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed font-medium" data-i18n="pdl.authenticity.desc">
+            问题应该来源于真实世界的挑战，而不是为了教学而人为制造的。真实性不仅能提高学生的兴趣，更重要的是让学生理解知识和能力的用途。
+          </p>
+          <div class="bg-rose-50 dark:bg-rose-900/10 p-4 border-l-4 border-rose-500">
+            <p class="text-sm font-bold text-slate-900 dark:text-white mb-2 uppercase tracking-wider" data-i18n="pdl.example">Example:</p>
+            <p class="text-sm text-slate-800 dark:text-slate-200 italic font-medium" data-i18n="pdl.authenticity.example">
+              "如何设计能抓取不同形状物体的机器人手"
+            </p>
+          </div>
+        </div>
+      </ScrollReveal>
+
+      <!-- 2. 开放性 -->
+      <ScrollReveal client:visible variant="brutal" delay={0.1}>
+        <div class="bg-white dark:bg-black/40 p-6 border-4 border-black dark:border-amber-500/50 hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[0_0_20px_rgba(245,158,11,0.2)] transition-all duration-200 h-full group">
+          <div class="flex items-center justify-center w-14 h-14 mb-4 bg-amber-100 dark:bg-amber-900/20 border-4 border-black dark:border-amber-500 group-hover:rotate-3 transition-transform">
+            <span class="font-display font-black text-2xl text-amber-600 dark:text-amber-400">02</span>
+          </div>
+          <h3 class="text-xl font-black mb-3 text-slate-900 dark:text-white font-display">
+            <span data-i18n="pdl.openness">开放性</span> <span class="text-sm font-mono font-normal opacity-70 ml-2" data-i18n="pdl.openness.en">Openness</span>
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed font-medium" data-i18n="pdl.openness.desc">
+            好的问题没有唯一正确答案，允许多种探索路径。开放性问题能够激发学生的创造力，让不同思维风格的学生都能找到自己的切入点。
+          </p>
+          <div class="bg-amber-50 dark:bg-amber-900/10 p-4 border-l-4 border-amber-500">
+            <p class="text-sm font-bold text-slate-900 dark:text-white mb-2 uppercase tracking-wider" data-i18n="pdl.example">Example:</p>
+            <p class="text-sm text-slate-800 dark:text-slate-200 italic font-medium" data-i18n="pdl.openness.example">
+              "如何让城市交通更智能"
+            </p>
+          </div>
+        </div>
+      </ScrollReveal>
+
+      <!-- 3. 挑战性 -->
+      <ScrollReveal client:visible variant="brutal" delay={0.2}>
+        <div class="bg-white dark:bg-black/40 p-6 border-4 border-black dark:border-emerald-500/50 hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[0_0_20px_rgba(16,185,129,0.2)] transition-all duration-200 h-full group">
+          <div class="flex items-center justify-center w-14 h-14 mb-4 bg-emerald-100 dark:bg-emerald-900/20 border-4 border-black dark:border-emerald-500 group-hover:rotate-3 transition-transform">
+            <span class="font-display font-black text-2xl text-emerald-600 dark:text-emerald-400">03</span>
+          </div>
+          <h3 class="text-xl font-black mb-3 text-slate-900 dark:text-white font-display">
+            <span data-i18n="pdl.challenge">挑战性</span> <span class="text-sm font-mono font-normal opacity-70 ml-2" data-i18n="pdl.challenge.en">Challenge</span>
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed font-medium" data-i18n="pdl.challenge.desc">
+            问题的难度应该在学生的最近发展区内，既不能太简单导致无聊，也不能太难导致无助。挑战性的平衡是课程设计的艺术。
+          </p>
+          <div class="bg-emerald-50 dark:bg-emerald-900/10 p-4 border-l-4 border-emerald-500">
+            <p class="text-sm font-bold text-slate-900 dark:text-white mb-2 uppercase tracking-wider" data-i18n="pdl.strategy">Strategy:</p>
+            <p class="text-sm text-slate-800 dark:text-slate-200 italic font-medium" data-i18n="pdl.challenge.strategy">
+              将大问题分解为一系列递进的子问题
+            </p>
+          </div>
+        </div>
+      </ScrollReveal>
+
+      <!-- 4. 跨学科性 -->
+      <ScrollReveal client:visible variant="brutal" delay={0.3}>
+        <div class="bg-white dark:bg-black/40 p-6 border-4 border-black dark:border-blue-500/50 hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all duration-200 h-full group">
+          <div class="flex items-center justify-center w-14 h-14 mb-4 bg-blue-100 dark:bg-blue-900/20 border-4 border-black dark:border-blue-500 group-hover:rotate-3 transition-transform">
+            <span class="font-display font-black text-2xl text-blue-600 dark:text-blue-400">04</span>
+          </div>
+          <h3 class="text-xl font-black mb-3 text-slate-900 dark:text-white font-display">
+            <span data-i18n="pdl.interdisciplinary">跨学科性</span> <span class="text-sm font-mono font-normal opacity-70 ml-2" data-i18n="pdl.interdisciplinary.en">Interdisciplinary</span>
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed font-medium" data-i18n="pdl.interdisciplinary.desc">
+            真实世界的问题往往需要整合多学科知识，这也是培养跨学科思维的最佳情境。好的问题能够自然地将不同学科连接起来，而不是强行拼凑。
+          </p>
+          <div class="bg-blue-50 dark:bg-blue-900/10 p-4 border-l-4 border-blue-500">
+            <p class="text-sm font-bold text-slate-900 dark:text-white mb-2 uppercase tracking-wider" data-i18n="pdl.example">Example:</p>
+            <p class="text-sm text-slate-800 dark:text-slate-200 italic font-medium" data-i18n="pdl.interdisciplinary.example">
+              "如何设计可持续的火星基地"
+            </p>
+          </div>
+        </div>
+      </ScrollReveal>
+
+      <!-- 5. 意义感 -->
+      <ScrollReveal client:visible variant="brutal" delay={0.4}>
+        <div class="bg-white dark:bg-black/40 p-6 border-4 border-black dark:border-violet-500/50 hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[0_0_20px_rgba(139,92,246,0.2)] transition-all duration-200 h-full group">
+          <div class="flex items-center justify-center w-14 h-14 mb-4 bg-violet-100 dark:bg-violet-900/20 border-4 border-black dark:border-violet-500 group-hover:rotate-3 transition-transform">
+            <span class="font-display font-black text-2xl text-violet-600 dark:text-violet-400">05</span>
+          </div>
+          <h3 class="text-xl font-black mb-3 text-slate-900 dark:text-white font-display">
+            <span data-i18n="pdl.meaning">意义感</span> <span class="text-sm font-mono font-normal opacity-70 ml-2" data-i18n="pdl.meaning.en">Meaningfulness</span>
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed font-medium" data-i18n="pdl.meaning.desc">
+            问题应该让学生感受到探索的价值和意义，能够看到解决问题可能带来的影响。意义感不一定是宏大的"改变世界"，也可以是解决身边人的困扰。
+          </p>
+          <div class="bg-violet-50 dark:bg-violet-900/10 p-4 border-l-4 border-violet-500">
+            <p class="text-sm font-bold text-slate-900 dark:text-white mb-2 uppercase tracking-wider" data-i18n="pdl.keyQuestion">Key Question:</p>
+            <p class="text-sm text-slate-800 dark:text-slate-200 italic font-medium" data-i18n="pdl.meaning.question">
+              "我为什么要花时间研究这个问题？"
+            </p>
+          </div>
+        </div>
+      </ScrollReveal>
+
+      <!-- 综合应用案例 -->
+      <ScrollReveal client:visible variant="brutal" delay={0.5} className="md:col-span-2 lg:col-span-1">
+        <div class="bg-black dark:bg-indigo-900/30 p-6 border-4 border-indigo-500 dark:border-indigo-400 h-full text-white shadow-[8px_8px_0px_0px_rgba(99,102,241,0.5)] dark:shadow-[0_0_30px_rgba(99,102,241,0.2)]">
+          <div class="flex items-center justify-center w-14 h-14 mb-4 bg-indigo-600 dark:bg-indigo-500 rounded-none">
+            <span class="font-display font-black text-2xl text-white">★</span>
+          </div>
+          <h3 class="text-xl font-black mb-3 font-display" data-i18n="pdl.case.title">
+            综合应用案例
+          </h3>
+          <p class="mb-4 leading-relaxed font-medium opacity-90" data-i18n="pdl.case.desc">
+            一个同时满足五个特征的优秀问题示例：
+          </p>
+          <div class="bg-white/10 p-4 border-l-2 border-indigo-300">
+            <p class="font-bold mb-2 text-lg" data-i18n="pdl.case.example">
+              "如何利用AI技术帮助视障人士更好地导航和感知周围环境？"
+            </p>
+            <ul class="text-sm space-y-2 font-mono">
+              <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> <span data-i18n="pdl.case.point1">真实社会问题</span></li>
+              <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> <span data-i18n="pdl.case.point2">多种技术路径</span></li>
+              <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> <span data-i18n="pdl.case.point3">适度挑战</span></li>
+              <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> <span data-i18n="pdl.case.point4">融合AI、工程、设计</span></li>
+              <li class="flex items-center gap-2"><span class="text-indigo-400">✓</span> <span data-i18n="pdl.case.point5">有明确社会价值</span></li>
+            </ul>
+          </div>
+        </div>
+      </ScrollReveal>
+    </div>
+
+    <!-- 底部引导 -->
+    <ScrollReveal client:visible variant="slide-up" delay={0.6}>
+      <div class="text-center bg-white dark:bg-black/40 p-8 border-4 border-black dark:border-slate-700 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-none">
+        <h3 class="text-2xl md:text-3xl font-black mb-4 text-slate-900 dark:text-white font-display" data-i18n="pdl.bottom.title">
+          在猫头鹰实验室，每一个学习项目都从一个好问题开始
+        </h3>
+        <p class="text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto font-medium" data-i18n="pdl.bottom.desc">
+          我们相信，提出一个好问题，比给出一百个答案更重要。让我们一起培养提出好问题的能力，开启真正的科学探索之旅。
+        </p>
+      </div>
+    </ScrollReveal>
+  </div>
+</section>

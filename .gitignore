@@ -2,8 +2,6 @@
 dist/
 .output/
 .astro/
-.next/
-out/
 
 # dependencies
 node_modules/
