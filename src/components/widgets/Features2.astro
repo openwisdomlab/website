@@ -1,0 +1,64 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const items = [
+	{
+		titleKey: 'pillars.curriculum.title',
+		descKey: 'pillars.curriculum.desc',
+		titleDefault: '进阶研究分级课程体系',
+		descDefault: 'B0科研探索、B1科研体验、B2科研挑战、B3长期研究项目。阶梯式设计既尊重学生的个体差异，也为他们提供了清晰的成长路径。',
+		icon: 'flat-color-icons:graduation-cap',
+	},
+	{
+		titleKey: 'pillars.evaluation.title',
+		descKey: 'pillars.evaluation.desc',
+		titleDefault: '多维人才评价模型',
+		descDefault: '打破单一标准的束缚，关注学生在探究过程中展现的好奇心、坚韧性、创造力、协作能力、反思能力等多个维度。',
+		icon: 'flat-color-icons:multiple-inputs',
+	},
+	{
+		titleKey: 'pillars.teacher.title',
+		descKey: 'pillars.teacher.desc',
+		titleDefault: '创新师资培训体系',
+		descDefault: '通过参与式行动研究(PAR)培训教师，让他们从"答案贩卖机"转变为"想象力守护者"，从知识权威转变为学生的"共同研究者"。',
+		icon: 'flat-color-icons:conference-call',
+	},
+	{
+		titleKey: 'pillars.space.title',
+		descKey: 'pillars.space.desc',
+		titleDefault: '数字与物理空间融合',
+		descDefault: '物理空间采用"去中心化"设计，配合在线协作平台、知识库、项目管理工具，创造出一种既有温度又有效率的创新场域。',
+		icon: 'flat-color-icons:business-contact',
+	},
+];
+---
+
+<section class="relative">
+	<div class="absolute inset-0 bg-primary-50 dark:bg-slate-800 pointer-events-none mb-32" aria-hidden="true"></div>
+	<div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+		<div class="py-4 pt-8 sm:py-6 lg:py-8 lg:pt-12">
+			<div class="mb-8 text-center">
+				<p class="text-base text-primary-600 dark:text-primary-200 font-semibold tracking-wide uppercase" data-i18n="pillars.tag">培养体系</p>
+				<h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading" id="education" data-i18n="pillars.title">
+					四大支柱体系
+				</h2>
+				<p class="max-w-3xl mx-auto text-center text-xl text-gray-600 dark:text-slate-400" data-i18n="pillars.subtitle">
+					经过多年实践，形成了一套系统性的创新人才培养体系，四大支柱相互支撑、协同发力
+				</p>
+			</div>
+			<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-2 items-start my-12 dark:text-white">
+				{
+					items.map(({ titleKey, descKey, titleDefault, descDefault, icon }) => (
+						<div class="relative flex flex-col p-6 bg-white dark:bg-slate-900 rounded shadow-xl hover:shadow-lg transition dark:border dark:border-slate-800">
+							<div class="flex items-center mb-4">
+								<Icon name={icon} class="w-12 h-12" />
+								<div class="ml-4 text-xl font-bold" data-i18n={titleKey}>{titleDefault}</div>
+							</div>
+							<p class="text-gray-500 dark:text-gray-400 text-md" data-i18n={descKey}>{descDefault}</p>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</section>
