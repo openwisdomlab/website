@@ -354,6 +354,47 @@ export const ui = {
     'spaces.equipment.creativeItems': '专业绘图板, 摄影摄像设备, VR/AR设备, 音频工作室',
     'spaces.equipment.learning': '学习资源',
     'spaces.equipment.learningItems': '专业图书馆, 在线课程平台, 研究数据库, 学术期刊',
+
+    // Vision 组件
+    'vision.title': '未来科技',
+    'vision.titleHighlight': '创新空间',
+    'vision.subtitle': '猫头鹰实验室致力于为每一位探索者打造充满惊喜的创新之旅，培养面向未来的创新人才',
+    'vision.card1.title': '激发想象',
+    'vision.card1.desc': '每个孩子都是天生的创造者。在这里，天马行空的想法不仅被接纳，更被鼓励、培育和实现。',
+    'vision.card2.title': '创造快乐',
+    'vision.card2.desc': '学习应该是充满乐趣的探险。我们让探索过程本身成为最大的奖励，让创新成为最好的体验。',
+    'vision.card3.title': '面向未来',
+    'vision.card3.desc': '培养AI时代不可替代的能力：批判性思维、创造力、协作能力和情感智慧。',
+    'vision.quote': '想象力比知识更重要，因为知识是有限的，而想象力概括着世界上的一切，推动着进步，并且是知识进化的源泉。',
+    'vision.quoteAuthor': '阿尔伯特·爱因斯坦',
+    'vision.note1': '猫头鹰实验室是一个不断进化的创新生态。',
+    'vision.note2': '我们相信，只要好奇心还在，探索就永不止步。',
+
+    // CallToAction 组件
+    'cta.title': '加入',
+    'cta.titleHighlight': '猫头鹰实验室',
+    'cta.subtitle': '让有好奇心的人、天马行空的想法和有趣的问题在此汇聚和激发。',
+    'cta.subtitle2': '一起探索未知，创造未来。',
+    'cta.button': '联系我们 →',
+
+    // Footer
+    'footer.copyright.text': '猫头鹰实验室 · Open Wisdom Lab',
+
+    // 页面标题
+    'page.about.pageTitle': '关于我们',
+    'page.curriculum.pageTitle': '课程体系',
+    'page.challenges.pageTitle': '科学问题',
+    'page.activities.pageTitle': '特色活动',
+    'page.spaces.pageTitle': '实验室空间',
+    'page.contact.pageTitle': '联系我们',
+
+    // Spaces 页面设备类别
+    'spaces.equipment.roboticsName': '机器人与自动化',
+    'spaces.equipment.digitalName': '数字制造',
+    'spaces.equipment.scienceName': '科学研究',
+    'spaces.equipment.computingName': '计算与AI',
+    'spaces.equipment.creativeName': '创意设计',
+    'spaces.equipment.learningName': '学习资源',
   },
   en: {
     // Navigation
@@ -519,8 +560,8 @@ export const ui = {
     'blog.nextPost': 'Next',
 
     // Home Hero Section
-    'home.hero.owl': 'OWL',
-    'home.hero.lab': 'LAB',
+    'home.hero.owl': 'Open Wisdom',
+    'home.hero.lab': 'Lab',
     'home.hero.openWisdomLab': 'OPEN_WISDOM_LAB',
     'home.hero.desc1': 'An',
     'home.hero.open': 'open',
@@ -702,6 +743,47 @@ export const ui = {
     'spaces.equipment.creativeItems': 'Professional Drawing Tablets, Photography/Video Equipment, VR/AR Devices, Audio Studio',
     'spaces.equipment.learning': 'Learning Resources',
     'spaces.equipment.learningItems': 'Professional Library, Online Course Platform, Research Databases, Academic Journals',
+
+    // Vision Component
+    'vision.title': 'Future Tech',
+    'vision.titleHighlight': 'Innovation Space',
+    'vision.subtitle': 'Open Wisdom Lab is dedicated to creating a journey of surprises for every explorer, cultivating innovative talents for the future',
+    'vision.card1.title': 'Spark Imagination',
+    'vision.card1.desc': 'Every child is a natural creator. Here, wild ideas are not only accepted but encouraged, nurtured, and realized.',
+    'vision.card2.title': 'Create Joy',
+    'vision.card2.desc': 'Learning should be a joyful adventure. We make the exploration process itself the greatest reward.',
+    'vision.card3.title': 'Future-Ready',
+    'vision.card3.desc': 'Cultivating irreplaceable abilities for the AI era: critical thinking, creativity, collaboration, and emotional intelligence.',
+    'vision.quote': 'Imagination is more important than knowledge. For knowledge is limited, whereas imagination embraces the entire world, stimulating progress, giving birth to evolution.',
+    'vision.quoteAuthor': 'Albert Einstein',
+    'vision.note1': 'Open Wisdom Lab is an ever-evolving innovation ecosystem.',
+    'vision.note2': 'We believe that as long as curiosity exists, exploration never stops.',
+
+    // CallToAction Component
+    'cta.title': 'Join',
+    'cta.titleHighlight': 'Open Wisdom Lab',
+    'cta.subtitle': 'Where curious minds, imaginative ideas, and intriguing questions converge and inspire.',
+    'cta.subtitle2': 'Together, explore the unknown and create the future.',
+    'cta.button': 'Contact Us →',
+
+    // Footer
+    'footer.copyright.text': 'Open Wisdom Lab',
+
+    // Page Titles
+    'page.about.pageTitle': 'About Us',
+    'page.curriculum.pageTitle': 'Curriculum',
+    'page.challenges.pageTitle': 'Research Challenges',
+    'page.activities.pageTitle': 'Featured Activities',
+    'page.spaces.pageTitle': 'Lab Spaces',
+    'page.contact.pageTitle': 'Contact Us',
+
+    // Spaces Page Equipment Categories
+    'spaces.equipment.roboticsName': 'Robotics & Automation',
+    'spaces.equipment.digitalName': 'Digital Manufacturing',
+    'spaces.equipment.scienceName': 'Scientific Research',
+    'spaces.equipment.computingName': 'Computing & AI',
+    'spaces.equipment.creativeName': 'Creative Design',
+    'spaces.equipment.learningName': 'Learning Resources',
   },
 } as const;
 
