@@ -1,0 +1,289 @@
+---
+/**
+ * LabLayout.astro
+ * Digital Industrial Laboratory Layout
+ *
+ * Features:
+ * - Deep obsidian background with film grain overlay
+ * - Subtle animated mesh gradient
+ * - Technical grid lines
+ * - Clash Display / Unbounded typography
+ */
+import '~/assets/styles/base.css';
+import MetaTags from '~/components/core/MetaTags.astro';
+import BasicScripts from '~/components/core/BasicScripts.astro';
+import AOSInit from '~/components/core/AOSInit.astro';
+import LenisInit from '~/components/core/LenisInit.astro';
+import Header from '~/components/widgets/Header.astro';
+import Footer from '~/components/widgets/Footer.astro';
+import { defaultLang } from '~/i18n/languages';
+
+interface Props {
+	meta?: Record<string, unknown>;
+	showHeader?: boolean;
+	showFooter?: boolean;
+}
+
+const { meta = {}, showHeader = true, showFooter = true } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang={defaultLang} class="motion-safe:scroll-smooth">
+	<head>
+		<MetaTags {...meta} />
+		<!-- Lab Typography: Clash Display + JetBrains Mono -->
+		<link rel="preconnect" href="https://api.fontshare.com" crossorigin="anonymous" />
+		<link
+			href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Unbounded:wght@400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+
+	<body class="antialiased bg-lab-void text-lab-text">
+		<!-- ========================================
+		     DYNAMIC BACKGROUND SYSTEM
+		     ======================================== -->
+		<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+			<!-- Layer 1: Base gradient -->
+			<div class="absolute inset-0 bg-gradient-to-b from-lab-void via-lab-obsidian to-lab-void"></div>
+
+			<!-- Layer 2: Animated mesh gradient -->
+			<div class="absolute inset-0 bg-lab-mesh bg-cover animate-lab-mesh-drift opacity-60"></div>
+
+			<!-- Layer 3: Technical grid -->
+			<div class="absolute inset-0 bg-lab-grid-fine bg-lab-grid-fine opacity-30"></div>
+
+			<!-- Layer 4: Film grain overlay -->
+			<div class="absolute inset-0 bg-lab-grain opacity-40 mix-blend-overlay"></div>
+
+			<!-- Layer 5: Subtle vignette -->
+			<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(12,12,15,0.8)_100%)]"></div>
+
+			<!-- Layer 6: Scan line (subtle) -->
+			<div class="absolute inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-signal-acid/20 to-transparent animate-lab-scan"></div>
+		</div>
+
+		<!-- ========================================
+		     TECHNICAL CORNER MARKERS
+		     ======================================== -->
+		<div class="fixed top-4 left-4 z-10 pointer-events-none">
+			<div class="w-8 h-8 border-l-2 border-t-2 border-lab-steel opacity-40"></div>
+		</div>
+		<div class="fixed top-4 right-4 z-10 pointer-events-none">
+			<div class="w-8 h-8 border-r-2 border-t-2 border-lab-steel opacity-40"></div>
+		</div>
+		<div class="fixed bottom-4 left-4 z-10 pointer-events-none">
+			<div class="w-8 h-8 border-l-2 border-b-2 border-lab-steel opacity-40"></div>
+		</div>
+		<div class="fixed bottom-4 right-4 z-10 pointer-events-none">
+			<div class="w-8 h-8 border-r-2 border-b-2 border-lab-steel opacity-40"></div>
+		</div>
+
+		<!-- ========================================
+		     MAIN CONTENT
+		     ======================================== -->
+		<div class="relative z-10">
+			{showHeader && <Header />}
+
+			<main>
+				<slot />
+			</main>
+
+			{showFooter && <Footer />}
+		</div>
+
+		<!-- Scripts -->
+		<BasicScripts />
+		<AOSInit />
+		<LenisInit />
+
+		<!-- Language initialization -->
+		<script is:inline>
+			(function() {
+				const savedLang = localStorage.getItem('preferred-language') || 'zh';
+				document.documentElement.lang = savedLang === 'zh' ? 'zh-CN' : 'en-US';
+				document.documentElement.setAttribute('data-lang', savedLang);
+			})();
+		</script>
+
+		<script>
+			import '~/scripts/i18n-client.ts';
+		</script>
+	</body>
+</html>
+
+<style is:global>
+	/* ========================================
+	   LAB DESIGN SYSTEM - Global Styles
+	   ======================================== */
+
+	/* Custom scrollbar for Lab theme */
+	::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: #0C0C0F;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: linear-gradient(180deg, #D4FF00 0%, #00D4FF 100%);
+		border-radius: 0;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: linear-gradient(180deg, #FF6B00 0%, #D4FF00 100%);
+	}
+
+	/* Selection colors */
+	::selection {
+		background: rgba(212, 255, 0, 0.3);
+		color: #E8E8ED;
+	}
+
+	/* Lab Glass Panel - thick industrial glass effect */
+	.lab-glass {
+		background: rgba(26, 26, 33, 0.7);
+		backdrop-filter: blur(20px) saturate(150%);
+		border: 1px solid rgba(51, 51, 63, 0.5);
+		box-shadow:
+			0 4px 30px rgba(0, 0, 0, 0.5),
+			inset 0 1px 0 rgba(255, 255, 255, 0.05);
+	}
+
+	.lab-glass:hover {
+		border-color: rgba(212, 255, 0, 0.2);
+		box-shadow:
+			0 8px 40px rgba(0, 0, 0, 0.6),
+			inset 0 1px 0 rgba(255, 255, 255, 0.08),
+			0 0 20px rgba(212, 255, 0, 0.05);
+	}
+
+	/* Lab Button - industrial style */
+	.lab-btn {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.75rem 1.5rem;
+		font-family: 'JetBrains Mono', monospace;
+		font-size: 0.875rem;
+		font-weight: 500;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: #E8E8ED;
+		background: linear-gradient(135deg, rgba(37, 37, 48, 0.8), rgba(26, 26, 33, 0.9));
+		border: 1px solid rgba(51, 51, 63, 0.8);
+		transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	.lab-btn::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background: linear-gradient(90deg, transparent, #D4FF00, transparent);
+		opacity: 0;
+		transition: opacity 0.3s;
+	}
+
+	.lab-btn:hover {
+		background: linear-gradient(135deg, rgba(45, 45, 58, 0.9), rgba(37, 37, 48, 0.95));
+		border-color: rgba(212, 255, 0, 0.3);
+		box-shadow: 0 0 20px rgba(212, 255, 0, 0.1);
+		transform: translateY(-2px);
+	}
+
+	.lab-btn:hover::before {
+		opacity: 1;
+	}
+
+	.lab-btn-primary {
+		background: linear-gradient(135deg, #D4FF00, #9ACD00);
+		color: #0C0C0F;
+		border-color: #D4FF00;
+		font-weight: 600;
+	}
+
+	.lab-btn-primary:hover {
+		background: linear-gradient(135deg, #E5FF33, #D4FF00);
+		box-shadow: 0 0 30px rgba(212, 255, 0, 0.3);
+	}
+
+	/* Technical text styles */
+	.lab-text-mono {
+		font-family: 'JetBrains Mono', monospace;
+		letter-spacing: 0.05em;
+	}
+
+	.lab-text-display {
+		font-family: 'Clash Display', 'Unbounded', sans-serif;
+		font-weight: 600;
+		letter-spacing: -0.02em;
+	}
+
+	/* Status indicator */
+	.lab-status {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.375rem 0.75rem;
+		font-family: 'JetBrains Mono', monospace;
+		font-size: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		background: rgba(212, 255, 0, 0.1);
+		border: 1px solid rgba(212, 255, 0, 0.3);
+		color: #D4FF00;
+	}
+
+	.lab-status::before {
+		content: '';
+		width: 6px;
+		height: 6px;
+		background: #D4FF00;
+		border-radius: 50%;
+		animation: labPulse 2s ease-in-out infinite;
+	}
+
+	/* Technical divider */
+	.lab-divider {
+		height: 1px;
+		background: linear-gradient(90deg, transparent, rgba(51, 51, 63, 0.8), transparent);
+	}
+
+	/* Accent border highlight */
+	.lab-accent-border {
+		position: relative;
+	}
+
+	.lab-accent-border::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background: linear-gradient(90deg, #D4FF00, #00D4FF);
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	.lab-accent-border:hover::after {
+		transform: scaleX(1);
+	}
+
+	/* Image lazy loading optimization */
+	img {
+		content-visibility: auto;
+	}
+</style>
