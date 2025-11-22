@@ -5,25 +5,25 @@ import { Icon } from 'astro-icon/components';
 <section class="scroll-mt-16 bg-gradient-to-b from-amber-50 to-white dark:from-slate-900 dark:to-slate-800" id="middleschool">
 	<div class="px-4 py-16 mx-auto max-w-6xl lg:px-8 lg:py-20">
 		<div class="mb-10 md:mx-auto sm:text-center md:mb-12 max-w-3xl">
-			<p class="text-base text-primary-600 dark:text-primary-200 font-semibold tracking-wide uppercase">培养阶段</p>
-			<h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+			<p class="text-base text-primary-600 dark:text-primary-200 font-semibold tracking-wide uppercase" data-i18n="stages.tag">培养阶段</p>
+			<h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading" data-i18n="stages.title">
 				分阶段培养体系
 			</h2>
-			<p class="max-w-3xl mx-auto sm:text-center text-xl text-gray-600 dark:text-slate-400">
+			<p class="max-w-3xl mx-auto sm:text-center text-xl text-gray-600 dark:text-slate-400" data-i18n="stages.subtitle">
 				根据学生认知发展特点，设计针对性的培养方案
 			</p>
 		</div>
 
 		<!-- 三大优势 -->
 		<div class="mb-12">
-			<h3 class="text-2xl font-bold text-center mb-8">学习阶段的特点</h3>
+			<h3 class="text-2xl font-bold text-center mb-8" data-i18n="stages.characteristics.title">学习阶段的特点</h3>
 			<div class="grid md:grid-cols-3 gap-8">
 				<div class="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg">
 					<div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-gradient-to-br from-blue-400 to-blue-600">
 						<Icon name="tabler:brain" class="w-8 h-8 text-white" />
 					</div>
-					<h4 class="text-xl font-bold mb-3">认知发展关键期</h4>
-					<p class="text-gray-600 dark:text-slate-400">
+					<h4 class="text-xl font-bold mb-3" data-i18n="stages.cognitive.title">认知发展关键期</h4>
+					<p class="text-gray-600 dark:text-slate-400" data-i18n="stages.cognitive.desc">
 						抽象思维、逻辑推理、系统思考能力正处于快速发展期，是培养科学思维的最佳时期
 					</p>
 				</div>
@@ -32,8 +32,8 @@ import { Icon } from 'astro-icon/components';
 					<div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-gradient-to-br from-purple-400 to-purple-600">
 						<Icon name="tabler:heart" class="w-8 h-8 text-white" />
 					</div>
-					<h4 class="text-xl font-bold mb-3">兴趣形成黄金窗口</h4>
-					<p class="text-gray-600 dark:text-slate-400">
+					<h4 class="text-xl font-bold mb-3" data-i18n="stages.interest.title">兴趣形成黄金窗口</h4>
+					<p class="text-gray-600 dark:text-slate-400" data-i18n="stages.interest.desc">
 						学生开始建立学科偏好和职业倾向，是激发科研兴趣、培养创新志向的关键时刻
 					</p>
 				</div>
@@ -42,8 +42,8 @@ import { Icon } from 'astro-icon/components';
 					<div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-gradient-to-br from-green-400 to-green-600">
 						<Icon name="tabler:tool" class="w-8 h-8 text-white" />
 					</div>
-					<h4 class="text-xl font-bold mb-3">能力培养最佳阶段</h4>
-					<p class="text-gray-600 dark:text-slate-400">
+					<h4 class="text-xl font-bold mb-3" data-i18n="stages.ability.title">能力培养最佳阶段</h4>
+					<p class="text-gray-600 dark:text-slate-400" data-i18n="stages.ability.desc">
 						具备了开展系统探究的基础能力，可以进行深度学习和创新实践
 					</p>
 				</div>
@@ -52,7 +52,7 @@ import { Icon } from 'astro-icon/components';
 
 		<!-- 初中vs高中 -->
 		<div class="mb-12">
-			<h3 class="text-2xl font-bold text-center mb-8">分阶段培养目标</h3>
+			<h3 class="text-2xl font-bold text-center mb-8" data-i18n="stages.goals.title">分阶段培养目标</h3>
 			<div class="grid md:grid-cols-2 gap-8">
 				<!-- 初中阶段 -->
 				<div class="bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-8 border-2 border-cyan-200 dark:border-cyan-800">
@@ -60,33 +60,33 @@ import { Icon } from 'astro-icon/components';
 						<div class="flex items-center justify-center w-12 h-12 rounded-full bg-cyan-500">
 							<Icon name="tabler:school" class="w-6 h-6 text-white" />
 						</div>
-						<h4 class="text-2xl font-bold">初中阶段</h4>
+						<h4 class="text-2xl font-bold" data-i18n="stages.junior.title">初中阶段</h4>
 					</div>
 					<div class="mb-4">
-						<p class="font-semibold text-lg mb-2 text-cyan-700 dark:text-cyan-400">核心：实践探究与技术应用</p>
+						<p class="font-semibold text-lg mb-2 text-cyan-700 dark:text-cyan-400" data-i18n="stages.junior.focus">核心：实践探究与技术应用</p>
 					</div>
 					<div class="space-y-3">
 						<div class="flex items-start gap-3">
 							<Icon name="tabler:circle-check" class="w-5 h-5 text-cyan-600 dark:text-cyan-400 flex-shrink-0 mt-1" />
-							<p class="text-gray-700 dark:text-slate-300 text-sm">
+							<p class="text-gray-700 dark:text-slate-300 text-sm" data-i18n="stages.junior.point1">
 								围绕"解决真实问题"开展跨学科探究性学习
 							</p>
 						</div>
 						<div class="flex items-start gap-3">
 							<Icon name="tabler:circle-check" class="w-5 h-5 text-cyan-600 dark:text-cyan-400 flex-shrink-0 mt-1" />
-							<p class="text-gray-700 dark:text-slate-300 text-sm">
+							<p class="text-gray-700 dark:text-slate-300 text-sm" data-i18n="stages.junior.point2">
 								引导学生从现象认知转向规律探究
 							</p>
 						</div>
 						<div class="flex items-start gap-3">
 							<Icon name="tabler:circle-check" class="w-5 h-5 text-cyan-600 dark:text-cyan-400 flex-shrink-0 mt-1" />
-							<p class="text-gray-700 dark:text-slate-300 text-sm">
+							<p class="text-gray-700 dark:text-slate-300 text-sm" data-i18n="stages.junior.point3">
 								培养基本的科学方法和技术应用能力
 							</p>
 						</div>
 						<div class="flex items-start gap-3">
 							<Icon name="tabler:circle-check" class="w-5 h-5 text-cyan-600 dark:text-cyan-400 flex-shrink-0 mt-1" />
-							<p class="text-gray-700 dark:text-slate-300 text-sm">
+							<p class="text-gray-700 dark:text-slate-300 text-sm" data-i18n="stages.junior.point4">
 								激发好奇心，建立对科学的初步兴趣
 							</p>
 						</div>
@@ -99,33 +99,33 @@ import { Icon } from 'astro-icon/components';
 						<div class="flex items-center justify-center w-12 h-12 rounded-full bg-violet-500">
 							<Icon name="tabler:school" class="w-6 h-6 text-white" />
 						</div>
-						<h4 class="text-2xl font-bold">高中阶段</h4>
+						<h4 class="text-2xl font-bold" data-i18n="stages.senior.title">高中阶段</h4>
 					</div>
 					<div class="mb-4">
-						<p class="font-semibold text-lg mb-2 text-violet-700 dark:text-violet-400">核心：实验探究与工程实践</p>
+						<p class="font-semibold text-lg mb-2 text-violet-700 dark:text-violet-400" data-i18n="stages.senior.focus">核心：实验探究与工程实践</p>
 					</div>
 					<div class="space-y-3">
 						<div class="flex items-start gap-3">
 							<Icon name="tabler:circle-check" class="w-5 h-5 text-violet-600 dark:text-violet-400 flex-shrink-0 mt-1" />
-							<p class="text-gray-700 dark:text-slate-300 text-sm">
+							<p class="text-gray-700 dark:text-slate-300 text-sm" data-i18n="stages.senior.point1">
 								了解科技前沿动态，接触前沿科学问题
 							</p>
 						</div>
 						<div class="flex items-start gap-3">
 							<Icon name="tabler:circle-check" class="w-5 h-5 text-violet-600 dark:text-violet-400 flex-shrink-0 mt-1" />
-							<p class="text-gray-700 dark:text-slate-300 text-sm">
+							<p class="text-gray-700 dark:text-slate-300 text-sm" data-i18n="stages.senior.point2">
 								开展基于真实情境的实验探究
 							</p>
 						</div>
 						<div class="flex items-start gap-3">
 							<Icon name="tabler:circle-check" class="w-5 h-5 text-violet-600 dark:text-violet-400 flex-shrink-0 mt-1" />
-							<p class="text-gray-700 dark:text-slate-300 text-sm">
+							<p class="text-gray-700 dark:text-slate-300 text-sm" data-i18n="stages.senior.point3">
 								参与小型工程实践项目
 							</p>
 						</div>
 						<div class="flex items-start gap-3">
 							<Icon name="tabler:circle-check" class="w-5 h-5 text-violet-600 dark:text-violet-400 flex-shrink-0 mt-1" />
-							<p class="text-gray-700 dark:text-slate-300 text-sm">
+							<p class="text-gray-700 dark:text-slate-300 text-sm" data-i18n="stages.senior.point4">
 								系统掌握科学研究的基本流程与核心方法
 							</p>
 						</div>
@@ -136,15 +136,15 @@ import { Icon } from 'astro-icon/components';
 
 		<!-- 猫头鹰实验室的独特优势 -->
 		<div class="bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl p-8 text-white">
-			<h3 class="text-2xl font-bold mb-6 text-center">猫头鹰实验室的独特优势</h3>
+			<h3 class="text-2xl font-bold mb-6 text-center" data-i18n="stages.advantages.title">猫头鹰实验室的独特优势</h3>
 			<div class="grid md:grid-cols-2 gap-6">
 				<div class="flex items-start gap-4">
 					<div class="flex-shrink-0">
 						<Icon name="tabler:star" class="w-8 h-8" />
 					</div>
 					<div>
-						<h4 class="font-bold mb-2 text-lg">十余年拔尖创新人才培养经验</h4>
-						<p class="text-sm opacity-90">
+						<h4 class="font-bold mb-2 text-lg" data-i18n="stages.advantage1.title">十余年拔尖创新人才培养经验</h4>
+						<p class="text-sm opacity-90" data-i18n="stages.advantage1.desc">
 							源自清华大学钱学森力学班，在中学教育中落地创生教育理念
 						</p>
 					</div>
@@ -155,8 +155,8 @@ import { Icon } from 'astro-icon/components';
 						<Icon name="tabler:users" class="w-8 h-8" />
 					</div>
 					<div>
-						<h4 class="font-bold mb-2 text-lg">科学家+教师双师团队</h4>
-						<p class="text-sm opacity-90">
+						<h4 class="font-bold mb-2 text-lg" data-i18n="stages.advantage2.title">科学家+教师双师团队</h4>
+						<p class="text-sm opacity-90" data-i18n="stages.advantage2.desc">
 							链接深圳零一学院和清华大学的顶尖科研资源
 						</p>
 					</div>
@@ -167,8 +167,8 @@ import { Icon } from 'astro-icon/components';
 						<Icon name="tabler:tool" class="w-8 h-8" />
 					</div>
 					<div>
-						<h4 class="font-bold mb-2 text-lg">完整的设备和空间支持</h4>
-						<p class="text-sm opacity-90">
+						<h4 class="font-bold mb-2 text-lg" data-i18n="stages.advantage3.title">完整的设备和空间支持</h4>
+						<p class="text-sm opacity-90" data-i18n="stages.advantage3.desc">
 							从基础工具到专业设备的全系列仪器装备
 						</p>
 					</div>
@@ -179,8 +179,8 @@ import { Icon } from 'astro-icon/components';
 						<Icon name="tabler:rocket" class="w-8 h-8" />
 					</div>
 					<div>
-						<h4 class="font-bold mb-2 text-lg">真实前沿的科研项目</h4>
-						<p class="text-sm opacity-90">
+						<h4 class="font-bold mb-2 text-lg" data-i18n="stages.advantage4.title">真实前沿的科研项目</h4>
+						<p class="text-sm opacity-90" data-i18n="stages.advantage4.desc">
 							让中学生接触到真正的科学前沿，而不是模拟实验
 						</p>
 					</div>

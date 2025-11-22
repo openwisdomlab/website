@@ -4,8 +4,10 @@ import { ScrollReveal } from '~/components/ui/cyber';
 type ColorKey = 'indigo' | 'violet' | 'emerald' | 'teal' | 'rose';
 
 interface Item {
-	title: string;
-	description: string;
+	titleKey: string;
+	descKey: string;
+	titleDefault: string;
+	descDefault: string;
 	number: string;
 	color: ColorKey;
 }
@@ -13,39 +15,44 @@ interface Item {
 const items: Item[][] = [
 	[
 		{
-			title: '开放性 Openness',
-			description:
-				'对所有有好奇心、有想法、有问题的学习者开放。不设门槛，欢迎各种"异想天开"的创意，包容失败，重视探索过程。',
+			titleKey: 'corevalues.openness.title',
+			descKey: 'corevalues.openness.desc',
+			titleDefault: '开放性 Openness',
+			descDefault: '对所有有好奇心、有想法、有问题的学习者开放。不设门槛，欢迎各种"异想天开"的创意，包容失败，重视探索过程。',
 			number: '01',
 			color: 'indigo',
 		},
 		{
-			title: '交叉性 Interdisciplinary',
-			description:
-				'打破学科壁垒，强调科学、技术、工程、艺术、数学等多学科的交叉融合。创新往往发生在学科交叉的边界上。',
+			titleKey: 'corevalues.interdisciplinary.title',
+			descKey: 'corevalues.interdisciplinary.desc',
+			titleDefault: '交叉性 Interdisciplinary',
+			descDefault: '打破学科壁垒，强调科学、技术、工程、艺术、数学等多学科的交叉融合。创新往往发生在学科交叉的边界上。',
 			number: '02',
 			color: 'violet',
 		},
 		{
-			title: '连接性 Connectivity',
-			description:
-				'连接产业界、学术界、社会组织，让学生的探索与真实世界的挑战相连接，构建全球性的猫头鹰网络。',
+			titleKey: 'corevalues.connectivity.title',
+			descKey: 'corevalues.connectivity.desc',
+			titleDefault: '连接性 Connectivity',
+			descDefault: '连接产业界、学术界、社会组织，让学生的探索与真实世界的挑战相连接，构建全球性的猫头鹰网络。',
 			number: '03',
 			color: 'emerald',
 		},
 	],
 	[
 		{
-			title: '可持续性 Sustainability',
-			description:
-				'培养学生的可持续思维，关注技术创新的社会影响和环境责任，思考如何让创新成果惠及更多人。',
+			titleKey: 'corevalues.sustainability.title',
+			descKey: 'corevalues.sustainability.desc',
+			titleDefault: '可持续性 Sustainability',
+			descDefault: '培养学生的可持续思维，关注技术创新的社会影响和环境责任，思考如何让创新成果惠及更多人。',
 			number: '04',
 			color: 'teal',
 		},
 		{
-			title: '黑科技 Advanced Technology',
-			description:
-				'鼓励学生接触和使用前沿工具，培养对未来技术的敏感度和驾驭能力。从基因编辑到量子计算，探索技术的无限可能。',
+			titleKey: 'corevalues.technology.title',
+			descKey: 'corevalues.technology.desc',
+			titleDefault: '黑科技 Advanced Technology',
+			descDefault: '鼓励学生接触和使用前沿工具，培养对未来技术的敏感度和驾驭能力。从基因编辑到量子计算，探索技术的无限可能。',
 			number: '05',
 			color: 'rose',
 		},
@@ -92,13 +99,13 @@ const colorClasses: Record<ColorKey, { bg: string; text: string; border: string;
 			<div class="mb-10 md:mx-auto sm:text-center md:mb-16 max-w-3xl">
 				<div class="flex items-center justify-center gap-2 mb-4">
 					<span class="w-8 h-[2px] bg-black dark:bg-white"></span>
-					<p class="text-sm md:text-base text-black dark:text-white font-mono font-bold tracking-widest uppercase">实验室特色</p>
+					<p class="text-sm md:text-base text-black dark:text-white font-mono font-bold tracking-widest uppercase" data-i18n="corevalues.tag">实验室特色</p>
 					<span class="w-8 h-[2px] bg-black dark:bg-white"></span>
 				</div>
-				<h2 class="text-4xl md:text-6xl font-black leading-tighter tracking-tighter mb-6 font-display text-slate-900 dark:text-white">
+				<h2 class="text-4xl md:text-6xl font-black leading-tighter tracking-tighter mb-6 font-display text-slate-900 dark:text-white" data-i18n="corevalues.title">
 					五大核心理念
 				</h2>
-				<p class="max-w-3xl mx-auto sm:text-center text-xl text-slate-600 dark:text-slate-400 font-medium">
+				<p class="max-w-3xl mx-auto sm:text-center text-xl text-slate-600 dark:text-slate-400 font-medium" data-i18n="corevalues.subtitle">
 					这些理念不仅指导着实验室的空间设计和运营管理，更深刻影响着所有参与者的思维方式。
 				</p>
 			</div>
@@ -108,7 +115,7 @@ const colorClasses: Record<ColorKey, { bg: string; text: string; border: string;
 			{
 				items.map((subitems, colIndex) => (
 					<div class="space-y-8">
-						{subitems.map(({ title, description, number, color }, itemIndex) => (
+						{subitems.map(({ titleKey, descKey, titleDefault, descDefault, number, color }, itemIndex) => (
 							<ScrollReveal client:visible variant="brutal" delay={colIndex * 0.1 + itemIndex * 0.1}>
 								<div class={`group relative h-full p-6 border-4 border-black dark:border-white/20 bg-white dark:bg-black/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-none ${colorClasses[color].bg} ${colorClasses[color].border} ${colorClasses[color].glow}`}>
 									<div class="flex flex-col sm:flex-row gap-6">
@@ -118,11 +125,11 @@ const colorClasses: Record<ColorKey, { bg: string; text: string; border: string;
 											</div>
 										</div>
 										<div class="flex-grow">
-											<h3 class={`mb-3 text-2xl font-black ${colorClasses[color].text} font-display uppercase tracking-tight`}>
-												{title}
+											<h3 class={`mb-3 text-2xl font-black ${colorClasses[color].text} font-display uppercase tracking-tight`} data-i18n={titleKey}>
+												{titleDefault}
 											</h3>
-											<p class="text-slate-700 dark:text-gray-400 text-base leading-relaxed font-medium">
-												{description}
+											<p class="text-slate-700 dark:text-gray-400 text-base leading-relaxed font-medium" data-i18n={descKey}>
+												{descDefault}
 											</p>
 										</div>
 									</div>
