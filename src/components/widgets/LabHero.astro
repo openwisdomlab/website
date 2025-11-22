@@ -1,0 +1,243 @@
+---
+/**
+ * LabHero.astro
+ * Digital Industrial Hero Section
+ *
+ * Features:
+ * - Asymmetrical layout (not centered)
+ * - Large typographic treatment
+ * - Technical decorations and data displays
+ * - Staggered entry animations
+ * - "Research facility" atmosphere
+ */
+import { ScrollReveal } from '~/components/ui/cyber';
+import { getPermalink } from '~/utils/permalinks';
+
+interface Props {
+	class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+
+// Technical data for decorative display
+const systemStatus = {
+	version: 'V4.2.1',
+	status: 'ACTIVE',
+	nodes: '2,847',
+	uptime: '99.97%',
+};
+---
+
+<section class={`relative min-h-screen overflow-hidden ${className}`}>
+	<!-- ========================================
+	     HERO BACKGROUND LAYERS
+	     ======================================== -->
+
+	<!-- Asymmetric accent blurs -->
+	<div class="absolute top-[-20%] right-[-10%] w-[60vw] h-[60vw] bg-signal-acid/5 rounded-full filter blur-[150px] animate-lab-mesh-drift"></div>
+	<div class="absolute bottom-[-10%] left-[-20%] w-[50vw] h-[50vw] bg-signal-electric/5 rounded-full filter blur-[120px]" style="animation: labMeshDrift 25s ease-in-out infinite reverse;"></div>
+
+	<!-- Technical grid lines -->
+	<div class="absolute inset-0 overflow-hidden pointer-events-none">
+		<!-- Horizontal measurement lines -->
+		<div class="absolute top-[20%] left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-lab-steel/30 to-transparent"></div>
+		<div class="absolute top-[80%] left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-lab-steel/20 to-transparent"></div>
+
+		<!-- Vertical measurement lines -->
+		<div class="absolute top-0 bottom-0 left-[15%] w-[1px] bg-gradient-to-b from-transparent via-lab-steel/20 to-transparent"></div>
+		<div class="absolute top-0 bottom-0 right-[15%] w-[1px] bg-gradient-to-b from-transparent via-lab-steel/20 to-transparent"></div>
+	</div>
+
+	<!-- ========================================
+	     MAIN CONTENT
+	     ======================================== -->
+	<div class="relative z-10 max-w-[90rem] mx-auto px-6 sm:px-8 lg:px-12 min-h-screen flex flex-col justify-center py-20 lg:py-32">
+
+		<!-- Asymmetric Grid Layout -->
+		<div class="grid lg:grid-cols-12 gap-8 lg:gap-16 items-end">
+
+			<!-- LEFT COLUMN: Main Content (spans 8 cols) -->
+			<div class="lg:col-span-8 space-y-8">
+
+				<!-- Status Badge -->
+				<ScrollReveal client:visible variant="fade" delay={0}>
+					<div class="flex items-center gap-4 opacity-0 animate-lab-enter">
+						<div class="lab-status">
+							<span data-i18n="lab.hero.status">SYSTEM ONLINE</span>
+						</div>
+						<span class="text-lab-dim font-data text-xs tracking-widest">// {systemStatus.version}</span>
+					</div>
+				</ScrollReveal>
+
+				<!-- Main Title Block -->
+				<ScrollReveal client:visible variant="slide-up" delay={0.1}>
+					<div class="space-y-4 opacity-0 animate-lab-enter-delay-1">
+						<!-- Primary Title -->
+						<h1 class="font-lab font-bold text-[clamp(3rem,12vw,10rem)] leading-[0.85] tracking-tighter text-lab-text">
+							<span class="block">
+								<span data-i18n="lab.hero.title1">OPEN</span>
+							</span>
+							<span class="block text-transparent bg-clip-text bg-gradient-to-r from-signal-acid via-signal-electric to-signal-acid bg-[length:200%_auto] animate-holographic">
+								<span data-i18n="lab.hero.title2">WISDOM</span>
+							</span>
+						</h1>
+
+						<!-- Secondary Title -->
+						<div class="flex items-center gap-4">
+							<div class="w-16 h-[2px] bg-signal-acid"></div>
+							<h2 class="font-data text-xl sm:text-2xl md:text-3xl tracking-[0.3em] text-lab-muted uppercase">
+								<span data-i18n="lab.hero.subtitle">LABORATORY</span>
+							</h2>
+						</div>
+					</div>
+				</ScrollReveal>
+
+				<!-- Description Block -->
+				<ScrollReveal client:visible variant="slide-up" delay={0.2}>
+					<div class="max-w-2xl space-y-6 opacity-0 animate-lab-enter-delay-2">
+						<p class="text-lg sm:text-xl text-lab-muted leading-relaxed">
+							<span data-i18n="lab.hero.desc">A research facility for curious minds. We explore the unknown, challenge assumptions, and build the future through interdisciplinary collaboration.</span>
+						</p>
+
+						<!-- Technical Tags -->
+						<div class="flex flex-wrap gap-3">
+							<span class="px-3 py-1.5 bg-lab-graphite/50 border border-lab-steel text-lab-dim font-data text-xs tracking-wider">
+								<span data-i18n="lab.hero.tag1">PROBLEM-DRIVEN</span>
+							</span>
+							<span class="px-3 py-1.5 bg-lab-graphite/50 border border-lab-steel text-lab-dim font-data text-xs tracking-wider">
+								<span data-i18n="lab.hero.tag2">CROSS-DISCIPLINARY</span>
+							</span>
+							<span class="px-3 py-1.5 bg-lab-graphite/50 border border-lab-steel text-lab-dim font-data text-xs tracking-wider">
+								<span data-i18n="lab.hero.tag3">HANDS-ON</span>
+							</span>
+						</div>
+					</div>
+				</ScrollReveal>
+
+				<!-- CTA Buttons -->
+				<ScrollReveal client:visible variant="slide-up" delay={0.3}>
+					<div class="flex flex-wrap gap-4 pt-4 opacity-0 animate-lab-enter-delay-3">
+						<a href={getPermalink('/about')} class="lab-btn lab-btn-primary">
+							<span data-i18n="lab.hero.cta1">Enter Lab</span>
+							<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+							</svg>
+						</a>
+						<a href={getPermalink('/contact')} class="lab-btn">
+							<span data-i18n="lab.hero.cta2">Connect</span>
+						</a>
+					</div>
+				</ScrollReveal>
+			</div>
+
+			<!-- RIGHT COLUMN: Data Display (spans 4 cols) -->
+			<div class="lg:col-span-4 hidden lg:block">
+				<ScrollReveal client:visible variant="fade" delay={0.4}>
+					<div class="space-y-6 opacity-0 animate-lab-enter-delay-3">
+
+						<!-- Data Panel -->
+						<div class="lab-glass p-6 space-y-6">
+							<div class="flex items-center justify-between border-b border-lab-steel/50 pb-4">
+								<span class="font-data text-xs text-lab-dim tracking-widest">FACILITY_STATUS</span>
+								<span class="w-2 h-2 bg-signal-acid rounded-full animate-lab-pulse"></span>
+							</div>
+
+							<!-- Data Rows -->
+							<div class="space-y-4">
+								<div class="flex items-center justify-between">
+									<span class="font-data text-sm text-lab-muted">Active Nodes</span>
+									<span class="font-data text-lg text-signal-acid">{systemStatus.nodes}</span>
+								</div>
+								<div class="flex items-center justify-between">
+									<span class="font-data text-sm text-lab-muted">System Uptime</span>
+									<span class="font-data text-lg text-signal-electric">{systemStatus.uptime}</span>
+								</div>
+								<div class="flex items-center justify-between">
+									<span class="font-data text-sm text-lab-muted">Status</span>
+									<span class="font-data text-sm text-signal-acid tracking-widest">{systemStatus.status}</span>
+								</div>
+							</div>
+
+							<!-- Progress Bar -->
+							<div class="space-y-2">
+								<div class="flex justify-between font-data text-xs text-lab-dim">
+									<span>CAPACITY</span>
+									<span>73%</span>
+								</div>
+								<div class="h-1 bg-lab-graphite overflow-hidden">
+									<div class="h-full w-[73%] bg-gradient-to-r from-signal-acid to-signal-electric"></div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Coordinates Display -->
+						<div class="font-data text-xs text-lab-dim tracking-wider space-y-1">
+							<div class="flex justify-between">
+								<span>LAT</span>
+								<span class="text-lab-muted">22.5431</span>
+							</div>
+							<div class="flex justify-between">
+								<span>LNG</span>
+								<span class="text-lab-muted">114.0579</span>
+							</div>
+						</div>
+
+					</div>
+				</ScrollReveal>
+			</div>
+
+		</div>
+
+		<!-- ========================================
+		     SCROLL INDICATOR
+		     ======================================== -->
+		<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
+			<span class="font-data text-[10px] text-lab-dim tracking-[0.3em]">SCROLL</span>
+			<div class="w-[1px] h-12 bg-gradient-to-b from-signal-acid/50 to-transparent relative overflow-hidden">
+				<div class="absolute top-0 left-0 w-full h-3 bg-signal-acid animate-lab-data-stream"></div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- ========================================
+	     DECORATIVE ELEMENTS
+	     ======================================== -->
+
+	<!-- Corner Technical Markers -->
+	<div class="absolute top-20 left-8 hidden lg:block pointer-events-none">
+		<div class="font-data text-[10px] text-lab-dim tracking-widest transform -rotate-90 origin-left">
+			OWL.LAB.SYSTEMS
+		</div>
+	</div>
+
+	<div class="absolute top-20 right-8 hidden lg:block pointer-events-none">
+		<div class="font-data text-[10px] text-lab-dim tracking-widest text-right">
+			<div>SECTOR_001</div>
+			<div class="text-signal-acid">SHENZHEN</div>
+		</div>
+	</div>
+
+	<!-- Floating Technical Elements -->
+	<div class="absolute bottom-32 right-[20%] hidden lg:block pointer-events-none">
+		<div class="w-20 h-20 border border-lab-steel/30 rotate-45 animate-spin-slower"></div>
+	</div>
+
+	<div class="absolute top-[40%] left-[8%] hidden lg:block pointer-events-none">
+		<div class="flex items-center gap-2 font-data text-[10px] text-lab-dim">
+			<div class="w-8 h-[1px] bg-lab-steel/50"></div>
+			<span>REF.001</span>
+		</div>
+	</div>
+
+</section>
+
+<style>
+	/* Local scope animations for the hero */
+	@keyframes labMeshDrift {
+		0%, 100% { transform: translate(0, 0) scale(1); }
+		25% { transform: translate(5%, -5%) scale(1.02); }
+		50% { transform: translate(-5%, 5%) scale(0.98); }
+		75% { transform: translate(3%, 3%) scale(1.01); }
+	}
+</style>

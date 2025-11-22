@@ -633,6 +633,34 @@ export const ui = {
     'note.connectivity': '连接',
     'note.sustainability': '可持续',
     'note.technology': '黑科技',
+
+    // ========================================
+    // LAB DESIGN SYSTEM - Hero Section
+    // ========================================
+    'lab.hero.status': '系统在线',
+    'lab.hero.title1': '开放',
+    'lab.hero.title2': '智慧',
+    'lab.hero.subtitle': '实验室',
+    'lab.hero.desc': '一个面向好奇心的研究设施。我们探索未知、挑战假设，通过跨学科协作构建未来。',
+    'lab.hero.tag1': '问题驱动',
+    'lab.hero.tag2': '跨学科',
+    'lab.hero.tag3': '实践导向',
+    'lab.hero.cta1': '进入实验室',
+    'lab.hero.cta2': '建立连接',
+
+    // LAB DESIGN SYSTEM - Research Matrix
+    'lab.matrix.sectionTitle': '核心研究领域',
+    'lab.matrix.sectionSubtitle': '探索我们跨学科的学习与发现方法',
+    'lab.matrix.problemDriven.title': '问题驱动学习',
+    'lab.matrix.problemDriven.desc': '从真实世界的挑战出发，在探索中学习，在解决问题中成长。每个项目都始于一个好问题。',
+    'lab.matrix.crossDisciplinary.title': '跨学科融合',
+    'lab.matrix.crossDisciplinary.desc': '打破学科边界，融合多领域知识，培养综合思维和创新能力。',
+    'lab.matrix.handsOn.title': '实践导向',
+    'lab.matrix.handsOn.desc': '动手实践，在做中学。真正的理解来自于创造和构建。',
+    'lab.matrix.innovation.title': '创新空间',
+    'lab.matrix.innovation.desc': '配备先进设备的物理空间，激发创造力和协作。',
+    'lab.matrix.community.title': '研究社区',
+    'lab.matrix.community.desc': '连接有好奇心的探索者、导师和行业专家的网络。',
   },
   en: {
     // Navigation
@@ -1260,6 +1288,34 @@ export const ui = {
     'note.connectivity': 'Connectivity',
     'note.sustainability': 'Sustainability',
     'note.technology': 'High-Tech',
+
+    // ========================================
+    // LAB DESIGN SYSTEM - Hero Section
+    // ========================================
+    'lab.hero.status': 'SYSTEM ONLINE',
+    'lab.hero.title1': 'OPEN',
+    'lab.hero.title2': 'WISDOM',
+    'lab.hero.subtitle': 'LABORATORY',
+    'lab.hero.desc': 'A research facility for curious minds. We explore the unknown, challenge assumptions, and build the future through interdisciplinary collaboration.',
+    'lab.hero.tag1': 'PROBLEM-DRIVEN',
+    'lab.hero.tag2': 'CROSS-DISCIPLINARY',
+    'lab.hero.tag3': 'HANDS-ON',
+    'lab.hero.cta1': 'Enter Lab',
+    'lab.hero.cta2': 'Connect',
+
+    // LAB DESIGN SYSTEM - Research Matrix
+    'lab.matrix.sectionTitle': 'Core Research Areas',
+    'lab.matrix.sectionSubtitle': 'Explore our interdisciplinary approach to learning and discovery',
+    'lab.matrix.problemDriven.title': 'Problem-Driven Learning',
+    'lab.matrix.problemDriven.desc': 'Start from real-world challenges, learn through exploration, grow through problem-solving. Every project begins with a good question.',
+    'lab.matrix.crossDisciplinary.title': 'Cross-Disciplinary Fusion',
+    'lab.matrix.crossDisciplinary.desc': 'Break down subject boundaries, integrate multi-domain knowledge, cultivate comprehensive thinking and innovation.',
+    'lab.matrix.handsOn.title': 'Hands-On Practice',
+    'lab.matrix.handsOn.desc': 'Learning by doing, building to understand. True comprehension comes from creation and construction.',
+    'lab.matrix.innovation.title': 'Innovation Spaces',
+    'lab.matrix.innovation.desc': 'Physical spaces equipped with advanced tools to spark creativity and collaboration.',
+    'lab.matrix.community.title': 'Research Community',
+    'lab.matrix.community.desc': 'A network connecting curious explorers, mentors, and industry experts.',
   },
 } as const;
 

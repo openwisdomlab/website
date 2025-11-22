@@ -13,6 +13,31 @@ module.exports = {
 				'dark-surface': '#151515',
 				'dark-border': '#2a2a2a',
 
+				// ========================================
+				// LAB DESIGN SYSTEM - Digital Industrial
+				// ========================================
+				// Deep obsidian/slate backgrounds (not pitch black)
+				lab: {
+					// Background tiers
+					void: '#0C0C0F',       // Deepest background
+					obsidian: '#111116',   // Primary surface
+					slate: '#1A1A21',      // Elevated surfaces
+					graphite: '#252530',   // Cards/panels
+					steel: '#33333F',      // Borders/dividers
+					// Text hierarchy
+					text: '#E8E8ED',       // Primary text
+					muted: '#9191A0',      // Secondary text
+					dim: '#5C5C6E',        // Tertiary/disabled
+				},
+				// Sharp electric accents (use sparingly)
+				signal: {
+					acid: '#D4FF00',       // Acid Green - primary accent
+					electric: '#00D4FF',   // Electric Blue - secondary accent
+					orange: '#FF6B00',     // Signal Orange - warnings/CTAs
+					ember: '#FF3D00',      // Hot ember - critical
+					violet: '#8B5CF6',     // Deep violet - special
+				},
+
 				// Light theme semantic colors
 				'text-primary': '#1a1a2e',
 				'text-secondary': '#6b7280',
@@ -107,9 +132,15 @@ module.exports = {
 			},
 
 			fontFamily: {
+				// Lab Design System Typography
+				// Display: Characterful headings (Clash Display > Unbounded > Syne)
+				// Mono: Technical/data labels (JetBrains Mono, Geist Mono)
 				sans: ["'InterVariable'", ...defaultTheme.fontFamily.sans],
-				display: ["'Syne'", "'Space Grotesk'", "'InterVariable'", ...defaultTheme.fontFamily.sans],
-				mono: ["'JetBrains Mono'", ...defaultTheme.fontFamily.mono],
+				display: ["'Clash Display'", "'Unbounded'", "'Syne'", ...defaultTheme.fontFamily.sans],
+				mono: ["'JetBrains Mono'", "'Geist Mono'", ...defaultTheme.fontFamily.mono],
+				// Lab-specific utility fonts
+				lab: ["'Clash Display'", "'Unbounded'", ...defaultTheme.fontFamily.sans],
+				data: ["'JetBrains Mono'", "'Geist Mono'", ...defaultTheme.fontFamily.mono],
 			},
 
 			fontSize: {
@@ -154,6 +185,19 @@ module.exports = {
 
 				// 扫描线
 				'scanlines': "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.1) 2px, rgba(0, 0, 0, 0.1) 4px)",
+
+				// ========================================
+				// LAB DESIGN SYSTEM - Backgrounds
+				// ========================================
+				// Fine technical grid
+				'lab-grid': "linear-gradient(rgba(212, 255, 0, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(212, 255, 0, 0.03) 1px, transparent 1px)",
+				'lab-grid-fine': "linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px)",
+				// Film grain effect (subtle)
+				'lab-grain': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='0.04'/%3E%3C/svg%3E\")",
+				// Mesh gradient for movement
+				'lab-mesh': "radial-gradient(at 40% 20%, rgba(212, 255, 0, 0.08) 0px, transparent 50%), radial-gradient(at 80% 0%, rgba(0, 212, 255, 0.06) 0px, transparent 50%), radial-gradient(at 0% 50%, rgba(139, 92, 246, 0.05) 0px, transparent 50%)",
+				// Technical crosshair pattern
+				'lab-crosshair': "linear-gradient(rgba(212, 255, 0, 0.1) 1px, transparent 1px) 50% 50% / 40px 40px, linear-gradient(90deg, rgba(212, 255, 0, 0.1) 1px, transparent 1px) 50% 50% / 40px 40px",
 			},
 
 			backgroundSize: {
@@ -162,6 +206,9 @@ module.exports = {
 				'grid-cyber': '100px 100px',
 				'grid-dots': '20px 20px',
 				'300%': '300%',
+				// Lab grid sizes
+				'lab-grid': '60px 60px',
+				'lab-grid-fine': '20px 20px',
 			},
 
 			// 阴影系统
@@ -202,6 +249,19 @@ module.exports = {
 				// 深度阴影
 				'depth': '0 1px 3px rgba(0, 0, 0, 0.05), 0 20px 40px -20px rgba(0, 0, 0, 0.1)',
 				'depth-lg': '0 1px 3px rgba(0, 0, 0, 0.05), 0 28px 56px -28px rgba(0, 0, 0, 0.15)',
+
+				// ========================================
+				// LAB DESIGN SYSTEM - Shadows
+				// ========================================
+				// Industrial glass effect (thick, not iOS blur)
+				'lab-glass': '0 4px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05)',
+				'lab-glass-lg': '0 8px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08)',
+				// Accent glow shadows
+				'lab-acid': '0 0 20px rgba(212, 255, 0, 0.3), 0 0 40px rgba(212, 255, 0, 0.1)',
+				'lab-electric': '0 0 20px rgba(0, 212, 255, 0.3), 0 0 40px rgba(0, 212, 255, 0.1)',
+				'lab-orange': '0 0 20px rgba(255, 107, 0, 0.3), 0 0 40px rgba(255, 107, 0, 0.1)',
+				// Inset technical shadows
+				'lab-inset': 'inset 0 2px 10px rgba(0, 0, 0, 0.4), inset 0 -1px 0 rgba(255, 255, 255, 0.05)',
 			},
 
 			// 动画
@@ -270,6 +330,23 @@ module.exports = {
 
 				// 磁吸效果
 				'magnetic': 'magnetic 0.3s ease-out',
+
+				// ========================================
+				// LAB DESIGN SYSTEM - Animations
+				// ========================================
+				// Mesh drift (subtle background movement)
+				'lab-mesh-drift': 'labMeshDrift 20s ease-in-out infinite',
+				// Data stream effect
+				'lab-data-stream': 'labDataStream 2s linear infinite',
+				// Technical scan line
+				'lab-scan': 'labScan 8s linear infinite',
+				// Entry animations (staggered)
+				'lab-enter': 'labEnter 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+				'lab-enter-delay-1': 'labEnter 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards',
+				'lab-enter-delay-2': 'labEnter 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards',
+				'lab-enter-delay-3': 'labEnter 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards',
+				// Subtle pulse for status indicators
+				'lab-pulse': 'labPulse 3s ease-in-out infinite',
 			},
 
 			keyframes: {
@@ -419,6 +496,34 @@ module.exports = {
 				magnetic: {
 					'0%': { transform: 'translate(var(--x, 0), var(--y, 0))' },
 					'100%': { transform: 'translate(0, 0)' },
+				},
+
+				// ========================================
+				// LAB DESIGN SYSTEM - Keyframes
+				// ========================================
+				labMeshDrift: {
+					'0%, 100%': { backgroundPosition: '0% 0%' },
+					'25%': { backgroundPosition: '100% 50%' },
+					'50%': { backgroundPosition: '50% 100%' },
+					'75%': { backgroundPosition: '0% 50%' },
+				},
+				labDataStream: {
+					'0%': { transform: 'translateY(-100%)', opacity: '0' },
+					'10%': { opacity: '1' },
+					'90%': { opacity: '1' },
+					'100%': { transform: 'translateY(100%)', opacity: '0' },
+				},
+				labScan: {
+					'0%': { transform: 'translateY(-100%)', opacity: '0.5' },
+					'100%': { transform: 'translateY(100vh)', opacity: '0' },
+				},
+				labEnter: {
+					'0%': { opacity: '0', transform: 'translateY(30px) scale(0.98)' },
+					'100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
+				},
+				labPulse: {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.6' },
 				},
 			},
 
