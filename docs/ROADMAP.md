@@ -1,7 +1,7 @@
 # Product Roadmap 2025-2026 | 产品路线图
 
-**Version**: 1.4.0
-**Last Updated**: 2025-11-22
+**Version**: 1.5.0
+**Last Updated**: 2025-11-24
 **Project**: Open Wisdom Lab Website
 **Related Documents**: [docs/](./docs/) 目录下的所有文档
 
@@ -14,6 +14,7 @@
 打造一个**世界级的创生教育平台**，通过科技赋能教育，培养AI时代的创新人才。
 
 **核心目标:**
+
 1. 建立完整的在线+线下混合教育体系
 2. 服务10,000+学员和家庭
 3. 成为创新教育领域的标杆品牌
@@ -22,6 +23,7 @@
 ### 2025 年度目标
 
 **Q4 2025 (当前)**
+
 - [x] 完成基础网站搭建
 - [x] 实现中英双语支持
 - [x] 整理项目文档结构（2025-11-21）
@@ -29,6 +31,7 @@
 - [ ] **统一代码规范和设计系统**
 
 **2025 Remaining Goals:**
+
 - [ ] 上线完整的课程展示系统
 - [ ] 实现在线报名和咨询功能
 - [ ] 发布30+优质博客文章
@@ -39,6 +42,7 @@
 ## 📅 Development Roadmap | 开发路线图
 
 ### Phase 0: 项目结构优化 (已完成)
+
 **Timeline**: 2025-11-21
 **Status**: ✅ Completed
 
@@ -48,10 +52,12 @@
 - [x] 更新项目路线图
 
 ### Phase 1: 标准化与规范化 (4 weeks)
+
 **Timeline**: Week 1-4 (2025-11-21 ~ 2025-12-19)
 **Status**: 🚧 In Progress
 
 #### Week 1-2: 代码标准化
+
 - [x] 创建 OPENSPEC.md 全局规范
 - [x] 创建 CONSISTENCY_AUDIT.md 一致性审核
 - [x] 创建 CONTENT_GAPS.md 内容缺口分析
@@ -59,9 +65,9 @@
 - [x] 创建 DESIGN_SYSTEM.md 设计系统文档
 - [x] 完善双语翻译系统 (i18n/languages.ts)
 - [x] 增强组件交互效果 (Card, Button, GridItem, ListItem)
-- [ ] 配置开发工具链
+- [x] 配置开发工具链
   - [x] Prettier + ESLint 配置完成
-  - [ ] Pre-commit hooks (Husky + lint-staged)
+  - [x] Pre-commit hooks (Husky + lint-staged)
   - [x] TypeScript strict mode (已配置)
 - [x] 代码格式化和修复
   - [x] 修复 deprecated APIs (substr -> substring)
@@ -73,6 +79,7 @@
   - [x] 移除 9 个 cyber 组件的 'use client' 指令 (消除 sourcemap 警告)
 
 #### Week 3-4: TypeScript 迁移
+
 - [x] 添加类型定义
   - [x] 创建 `src/types/` 目录
   - [x] 定义 `SiteConfig.ts`
@@ -85,12 +92,14 @@
   - [ ] 创建 `src/config/` 模块化配置
 
 **Deliverables:**
+
 - [x] 完整的开发规范文档
 - [ ] 100% TypeScript 覆盖 (~80% 已完成)
 - [x] 0 ESLint/TypeScript 错误 (构建通过)
 - [x] 统一的代码风格
 
 **Metrics:**
+
 - Code quality score: > 90
 - TypeScript coverage: 80%+
 - Build time: ~12s (当前已达成)
@@ -98,12 +107,14 @@
 ---
 
 ### Phase 2: 核心内容完善 (5-8 weeks)
+
 **Timeline**: Week 5-12 (2025-12-18 ~ 2026-02-10)
 **Status**: 📋 Planned
 
 #### Week 5-6: 关键页面开发
 
 **优先级 P0 页面:**
+
 - [ ] 关于我们 (`/about`)
   - [ ] 使命与愿景子页
   - [ ] 团队介绍页
@@ -119,6 +130,7 @@
   - [ ] 使用条款 `/legal/terms`
 
 **页面规范:**
+
 - 双语内容完整
 - SEO 优化(Meta tags, OG, Schema)
 - 响应式设计
@@ -174,12 +186,14 @@
   - [ ] 自定义品牌图标
 
 **Deliverables:**
+
 - 🎯 10+ 核心页面上线
 - 🎯 30+ 博客文章发布
 - 🎯 完整的导航体系
 - 🎯 多媒体内容库
 
 **Metrics:**
+
 - Pages indexed: 40+
 - Organic traffic: 1000+/month
 - Bounce rate: < 60%
@@ -188,6 +202,7 @@
 ---
 
 ### Phase 3: 交互功能开发 (9-12 weeks)
+
 **Timeline**: Week 13-20 (2026-02-11 ~ 2026-04-07)
 **Status**: 📋 Planned
 
@@ -269,12 +284,14 @@
   - [ ] 屏幕阅读器测试
 
 **Deliverables:**
+
 - 🎯 完整的表单处理系统
 - 🎯 全站搜索功能
 - 🎯 Analytics 仪表盘
 - 🎯 Lighthouse 分数 > 90
 
 **Metrics:**
+
 - Form conversion rate: > 5%
 - Search usage: 30%+ of visitors
 - Core Web Vitals: All Green
@@ -283,6 +300,7 @@
 ---
 
 ### Phase 4: 高级功能与扩展 (13-20 weeks)
+
 **Timeline**: Week 21-32 (2026-04-08 ~ 2026-07-07)
 **Status**: 💡 Concept
 
@@ -304,6 +322,7 @@
 #### Week 25-28: 用户系统 MVP
 
 **Architecture Decision:**
+
 - Option A: Supabase (推荐)
   - Auth + Database + Storage
   - PostgreSQL
@@ -314,6 +333,7 @@
   - Cloud Storage
 
 **Features:**
+
 - [ ] 用户注册/登录
   - [ ] Email/Password
   - [ ] 社交登录 (WeChat, Google)
@@ -354,12 +374,14 @@
   - [ ] 退款处理
 
 **Deliverables:**
+
 - 🎯 完整知识库系统
 - 🎯 用户账户系统
 - 🎯 在线学习平台 MVP
 - 🎯 支付功能上线
 
 **Metrics:**
+
 - Registered users: 500+
 - Course enrollments: 100+
 - Payment success rate: > 95%
@@ -368,6 +390,7 @@
 ---
 
 ### Phase 5: 社区与生态 (21-28 weeks)
+
 **Timeline**: Week 33-48 (2026-07-08 ~ 2026-10-27)
 **Status**: 💡 Concept
 
@@ -436,11 +459,13 @@
   - [ ] 财务报告
 
 **Deliverables:**
+
 - 🎯 完整的社区生态系统
 - 🎯 家长端应用
 - 🎯 数据驱动的运营平台
 
 **Metrics:**
+
 - Community members: 2000+
 - Monthly active users: 40%+
 - Event attendance rate: 60%+
@@ -485,6 +510,7 @@ Phase 5 (Q3-Q4 2026)
 ### 架构演进
 
 **Current: Static Site (JAMstack)**
+
 ```
 Browser → Vercel CDN → Static HTML
                 ↓
@@ -492,6 +518,7 @@ Browser → Vercel CDN → Static HTML
 ```
 
 **Phase 3-4: Hybrid (SSG + API Routes)**
+
 ```
 Browser → Vercel Edge → Static HTML
                 ↓
@@ -501,6 +528,7 @@ Browser → Vercel Edge → Static HTML
 ```
 
 **Phase 5: Full-stack Platform**
+
 ```
 Web App ─┐
          ├→ Next.js/Astro → API Layer → Supabase
@@ -519,78 +547,86 @@ Mobile App─┘                    ↓
 
 ### Website Performance KPIs
 
-| Metric | Current | Q1 2026 | Q2 2026 | Q3 2026 | Q4 2026 |
-|--------|---------|---------|---------|---------|---------|
-| Lighthouse Performance | ~85 | >90 | >92 | >94 | >95 |
-| Page Load Time (LCP) | ~2.8s | <2.5s | <2.0s | <1.8s | <1.5s |
-| Accessibility Score | ~90 | >95 | >97 | >98 | >99 |
-| SEO Score | ~85 | >95 | >98 | >99 | 100 |
+| Metric                 | Current | Q1 2026 | Q2 2026 | Q3 2026 | Q4 2026 |
+| ---------------------- | ------- | ------- | ------- | ------- | ------- |
+| Lighthouse Performance | ~85     | >90     | >92     | >94     | >95     |
+| Page Load Time (LCP)   | ~2.8s   | <2.5s   | <2.0s   | <1.8s   | <1.5s   |
+| Accessibility Score    | ~90     | >95     | >97     | >98     | >99     |
+| SEO Score              | ~85     | >95     | >98     | >99     | 100     |
 
 ### Traffic & Engagement
 
-| Metric | Q4 2025 | Q1 2026 | Q2 2026 | Q3 2026 | Q4 2026 |
-|--------|---------|---------|---------|---------|---------|
-| Monthly Visitors | 500 | 2,000 | 5,000 | 10,000 | 20,000 |
-| Page Views | 2,000 | 8,000 | 20,000 | 50,000 | 100,000 |
-| Bounce Rate | ~70% | <65% | <60% | <55% | <50% |
-| Avg. Session Duration | ~1.5m | >2m | >2.5m | >3m | >3.5m |
-| Pages per Session | ~2 | >2.5 | >3 | >3.5 | >4 |
+| Metric                | Q4 2025 | Q1 2026 | Q2 2026 | Q3 2026 | Q4 2026 |
+| --------------------- | ------- | ------- | ------- | ------- | ------- |
+| Monthly Visitors      | 500     | 2,000   | 5,000   | 10,000  | 20,000  |
+| Page Views            | 2,000   | 8,000   | 20,000  | 50,000  | 100,000 |
+| Bounce Rate           | ~70%    | <65%    | <60%    | <55%    | <50%    |
+| Avg. Session Duration | ~1.5m   | >2m     | >2.5m   | >3m     | >3.5m   |
+| Pages per Session     | ~2      | >2.5    | >3      | >3.5    | >4      |
 
 ### Conversion Metrics
 
-| Metric | Q1 2026 | Q2 2026 | Q3 2026 | Q4 2026 |
-|--------|---------|---------|---------|---------|
-| Inquiry Form Submissions | 50 | 100 | 200 | 400 |
-| Newsletter Subscribers | 200 | 500 | 1,000 | 2,000 |
-| Course Enrollments | - | 20 | 50 | 100 |
-| Conversion Rate | 2% | 3% | 4% | 5% |
+| Metric                   | Q1 2026 | Q2 2026 | Q3 2026 | Q4 2026 |
+| ------------------------ | ------- | ------- | ------- | ------- |
+| Inquiry Form Submissions | 50      | 100     | 200     | 400     |
+| Newsletter Subscribers   | 200     | 500     | 1,000   | 2,000   |
+| Course Enrollments       | -       | 20      | 50      | 100     |
+| Conversion Rate          | 2%      | 3%      | 4%      | 5%      |
 
 ### Content Metrics
 
-| Metric | Q4 2025 | Q1 2026 | Q2 2026 | Q3 2026 | Q4 2026 |
-|--------|---------|---------|---------|---------|---------|
-| Blog Posts | 4 | 30 | 50 | 80 | 120 |
-| Total Pages | ~10 | 40 | 60 | 80 | 100+ |
-| Video Content | 0 | 5 | 10 | 20 | 30 |
-| Downloadable Resources | 0 | 5 | 10 | 20 | 30 |
+| Metric                 | Q4 2025 | Q1 2026 | Q2 2026 | Q3 2026 | Q4 2026 |
+| ---------------------- | ------- | ------- | ------- | ------- | ------- |
+| Blog Posts             | 4       | 30      | 50      | 80      | 120     |
+| Total Pages            | ~10     | 40      | 60      | 80      | 100+    |
+| Video Content          | 0       | 5       | 10      | 20      | 30      |
+| Downloadable Resources | 0       | 5       | 10      | 20      | 30      |
 
 ---
 
 ## 🚀 Launch Strategy | 发布策略
 
 ### Soft Launch (Q1 2026)
+
 **Target**: 内测用户和早期采用者
 
 **Activities:**
+
 - 邀请制测试
 - 收集反馈
 - 迭代改进
 - 小范围推广
 
 **Channels:**
+
 - 现有学员家长
 - 教育社群
 - 朋友圈/微信群
 
 ### Public Launch (Q2 2026)
+
 **Target**: 公开发布,获取新用户
 
 **Activities:**
+
 - 正式发布会
 - PR 新闻稿
 - 社交媒体推广
 - KOL/教育博主合作
 
 **Channels:**
+
 - 微信公众号
 - 知乎/小红书
 - 教育媒体
 - 线下活动
 
 ### Growth Phase (Q3-Q4 2026)
+
 **Target**: 规模化增长
 
 **Activities:**
+
 - 付费广告 (Google, 微信)
 - SEO 持续优化
 - 内容营销
@@ -598,6 +634,7 @@ Mobile App─┘                    ↓
 - 口碑营销
 
 **Channels:**
+
 - 搜索引擎
 - 社交媒体
 - 内容平台
@@ -608,6 +645,7 @@ Mobile App─┘                    ↓
 ## 🎨 Design System Evolution | 设计系统演进
 
 ### Phase 1: 基础设计系统 (Q4 2025 - Q1 2026)
+
 - [x] 创建 DESIGN_SYSTEM.md
 - [x] 定义颜色系统
 - [x] 定义字体系统
@@ -616,6 +654,7 @@ Mobile App─┘                    ↓
 - [x] 交互效果系统 (Hover, Animation, Transition)
 
 ### Phase 2: 组件库扩展 (Q2 2026)
+
 - [ ] 原子组件完整化
 - [ ] 分子组件系统
 - [ ] 有机体组件
@@ -623,6 +662,7 @@ Mobile App─┘                    ↓
 - [ ] Storybook 集成
 
 ### Phase 3: 设计工具集成 (Q3 2026)
+
 - [ ] Figma 设计库
 - [ ] Design Tokens
 - [ ] 自动化设计-代码同步
@@ -635,6 +675,7 @@ Mobile App─┘                    ↓
 ### 迭代周期
 
 **Sprint Structure: 2-week Sprints**
+
 ```
 Week 1:
 ├── Mon: Sprint Planning
@@ -652,6 +693,7 @@ Week 2:
 ### 反馈机制
 
 **用户反馈渠道:**
+
 1. 网站反馈表单
 2. 用户调研 (每季度)
 3. A/B 测试数据
@@ -660,6 +702,7 @@ Week 2:
 6. 客服记录分析
 
 **内部评审:**
+
 1. 每周代码评审
 2. 每月设计评审
 3. 每季度产品评审
@@ -670,6 +713,7 @@ Week 2:
 ## 🎯 Milestones & Checkpoints | 里程碑
 
 ### 2025 Q4
+
 - [x] ✅ 网站基础架构完成
 - [x] ✅ 双语系统上线
 - [x] ✅ 首页和博客功能
@@ -679,6 +723,7 @@ Week 2:
 - [ ] 🎯 TypeScript 全面迁移
 
 ### 2026 Q1
+
 - [ ] 🎯 10+ 核心页面上线
 - [ ] 🎯 30+ 博客文章发布
 - [ ] 🎯 表单和咨询系统
@@ -686,18 +731,21 @@ Week 2:
 - [ ] 🎯 Lighthouse > 90
 
 ### 2026 Q2
+
 - [ ] 🎯 搜索功能上线
 - [ ] 🎯 用户系统 MVP
 - [ ] 🎯 在线课程平台基础
 - [ ] 🎯 月访问量 5000+
 
 ### 2026 Q3
+
 - [ ] 🎯 支付系统集成
 - [ ] 🎯 100+ 付费学员
 - [ ] 🎯 社区功能上线
 - [ ] 🎯 移动应用 Beta
 
 ### 2026 Q4
+
 - [ ] 🎯 完整 LMS 平台
 - [ ] 🎯 1000+ 注册用户
 - [ ] 🎯 家长端应用
@@ -710,12 +758,14 @@ Week 2:
 ### 关键依赖
 
 **Technical Dependencies:**
+
 - Astro framework updates
 - Supabase service availability
 - Payment gateway integration
 - Video hosting service
 
 **Resource Dependencies:**
+
 - Development team bandwidth
 - Content creation capacity
 - Design resources
@@ -723,26 +773,28 @@ Week 2:
 
 ### 风险管理
 
-| Risk | Probability | Impact | Mitigation |
-|------|-------------|--------|------------|
-| 技术栈重大变更 | Low | High | 版本锁定,渐进式升级 |
-| 第三方服务故障 | Medium | High | 备用方案,多云部署 |
-| 内容生产延期 | Medium | Medium | 提前规划,外包支持 |
-| 预算超支 | Low | Medium | 分阶段投入,优先级管理 |
-| 用户增长不达预期 | Medium | High | 多渠道营销,产品优化 |
-| 竞争对手压力 | Medium | Medium | 差异化定位,持续创新 |
+| Risk             | Probability | Impact | Mitigation            |
+| ---------------- | ----------- | ------ | --------------------- |
+| 技术栈重大变更   | Low         | High   | 版本锁定,渐进式升级   |
+| 第三方服务故障   | Medium      | High   | 备用方案,多云部署     |
+| 内容生产延期     | Medium      | Medium | 提前规划,外包支持     |
+| 预算超支         | Low         | Medium | 分阶段投入,优先级管理 |
+| 用户增长不达预期 | Medium      | High   | 多渠道营销,产品优化   |
+| 竞争对手压力     | Medium      | Medium | 差异化定位,持续创新   |
 
 ---
 
 ## 📚 References & Resources | 参考资源
 
 ### 相关文档
+
 - [OPENSPEC.md](./OPENSPEC.md) - 全局开发规范
 - [CONSISTENCY_AUDIT.md](./CONSISTENCY_AUDIT.md) - 一致性审核
 - [CONTENT_GAPS.md](./CONTENT_GAPS.md) - 内容缺口分析
 - [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) - 设计系统文档 (待创建)
 
 ### 外部资源
+
 - [Astro Documentation](https://docs.astro.build/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Supabase Docs](https://supabase.com/docs)
@@ -750,6 +802,7 @@ Week 2:
 - [WCAG Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
 
 ### 工具与服务
+
 - **Development**: VSCode, Git, GitHub
 - **Design**: Figma, Adobe Creative Suite
 - **Analytics**: Google Analytics, Vercel Analytics
@@ -760,7 +813,16 @@ Week 2:
 
 ## 📝 Changelog | 更新日志
 
+### Version 1.5.0 (2025-11-24)
+
+- **开发工具链完善**
+  - 添加 Husky v9 + lint-staged 预提交钩子
+  - 自动运行 ESLint 和 Prettier 检查暂存文件
+  - 配置 lint-staged 支持 .js, .ts, .tsx, .astro, .json, .md, .css 文件
+- **构建状态**: 0 errors, 0 warnings
+
 ### Version 1.4.0 (2025-11-22)
+
 - **文档架构优化**
   - 更新 OPENSPEC.md v1.2.0: 添加文档架构章节(Section 0)
   - 明确 CLAUDE.md 与 OPENSPEC.md 的职责划分和更新原则
@@ -770,6 +832,7 @@ Week 2:
 - **构建状态**: 0 errors, 0 warnings, 1 hint
 
 ### Version 1.3.0 (2025-11-22)
+
 - **代码质量优化**
   - 修复 deprecated API (substr -> substring)
   - 修复 RSS endpoint handler 命名 (get -> GET)
@@ -779,20 +842,23 @@ Week 2:
   - 优化 PageLayout: 移除重复的 ParticlesBackground 和空的 Announcement 组件
   - 保留单一 PhysicsBackground 动画，提升页面加载性能
 - **i18n 完善**
-  - 补充 Note.astro 组件的双语翻译 (note.* 翻译键)
+  - 补充 Note.astro 组件的双语翻译 (note.\* 翻译键)
 - **构建状态**: 0 errors, 0 warnings, 1 hint (ImageUpload 的 define:vars 为预期行为)
 
 ### Version 1.2.0 (2025-11-21)
+
 - 更新 Phase 1 完成状态
 - 标记设计系统相关任务为完成
 - 更新 2025 Q4 里程碑
 - 添加双语翻译和交互效果完成记录
 
 ### Version 1.1.0 (2025-11-21)
+
 - 整理文档结构
 - 更新项目状态
 
 ### Version 1.0.0 (2025-11-19)
+
 - 创建初始路线图文档
 - 定义 5 个主要开发阶段
 - 设定 2025-2026 年度目标
@@ -805,20 +871,22 @@ Week 2:
 这是一个**活文档**,会根据实际情况持续更新。
 
 **如何贡献:**
+
 1. 提出新的功能建议 (GitHub Issues)
 2. 参与季度产品评审会议
 3. 提供用户反馈和数据洞察
 4. 审查和改进现有计划
 
 **Review Cycle:**
+
 - 每月更新进度
 - 每季度调整优先级
 - 每年度战略回顾
 
 ---
 
-**Last Updated**: 2025-11-22
-**Next Review**: 2025-12-22
+**Last Updated**: 2025-11-24
+**Next Review**: 2025-12-24
 **Document Owner**: Product Team
 
 ---
