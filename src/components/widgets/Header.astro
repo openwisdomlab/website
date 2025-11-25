@@ -9,10 +9,10 @@ import { getHomePermalink, getBlogPermalink, getPermalink } from '~/utils/permal
 ---
 
 <header
-	class="sticky top-0 z-40 flex-none mx-auto w-full bg-white/90 dark:bg-cyber-black/90 backdrop-blur-md border-b-4 border-black dark:border-white/10 transition-all duration-300"
+	class="sticky top-0 z-40 mx-auto w-full flex-none border-b-4 border-black bg-white/90 backdrop-blur-md transition-all duration-300 dark:border-white/10 dark:bg-cyber-black/90"
 	id="header"
 >
-	<div class="py-3 px-3 mx-auto w-full md:flex md:justify-between max-w-6xl md:px-4">
+	<div class="mx-auto w-full max-w-6xl px-3 py-3 md:flex md:justify-between md:px-4">
 		<div class="flex justify-between">
 			<a class="flex items-center" href={getHomePermalink()}>
 				<Logo />
@@ -23,77 +23,79 @@ import { getHomePermalink, getBlogPermalink, getPermalink } from '~/utils/permal
 			</div>
 		</div>
 		<nav
-			class="items-center w-full md:w-auto hidden md:flex text-black dark:text-slate-200 h-[calc(100vh-100px)] md:h-auto overflow-y-auto md:overflow-visible"
+			class="hidden h-[calc(100vh-100px)] w-full items-center overflow-y-auto text-black dark:text-slate-200 md:flex md:h-auto md:w-auto md:overflow-visible"
 			aria-label="Main navigation"
 		>
-			<ul class="flex flex-col pt-8 md:pt-0 md:flex-row md:self-center w-full md:w-auto text-xl md:text-base font-mono font-bold tracking-tight">
+			<ul
+				class="flex w-full flex-col pt-8 font-mono text-xl font-bold tracking-tight md:w-auto md:flex-row md:self-center md:pt-0 md:text-base"
+			>
 				<li>
 					<a
-						class="hover:text-indigo-600 dark:hover:text-neon-blue px-4 py-3 flex items-center transition-all duration-200 uppercase"
+						class="flex items-center px-4 py-3 uppercase transition-all duration-200 hover:text-indigo-600 dark:hover:text-neon-blue"
 						href={getHomePermalink()}
 						><span data-i18n="nav.home">首页</span>
 					</a>
 				</li>
 				<li>
 					<a
-						class="hover:text-indigo-600 dark:hover:text-neon-blue px-4 py-3 flex items-center transition-all duration-200 uppercase"
+						class="flex items-center px-4 py-3 uppercase transition-all duration-200 hover:text-indigo-600 dark:hover:text-neon-blue"
 						href={getPermalink('/about')}
 						><span data-i18n="nav.about">关于我们</span>
 					</a>
 				</li>
 				<li>
 					<a
-						class="hover:text-indigo-600 dark:hover:text-neon-blue px-4 py-3 flex items-center transition-all duration-200 uppercase"
+						class="flex items-center px-4 py-3 uppercase transition-all duration-200 hover:text-indigo-600 dark:hover:text-neon-blue"
 						href={getPermalink('/curriculum')}
 						><span data-i18n="nav.curriculum">课程体系</span>
 					</a>
 				</li>
 				<li>
 					<a
-						class="hover:text-indigo-600 dark:hover:text-neon-blue px-4 py-3 flex items-center transition-all duration-200 uppercase"
+						class="flex items-center px-4 py-3 uppercase transition-all duration-200 hover:text-indigo-600 dark:hover:text-neon-blue"
 						href={getPermalink('/challenges')}
 						><span data-i18n="nav.challenges">科学问题</span>
 					</a>
 				</li>
 				<li>
 					<a
-						class="hover:text-indigo-600 dark:hover:text-neon-blue px-4 py-3 flex items-center transition-all duration-200 uppercase"
+						class="flex items-center px-4 py-3 uppercase transition-all duration-200 hover:text-indigo-600 dark:hover:text-neon-blue"
 						href={getPermalink('/activities')}
 						><span data-i18n="nav.activities">特色活动</span>
 					</a>
 				</li>
 				<li>
 					<a
-						class="hover:text-indigo-600 dark:hover:text-neon-blue px-4 py-3 flex items-center transition-all duration-200 uppercase"
+						class="flex items-center px-4 py-3 uppercase transition-all duration-200 hover:text-indigo-600 dark:hover:text-neon-blue"
 						href={getPermalink('/spaces')}
 						><span data-i18n="nav.spaces">实验室空间</span>
 					</a>
 				</li>
 				<li>
 					<a
-						class="hover:text-indigo-600 dark:hover:text-neon-blue px-4 py-3 flex items-center transition-all duration-200 uppercase"
+						class="flex items-center px-4 py-3 uppercase transition-all duration-200 hover:text-indigo-600 dark:hover:text-neon-blue"
 						href={getBlogPermalink()}><span data-i18n="nav.blog">动态</span></a
 					>
 				</li>
 				<li class="md:hidden">
 					<a
-						class="font-bold hover:text-indigo-600 dark:hover:text-neon-blue px-4 py-3 flex items-center transition-all duration-200"
+						class="flex items-center px-4 py-3 font-bold transition-all duration-200 hover:text-indigo-600 dark:hover:text-neon-blue"
 						href={getPermalink('/contact')}
 						><span data-i18n="nav.contact">联系我们</span>
 					</a>
 				</li>
 			</ul>
-			<div class="md:self-center flex items-center mb-4 md:mb-0 ml-2">
-				<div class="hidden items-center md:flex gap-2">
+			<div class="mb-4 ml-2 flex items-center md:mb-0 md:self-center">
+				<div class="hidden items-center gap-2 md:flex">
 					<LanguageSwitch />
 					<ToggleTheme iconClass="w-5 h-5" />
 
 					<a
 						href="#contact"
-						class="inline-block text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-neon-purple dark:hover:text-white border-2 border-black dark:border-white rounded-none text-sm p-2 transition-all duration-200 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[0_0_10px_rgba(191,0,255,0.5)] hover:translate-y-[2px] hover:shadow-none"
-						aria-label="联系我们"
+						class="inline-block rounded-none border-2 border-black p-2 text-sm text-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 hover:translate-y-[2px] hover:bg-black hover:text-white hover:shadow-none dark:border-white dark:text-white dark:shadow-[0_0_10px_rgba(191,0,255,0.5)] dark:hover:bg-neon-purple dark:hover:text-white"
+						aria-label="Contact Us"
 					>
-						<Icon name="tabler:mail" class="w-5 h-5" />
+						<Icon name="tabler:mail" class="h-5 w-5" />
 					</a>
 				</div>
 			</div>
