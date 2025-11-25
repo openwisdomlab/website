@@ -10,101 +10,104 @@
 
 <!-- Scroll to Top Button -->
 <button
-  id="scroll-to-top"
-  class="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full bg-primary dark:bg-primary-dark text-white shadow-lg opacity-0 invisible translate-y-4 transition-all duration-300 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 group"
-  aria-label="Scroll to top"
-  data-i18n-aria="common.scrollToTop"
+	id="scroll-to-top"
+	class="bg-primary dark:bg-primary-dark focus:ring-primary group invisible fixed bottom-8 right-8 z-50 h-12 w-12 translate-y-4 rounded-full text-white opacity-0 shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2"
+	aria-label="Scroll to top"
 >
-  <svg
-    class="w-6 h-6 mx-auto transform transition-transform group-hover:-translate-y-0.5"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      d="M5 10l7-7m0 0l7 7m-7-7v18"
-    ></path>
-  </svg>
+	<svg
+		class="mx-auto h-6 w-6 transform transition-transform group-hover:-translate-y-0.5"
+		fill="none"
+		stroke="currentColor"
+		viewBox="0 0 24 24"
+		xmlns="http://www.w3.org/2000/svg"
+	>
+		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+	</svg>
 </button>
 
 <style>
-  #scroll-to-top.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
+	#scroll-to-top.visible {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
 
-  #scroll-to-top {
-    background: linear-gradient(135deg, var(--color-primary, #6366f1) 0%, var(--color-secondary, #a855f7) 100%);
-  }
+	#scroll-to-top {
+		background: linear-gradient(135deg, var(--color-primary, #6366f1) 0%, var(--color-secondary, #a855f7) 100%);
+	}
 
-  #scroll-to-top:hover {
-    background: linear-gradient(135deg, var(--color-primary-dark, #4f46e5) 0%, var(--color-secondary-dark, #9333ea) 100%);
-  }
+	#scroll-to-top:hover {
+		background: linear-gradient(
+			135deg,
+			var(--color-primary-dark, #4f46e5) 0%,
+			var(--color-secondary-dark, #9333ea) 100%
+		);
+	}
 
-  /* Pulse animation when visible */
-  #scroll-to-top.visible {
-    animation: subtle-pulse 2s ease-in-out infinite;
-  }
+	/* Pulse animation when visible */
+	#scroll-to-top.visible {
+		animation: subtle-pulse 2s ease-in-out infinite;
+	}
 
-  @keyframes subtle-pulse {
-    0%, 100% {
-      box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3), 0 4px 6px -4px rgba(99, 102, 241, 0.3);
-    }
-    50% {
-      box-shadow: 0 10px 25px -3px rgba(99, 102, 241, 0.5), 0 4px 10px -4px rgba(99, 102, 241, 0.5);
-    }
-  }
+	@keyframes subtle-pulse {
+		0%,
+		100% {
+			box-shadow:
+				0 10px 15px -3px rgba(99, 102, 241, 0.3),
+				0 4px 6px -4px rgba(99, 102, 241, 0.3);
+		}
+		50% {
+			box-shadow:
+				0 10px 25px -3px rgba(99, 102, 241, 0.5),
+				0 4px 10px -4px rgba(99, 102, 241, 0.5);
+		}
+	}
 </style>
 
 <script>
-  const initScrollToTop = () => {
-    const button = document.getElementById('scroll-to-top');
-    if (!button) return;
+	const initScrollToTop = () => {
+		const button = document.getElementById('scroll-to-top');
+		if (!button) return;
 
-    // Show/hide button based on scroll position
-    const toggleVisibility = () => {
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
-      const threshold = 300;
+		// Show/hide button based on scroll position
+		const toggleVisibility = () => {
+			const scrollY = window.scrollY || document.documentElement.scrollTop;
+			const threshold = 300;
 
-      if (scrollY > threshold) {
-        button.classList.add('visible');
-      } else {
-        button.classList.remove('visible');
-      }
-    };
+			if (scrollY > threshold) {
+				button.classList.add('visible');
+			} else {
+				button.classList.remove('visible');
+			}
+		};
 
-    // Listen to scroll events
-    window.addEventListener('scroll', toggleVisibility, { passive: true });
+		// Listen to scroll events
+		window.addEventListener('scroll', toggleVisibility, { passive: true });
 
-    // Also listen to Lenis scroll events for smoother updates
-    window.addEventListener('lenis-scroll', toggleVisibility);
+		// Also listen to Lenis scroll events for smoother updates
+		window.addEventListener('lenis-scroll', toggleVisibility);
 
-    // Scroll to top on click
-    button.addEventListener('click', () => {
-      // Use Lenis if available, otherwise fallback
-      if ((window as any).lenis) {
-        (window as any).lenis.scrollTo(0, { duration: 1.5 });
-      } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    });
+		// Scroll to top on click
+		button.addEventListener('click', () => {
+			// Use Lenis if available, otherwise fallback
+			if ((window as any).lenis) {
+				(window as any).lenis.scrollTo(0, { duration: 1.5 });
+			} else {
+				window.scrollTo({ top: 0, behavior: 'smooth' });
+			}
+		});
 
-    // Initial check
-    toggleVisibility();
-  };
+		// Initial check
+		toggleVisibility();
+	};
 
-  // Initialize on page load
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initScrollToTop);
-  } else {
-    initScrollToTop();
-  }
+	// Initialize on page load
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', initScrollToTop);
+	} else {
+		initScrollToTop();
+	}
 
-  // Re-initialize on Astro page navigation
-  document.addEventListener('astro:page-load', initScrollToTop);
+	// Re-initialize on Astro page navigation
+	document.addEventListener('astro:page-load', initScrollToTop);
 </script>
