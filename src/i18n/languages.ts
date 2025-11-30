@@ -180,6 +180,10 @@ export const ui = {
 		'blog.prevPost': '上一篇',
 		'blog.nextPost': '下一篇',
 
+		// 分页
+		'pagination.newer': '较新文章',
+		'pagination.older': '较旧文章',
+
 		// 首页 Hero 区域
 		'home.hero.owl': '猫头鹰',
 		'home.hero.lab': '实验室',
@@ -914,6 +918,10 @@ export const ui = {
 		'blog.relatedPosts': 'Related Posts',
 		'blog.prevPost': 'Previous',
 		'blog.nextPost': 'Next',
+
+		// Pagination
+		'pagination.newer': 'Newer posts',
+		'pagination.older': 'Older posts',
 
 		// Home Hero Section
 		'home.hero.owl': 'Open Wisdom',
