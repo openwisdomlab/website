@@ -140,6 +140,12 @@ export const ui = {
 		'common.all': '全部',
 		'common.scrollToTop': '返回顶部',
 
+		// 404 页面
+		'error404.title': '404',
+		'error404.message': '抱歉，我们找不到这个页面。',
+		'error404.description': '别担心，您可以在我们的首页找到更多精彩内容。',
+		'error404.backHome': '返回首页',
+
 		// 表单
 		'form.name': '姓名',
 		'form.email': '邮箱',
@@ -868,6 +874,12 @@ export const ui = {
 		'common.sort': 'Sort',
 		'common.all': 'All',
 		'common.scrollToTop': 'Back to Top',
+
+		// 404 Page
+		'error404.title': '404',
+		'error404.message': "Sorry, we couldn't find this page.",
+		'error404.description': "But don't worry, you can find plenty of other things on our homepage.",
+		'error404.backHome': 'Back to Homepage',
 
 		// Form
 		'form.name': 'Name',
