@@ -5,33 +5,42 @@ import PostTags from '~/components/atoms/Tags.astro';
 import { getPermalink } from '~/utils/permalinks';
 import { findImage } from '~/utils/images';
 import { getFormattedDate } from '~/utils/utils';
+import type { BlogPost } from '~/types/BlogPost';
+
+interface Props {
+	post: BlogPost;
+}
 
 const { post } = Astro.props;
 
 const image = await findImage(post.image);
+const publishDateString = post.publishDate instanceof Date ? post.publishDate.toISOString() : post.publishDate;
 ---
 
 <article class={`max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 ${image ? 'md:grid-cols-2' : ''} group`}>
 	{
 		image && (
 			<a class="relative block" href={getPermalink(post.slug, 'post')}>
-				<div class="relative h-0 pb-[56.25%] md:pb-[75%] md:h-80 lg:pb-[56.25%] overflow-hidden bg-gray-400 dark:bg-slate-700 rounded-xl shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+				<div class="relative h-0 overflow-hidden rounded-xl bg-gray-400 pb-[56.25%] shadow-lg transition-shadow duration-300 group-hover:shadow-xl dark:bg-slate-700 md:h-80 md:pb-[75%] lg:pb-[56.25%]">
 					{image && (
 						<Picture
 							src={image}
-							class="absolute inset-0 object-cover w-full h-full rounded-xl bg-gray-400 dark:bg-slate-700 transform group-hover:scale-105 transition-transform duration-500 ease-out"
+							class="absolute inset-0 h-full w-full transform rounded-xl bg-gray-400 object-cover transition-transform duration-500 ease-out group-hover:scale-105 dark:bg-slate-700"
 							widths={[400, 900]}
 							sizes="(max-width: 900px) 400px, 900px"
 							alt={post.title}
 						/>
 					)}
-					<!-- Overlay gradient on hover -->
-					<div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
-					<!-- Play/Read indicator -->
-					<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-						<div class="w-14 h-14 rounded-full bg-white/90 dark:bg-slate-800/90 flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform duration-300">
-							<svg class="w-6 h-6 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+					<div class="absolute inset-0 rounded-xl bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+					<div class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+						<div class="flex h-14 w-14 scale-90 transform items-center justify-center rounded-full bg-white/90 shadow-lg transition-transform duration-300 group-hover:scale-100 dark:bg-slate-800/90">
+							<svg
+								class="h-6 w-6 text-primary-600 dark:text-primary-400"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
 							</svg>
 						</div>
 					</div>
@@ -41,32 +50,40 @@ const image = await findImage(post.image);
 	}
 	<div class="flex flex-col justify-center">
 		<header>
-			<h2 class="text-xl sm:text-2xl font-bold leading-snug mb-2 font-heading">
+			<h2 class="font-heading mb-2 text-xl font-bold leading-snug sm:text-2xl">
 				<a
-					class="text-slate-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+					class="text-slate-900 transition-colors duration-200 hover:text-primary-600 dark:text-white dark:hover:text-primary-400"
 					href={getPermalink(post.slug, 'post')}
 				>
 					{post.title}
 				</a>
 			</h2>
 		</header>
-		<p class="text-md sm:text-lg flex-grow text-gray-600 dark:text-gray-400 line-clamp-3">
+		<p class="text-md line-clamp-3 flex-grow text-gray-600 dark:text-gray-400 sm:text-lg">
 			{post.excerpt || post.description}
 		</p>
 		<footer class="mt-4">
 			<div class="flex items-center gap-2">
-				<span class="text-gray-500 dark:text-slate-400 text-sm flex items-center gap-1">
-					<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+				<span class="flex items-center gap-1 text-sm text-gray-500 dark:text-slate-400">
+					<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
 					</svg>
-					<time datetime={post.publishDate}>{getFormattedDate(post.publishDate)}</time>
+					<time datetime={publishDateString}>{getFormattedDate(post.publishDate)}</time>
 				</span>
 				<span class="text-gray-300 dark:text-slate-600">•</span>
-				<span class="text-gray-500 dark:text-slate-400 text-sm flex items-center gap-1">
-					<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+				<span class="flex items-center gap-1 text-sm text-gray-500 dark:text-slate-400">
+					<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 					</svg>
-					{Math.ceil(post.readingTime)} min
+					{Math.ceil(post.readingTime ?? 0)} min
 				</span>
 			</div>
 			<div class="mt-4">
