@@ -2,6 +2,7 @@
   "name": "@onwidget/astrowind",
   "description": "A free template using Astro 5.0 and Tailwind CSS. Powered by Owl Lab.",
   "version": "1.0.0-beta.52",
+  "packageManager": "pnpm@12.4.1",
   "private": true,
   "type": "module",
   "scripts": {
