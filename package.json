@@ -14,7 +14,8 @@
     "check": "astro check && eslint . && prettier --check .",
     "fix": "eslint --fix . && prettier --write .",
     "lint:eslint": "eslint . --ext .js,.ts,.astro",
-    "prepare": "husky"
+    "prepare": "husky",
+    "verify": "pnpm run build"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
@@ -51,6 +52,9 @@
     "@types/eslint__js": "^8.42.3",
     "@types/lodash.merge": "^4.6.9",
     "@types/matter-js": "^0.20.2",
+    "@types/mdast": "^4.0.4",
+    "@types/react": "^19.2.6",
+    "@types/react-dom": "^19.2.3",
     "astro-icon": "^1.1.1",
     "eslint": "^9.17.0",
     "eslint-plugin-astro": "^1.3.3",
